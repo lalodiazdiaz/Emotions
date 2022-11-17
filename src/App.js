@@ -1,13 +1,16 @@
-import "./App.css";
+import './App.css';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import Home from './components/Home';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <p>Reconicimiento de emociones</p>
-      </header>
-    </div>
-  );
+	const router = createBrowserRouter([
+		{
+			path: '/',
+			element: <Home />,
+		},
+	]);
+
+	return <RouterProvider router={router} />;
 }
 
 export default App;

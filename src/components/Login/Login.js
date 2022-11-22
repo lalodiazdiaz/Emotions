@@ -5,36 +5,19 @@ import { useForm } from 'react-hook-form';
 
 function Login() {
 	const [user, setUser] = useState('null');
-	
-
 	const {register, handleSubmit, formState: { errors } } = useForm();
 
-	const onSubmit = (evento) => {
-
+	const onSubmit = (events) => {
 		setTimeout(() => {
-		  if (evento.email === 'luz@gmail.com' && evento.password === '123456') {
-				setUser(evento);
+		  if (events.email === 'luz@gmail.com' && events.password === '123456') {
+				setUser(events);
 			
 				window.location.href = '/dashboard';
 		  } else {
 				setUser(null);
-				
 		  }
 		}, 4000);
 	};
-
-	// const validar = () => {
-	// 	(user === 'luz@gmail.com' && password === '123456');
-	// };
-
-	// const success = () => {
-	// 	alert(`Welcome ${user} `);
-	// 	window.location.href = '/dashboard/' + user;
-	// };
-
-	// const error = () => {
-	// 	alert('Usuario y/o password invalido');
-	// };
 	return (
 		<div className={styles.container}>
 			<div className={styles.contLogo}>
@@ -61,8 +44,6 @@ function Login() {
 							/>
 						</div>
 						{errors.email && <span>{errors.email.message}</span>}
-						{/* {!user && <span>Usuario Incorrecto</span>} */}
-
 						<div className={`${styles.input}
               				${errors.password && styles.error}`}>
 							<label>Password</label>
@@ -78,7 +59,6 @@ function Login() {
 									}
 								})}
 							/>
-							
 						</div>
 						{errors.password && <span>{errors.password.message}</span>}
 						{!user && <span>Contraseña y/o email incorrecta</span>}
@@ -95,7 +75,3 @@ function Login() {
 }
 
 export default Login;
-
-
-
-

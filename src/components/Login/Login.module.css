@@ -1,0 +1,142 @@
+.container {
+    align-items: center;
+    background: linear-gradient(1turn, #f5efe6, 60%, #aebdca);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: center;
+    position: absolute;
+    width: 100%;
+  }
+
+  .contLogo {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+  }
+  
+  .imgLogo {
+    width: 40%;
+  }
+  
+  .contform {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    height: 40%;
+    justify-content: center;
+    margin: 2%;
+    width: 40%;
+  }
+
+  .contform form {
+    align-items: center;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+  }
+  
+  .campo {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    margin-top: 5%;
+    width: 90%;
+  }
+  
+  .campo label {
+    font-size: 20px;
+    font-weight: bold;
+    height: 30px;
+  }
+  
+  .btnUser {
+    border-radius: 5px 5px 5px 5px;
+    border: 1px solid #393939;
+    color: #393939;
+    font-size: 20px;
+    padding: 5px;
+    width: 90%;
+  }
+
+  .btnPass {
+    border-radius: 5px 5px 5px 5px;
+    border: 1px solid #393939;
+    color: #393939;
+    font-size: 20px;
+    padding: 5px;
+    width: 90%;
+  }
+  
+  .btnSend {
+    background: #aebdca;
+    border-radius: 5px 5px 5px 5px;
+    border: 1px solid #000;
+    color: #000;
+    cursor: pointer;
+    font-size: 12px;
+    font-size: 20px;
+    margin: 5%;
+    padding: 5px;
+    width: 90%;
+  }
+
+  .btnSend:hover {
+    background: #7895b2;
+  }
+
+  .campo h2 {
+    font-size: 40px;
+  }
+  
+  @media screen and (max-width: 600px) and (orientation: portrait) {
+    .contform {
+      width: 80%;
+    }
+
+    .contform form {
+      width: 100%;
+    }
+
+    .campo {
+      margin: 5px;
+      width: 100%;
+    }
+
+    .imgLogo {
+      width: 50%;
+    }
+
+    .campo h2 {
+      margin-top: -20%;
+    }
+  }
+  
+  @media screen and (max-width: 1200px) {
+    .contform form {
+      margin-top: 25px;
+      width: 100%;
+    }
+
+    .campo {
+      margin: 5px;
+      width: 100%;
+    }
+
+    .contLogo {
+      align-items: center;
+      display: flex;
+      justify-content: center;
+      margin-bottom: 5%;
+      margin-top: 10%;
+      width: 100%;
+    }
+  }
+  
+  .input.error input {
+    border: 5px solid #d23200;
+  }
+  

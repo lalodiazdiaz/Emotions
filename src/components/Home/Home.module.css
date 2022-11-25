@@ -1,0 +1,107 @@
+.contHome{
+  height: 100vh;
+}
+
+.bodyHome{
+  display: flex;
+  height: 91%;
+  justify-content: center;
+  align-items: flex-end;
+  background-image: url('../../assets/terapia.jpg');
+  background-repeat:round;
+  background-size: cover;
+}
+
+.agendar{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  color: black;
+  font-size: 20px;
+  margin: 5%;
+  text-align: center;
+  cursor: pointer;
+  height: 3%;
+  padding: 10px;
+  border-radius:50px;
+  width: 130px;
+  background: rgba(13, 177, 108, 0.79); 
+   border: 2px solid black;
+}
+.agendar:hover{
+  transform: scale(1.1); 
+  background-color: aquamarine;
+}
+.modalCont{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  margin: 20px;
+}
+
+.inputCita{
+  color: black;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  background-color:  rgba(13, 177, 108, 0.79);
+  border: 2px solid black;
+  border-radius:50px;
+  width: 130px;
+}
+
+.modalCont > text{
+  font-size: 20px;
+  margin-left: 10px;
+  color: black;
+  font-weight: 500;
+}
+
+.btnCont{
+display:flex ;
+justify-content: center;
+align-items: center;
+}
+
+.btnCloseModal{
+  border: none;
+  color: black;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  background-color:  rgba(13, 177, 108, 0.79);
+  border: 2px solid black;
+  border-radius:50px;
+  width: 130px;
+}
+
+@media (max-width: 600px ) {
+  .agendar{
+    font-size: 30px;
+    padding: 10px;
+    margin: 10%;
+    width: 120px;
+    height: 15%;
+    margin-bottom: 80px;
+  }
+}
+
+@media (max-width: 1335px ) {
+  .bodyHome{
+    height: 91%;
+    background-image: url('../../assets/terapia2.jpg');
+    background-repeat:space;
+    background-size: cover;
+  }
+
+  .agendar{
+    font-size: 30px;
+    padding: 2%;
+    height: 30px;
+  }
+}

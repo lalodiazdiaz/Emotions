@@ -6,8 +6,7 @@
   },
   "extends": [
     "eslint:recommended",
-    "plugin:react/recommended",
-    "airbnb"
+    "plugin:react/recommended"
   ],
   "settings": {
     "react": {
@@ -26,74 +25,12 @@
     "react"
   ],
   "rules": {
-    "eqeqeq": [
-      "error",
-      "always",
-      {
-        "null": "always"
-      }
-    ],
     "react/prop-types": "off",
     "react/react-in-jsx-scope": "off",
-    "react/jsx-curly-spacing": [
-      2,
-      {
-        "allowMultiline": false,
-        "children": true
-      }
-    ],
-    "react/jsx-filename-extension": [
-      1,
-      {
-        "extensions": [
-          ".js",
-          ".jsx"
-        ]
-      }
-    ],
-    "react/jsx-no-bind": [
-      2,
-      {
-        "ignoreRefs": true
-      }
-    ],
-    "react/jsx-sort-props": "error",
-    "react/jsx-one-expression-per-line": "off",
-    "react/jsx-props-no-spreading": "off",
-    "react/jsx-indent": ["error", "tab"],
-    "react/jsx-indent-props": ["error", "tab"],
-    "indent": ["error", "tab"],
-    "max-len": [
+    "indent": [
       "error",
-      {
-        "code": 90,
-        "tabWidth": 2
-      }
+      2
     ],
-    "no-multiple-empty-lines": [
-      "error",
-      {
-        "max": 1,
-        "maxEOF": 0,
-        "maxBOF": 0
-      }
-    ],
-    "object-curly-newline": [
-      "error",
-      {
-        "consistent": true
-      }
-    ],
-    "operator-linebreak": [
-      "error",
-      "before",
-      {
-        "overrides": {
-          "=": "after"
-        }
-      }
-    ],
-    "sort-keys": "error",
     "linebreak-style": [
       "error",
       "windows"
@@ -106,7 +43,6 @@
       "error",
       "always"
     ],
-    "no-mixed-spaces-and-tabs": 0,
-    "no-tabs": "off"
+    "no-mixed-spaces-and-tabs": 0
   }
 }

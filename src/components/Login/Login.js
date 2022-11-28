@@ -1,9 +1,12 @@
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
+import { useNavigate } from 'react-router-dom';
 import styles from './Login.module.css';
 import logo from '../../assets/logo.png';
 
 function Login() {
+	const navigate = useNavigate();
+
 	const [user, setUser] = useState('null');
 	const { register, handleSubmit, formState: { errors } } = useForm();
 
@@ -12,8 +15,7 @@ function Login() {
 			// TODO: Consume backend endpoint
 			if (events.email === 'luz@gmail.com' && events.password === '123456') {
 				setUser(events);
-
-				window.location.href = '/dashboard';
+				navigate('/dashboard');
 			} else {
 				setUser(null);
 			}

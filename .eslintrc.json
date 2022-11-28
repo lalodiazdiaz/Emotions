@@ -60,9 +60,18 @@
     "react/jsx-sort-props": "error",
     "react/jsx-one-expression-per-line": "off",
     "react/jsx-props-no-spreading": "off",
-    "react/jsx-indent": ["error", "tab"],
-    "react/jsx-indent-props": ["error", "tab"],
-    "indent": ["error", "tab"],
+    "react/jsx-indent": [
+      "error",
+      "tab"
+    ],
+    "react/jsx-indent-props": [
+      "error",
+      "tab"
+    ],
+    "indent": [
+      "error",
+      "tab"
+    ],
     "max-len": [
       "error",
       {

@@ -1,0 +1,63 @@
+.Navbar{
+  height: 9%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #2cd0b2;
+}
+
+.Navbar > .navLogo{
+  font-weight: 700;
+  font-size: 30px;
+  margin: 15px;
+  color: white;
+  margin-left: 50px;
+}
+.link{
+  text-decoration: none;
+}
+
+.btnLog{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  color: black;
+  font-size: 20px;
+  text-decoration: none;
+  margin: 20px;
+  text-align: center;
+  cursor: pointer;
+  height: max-content;
+  padding: 5px;
+  border-radius:50px;
+  width: 130px;
+  background: #66d086;   border: 1px solid black;
+}
+
+.btnLog:hover{
+  transform: scale(1.1); 
+  background-color: aquamarine;
+}
+
+@media (max-width: 600px ) {
+  .Navbar{
+    height: 7%;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+
+  .Navbar > .navLogo{
+  font-size: 30px;
+  margin-left: 10px;
+  }
+}
+
+@media (max-width: 1335px ) {
+  .Navbar{
+    height: 10%;
+  }
+
+  .btnLog{
+    font-size: 30px;
+  }
+}

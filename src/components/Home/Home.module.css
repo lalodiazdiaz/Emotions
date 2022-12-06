@@ -1,5 +1,13 @@
 .contHome{
-  height: 100vh;
+  display: block;
+  position: absolute;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+ 
+ 
 }
 
 .bodyHome{
@@ -16,84 +24,100 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
-  color: black;
+  color: white;
   font-size: 20px;
   margin: 5%;
   text-align: center;
   cursor: pointer;
   height: 6%;
   padding: 10px;
-  border-radius:50px;
+  border-radius:5px;
   width: 130px;
-  background: rgba(13, 177, 108, 0.79); 
-  border: 2px solid black;
+  background: #66d086;
+  border-color: #66d086;
+  /* box-shadow: 2px  2px 5px #66d086; */
 }
 
 .agendar:hover{
-  transform: scale(1.1); 
-  background-color: aquamarine;
-}
+background-color: #64ba7e;
+  }
 
-.modalCont{
+.modalOpen{
   display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  align-items: center;
-  margin: 20px;
-}
-
-.inputCita{
-  color: black;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  background-color:  rgba(13, 177, 108, 0.79);
-  border: 2px solid black;
-  border-radius:50px;
-  width: 130px;
-}
-
-.modalCont > text{
-  font-size: 20px;
-  margin-left: 10px;
-  color: black;
-  font-weight: 500;
-}
-
-.btnCont{
-  display:flex ;
+  height: 100%;
+  width: 100%;
+  position: absolute;
   justify-content: center;
   align-items: center;
 }
 
-.btnCloseModal{
-  border: none;
-  color: black;
-  padding: 15px 32px;
+.modalClose{
+  display: none;
+}
+
+.backModal{
+  display: flex;
+  position: absolute;
+  background-color: #f0eeee;
+  height: 100%;
+  width: 100%;
+  opacity: .9;
+}
+
+
+.contModal{
+  display: flex;
+  position: absolute;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  background-color: white;
+  height: 40%;
+  width: 45%;
+  border: 3px #b2b9ba solid;
+  border-radius: 5px;
+}
+.contact{
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  align-items: center;
+  
+}
+.llamarPsicologo{
+  color: white;
+  font-size: 20px;
+  margin: 5%;
   text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  background-color:  rgba(13, 177, 108, 0.79);
-  border: 2px solid black;
-  border-radius:50px;
+  cursor: pointer;
+  padding: 10px;
+  border-radius:5px;
   width: 130px;
+  background: #66d086;
+  border-color: #66d086;
+}
+.llamarPsicologo:hover{
+  background-color: #64ba7e;
 }
 
-@media (max-width: 600px ) {
-  .agendar{
-    font-size: 30px;
-    padding: 10px;
-    margin: 10%;
-    width: 120px;
-    height: 15%;
-    margin-bottom: 80px;
-  }
+.closeModal{
+  color: white;
+  font-size: 20px;
+  margin: 5%;
+  text-align: center;
+  cursor: pointer;
+  padding: 10px;
+  border-radius:5px;
+  width: 130px;
+  background: #fe6272;
+  border-color: #fe6272;
 }
 
-@media (max-width: 1335px ) {
+.closeModal:hover{
+  background-color: #e24f5e;
+}
+
+@media (max-width: 1100px ) {
   .bodyHome{
     height: 91%;
     background-image: url('../../assets/terapia2.jpg');
@@ -103,7 +127,68 @@
 
   .agendar{
     font-size: 30px;
-    padding: 2%;
-    height: 30px;
+    width: 140px;
+    height: 50px;
+    margin-bottom: 80px;
   }
+
+  .contModal{
+    height: 40%;
+    width: 95%;
+  }
+
+  .contModal h1{
+    font-size: 40px;
+  }
+
+  .contact{
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .contact h2{
+    font-size: 35px;
+    text-align: center;
+  }
+  .llamarPsicologo{
+  height: max-content;
+  width: 150px;
+  font-size: 25px;
+  }
+  .closeModal{
+    height: max-content;
+    width: 150px;
+    font-size: 25px;
+  }
+}
+
+@media (max-width: 600px ) {
+  .agendar{
+    font-size: 30px;
+    padding: 10px;
+    margin: 10%;
+    width: 140px;
+    height: 50px;
+    margin-bottom: 80px;
+  }
+
+  .contModal{
+    height: 40%;
+    width: 90%;
+  }
+
+  .contModal h1{
+    font-size: 25px;
+  }
+
+.contact{
+  flex-direction: column;
+  justify-content: center;
+}
+
+.contact h2{
+  font-size: 20px;
+  text-align: center;
+}
 }

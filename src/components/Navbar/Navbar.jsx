@@ -7,7 +7,7 @@ function Navbar() {
 			<span className={styles.navLogo}>BEGINNING</span>
 			<div className={styles.navItems}>
 				<Link className={styles.link} to="login">
-					<div className={styles.btnLog}>LogIn</div>
+					<button className={styles.btnLog} type="button">LogIn</button>
 				</Link>
 			</div>
 		</div>

@@ -32,8 +32,7 @@
   border-radius:5px;
   width: 130px;
   background: #66d086;
-  border-color: #66d086;
-  /* box-shadow: 5px  5px 5px #ddd; */
+  border: 0;
 }
 
 .btnLog:hover{

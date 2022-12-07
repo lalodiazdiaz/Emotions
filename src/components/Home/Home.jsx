@@ -1,10 +1,26 @@
 import React, { useCallback, useState } from 'react';
+import Modal from '../Modal/Modal';
 import Navbar from '../Navbar/Navbar';
 import styles from './Home.module.css';
 
-function Home() {
-	const url = ' https://wa.me/526145153963';
+const url = ' https://wa.me/526145153963';
 
+function contModal() {
+	return (
+		<div className={styles.contact}>
+			<h2>Lic. Claudia Patricia Gonzalez Moreno </h2>
+			<a href={url} target="_blanket">
+				<button
+					className={styles.llamarPsicologo}
+					type="button"
+				>Contactar
+				</button>
+			</a>
+		</div>
+	);
+}
+
+function Home() {
 	const [modal, setModal] = useState(styles.modalClose);
 
 	const modalOpenAction = useCallback(() => {
@@ -28,29 +44,12 @@ function Home() {
 				</div>
 
 			</div>
-			<div className={modal}>
-				<div className={styles.backModal} />
-				<div className={styles.contModal}>
-					<h1>Contactar con tu psicologo</h1>
-					<div className={styles.contact}>
-						<h2>Lic. Claudia Patricia Gonzalez Moreno </h2>
-						<a href={url} target="_blanket">
-							<button
-								className={styles.llamarPsicologo}
-								onClick={modalCloseAction}
-								type="button"
-							>Contactar
-							</button>
-						</a>
-					</div>
-					<button
-						className={styles.closeModal}
-						onClick={modalCloseAction}
-						type="button"
-					>Cerrar
-					</button>
-				</div>
-			</div>
+			<Modal
+				Content={contModal}
+				onAction={modalCloseAction}
+				style={modal}
+				title="Consulta a tu psicologo"
+			/>
 		</>
 	);
 }

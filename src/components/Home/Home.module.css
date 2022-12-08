@@ -52,32 +52,6 @@
   display: none;
 }
 
-.contact {
-  display: flex;
-  width: 100%;
-  justify-content: space-around;
-  align-items: center;
-
-}
-
-.callPshychologist {
-  color: white;
-  font-size: 20px;
-  margin: 5%;
-  text-align: center;
-  cursor: pointer;
-  padding: 10px;
-  border-radius: 5px;
-  width: 130px;
-  background: #66d086;
-  border-color: #66d086;
-  text-decoration: none;
-}
-
-.callPshychologist:hover {
-  background-color: #64ba7e;
-}
-
 @media (max-width: 1100px) {
   .bodyHome {
     height: 91%;
@@ -110,7 +84,6 @@
     font-size: 25px;
     margin-right: 19px;
   }
-
 }
 
 @media (max-width: 600px) {
@@ -131,20 +104,4 @@
   .contModal h1 {
     font-size: 25px;
   }
-
-  .contact {
-    flex-direction: column;
-    justify-content: center;
-  }
-
-  .contact h2 {
-    font-size: 20px;
-    text-align: center;
-  }
-
-  .callPshychologist {
-    font-size: 20px;
-    width: 120px;
-  }
-
 }

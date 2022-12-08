@@ -6,8 +6,8 @@ function Navbar() {
 		<div className={styles.Navbar}>
 			<span className={styles.navLogo}>BEGINNING</span>
 			<div className={styles.navItems}>
-				<Link className={styles.link} to="login">
-					<div className={styles.btnLog}>LogIn</div>
+				<Link className={styles.btnLog} to="login">
+					LogIn
 				</Link>
 			</div>
 		</div>

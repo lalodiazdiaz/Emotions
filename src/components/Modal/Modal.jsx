@@ -1,9 +1,9 @@
 import React from 'react';
 import styles from './Modal.module.css';
 
-function Modal({ style, onAction, title, children }) {
+function Modal({ isVisible, onAction, title, children }) {
 	return (
-		<div className={style}>
+		<div className={isVisible ? styles.modalOpen : styles.modalClose}>
 			<div className={styles.backModal} />
 			<div className={styles.contModal}>
 				<h1>{title}</h1>

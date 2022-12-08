@@ -3,11 +3,11 @@ import Modal from '../Modal/Modal';
 import URL from '../../constants';
 import styles from './ScheduleModal.module.css';
 
-function ScheduleModal({ style, onAction }) {
+function ScheduleModal({ onAction, isVisible }) {
 	return (
 		<Modal
+			isVisible={isVisible}
 			onAction={onAction}
-			style={style}
 			title="Consulta a tu psicologo"
 		>
 			<div className={styles.contact}>

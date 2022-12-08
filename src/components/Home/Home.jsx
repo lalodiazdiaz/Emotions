@@ -4,14 +4,14 @@ import ScheduleModal from '../ScheduleModal/ScheduleModal';
 import styles from './Home.module.css';
 
 function Home() {
-	const [modal, setModal] = useState(styles.modalClose);
+	const [modal, setModal] = useState(false);
 
 	const modalOpenAction = useCallback(() => {
-		setModal(styles.modalOpen);
+		setModal(true);
 	}, []);
 
 	const modalCloseAction = useCallback(() => {
-		setModal(styles.modalClose);
+		setModal(false);
 	 }, []);
 
 	return (
@@ -25,7 +25,7 @@ function Home() {
 				>
 					Agendar
 				</button>
-				<ScheduleModal onAction={modalCloseAction} style={modal} />
+				<ScheduleModal isVisible={modal} onAction={modalCloseAction} />
 			</div>
 		</div>
 	);

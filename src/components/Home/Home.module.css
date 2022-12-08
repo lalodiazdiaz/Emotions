@@ -1,4 +1,4 @@
-.contHome{
+.contHome {
   display: block;
   position: absolute;
   flex-direction: column;
@@ -8,17 +8,17 @@
   height: 100%;
 }
 
-.bodyHome{
+.bodyHome {
   display: flex;
   height: 91%;
   justify-content: center;
   align-items: flex-end;
   background-image: url('../../assets/terapia.jpg');
-  background-repeat:round;
+  background-repeat: round;
   background-size: cover;
 }
 
-.agendar{
+.schedule {
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -29,17 +29,17 @@
   cursor: pointer;
   height: 6%;
   padding: 10px;
-  border-radius:5px;
+  border-radius: 5px;
   width: 130px;
   background: #66d086;
   border: 0;
 }
 
-.agendar:hover{
+.schedule:hover {
   background-color: #64ba7e;
-  }
+}
 
-.modalOpen{
+.modalOpen {
   display: flex;
   height: 100%;
   width: 100%;
@@ -48,68 +48,73 @@
   align-items: center;
 }
 
-.modalClose{
+.modalClose {
   display: none;
 }
 
-.contact{
+.contact {
   display: flex;
   width: 100%;
   justify-content: space-around;
   align-items: center;
-  
+
 }
-.llamarPsicologo{
+
+.callPshychologist {
   color: white;
   font-size: 20px;
   margin: 5%;
   text-align: center;
   cursor: pointer;
   padding: 10px;
-  border-radius:5px;
+  border-radius: 5px;
   width: 130px;
   background: #66d086;
   border-color: #66d086;
+  text-decoration: none;
 }
-.llamarPsicologo:hover{
+
+.callPshychologist:hover {
   background-color: #64ba7e;
 }
 
-@media (max-width: 1100px ) {
-  .bodyHome{
+@media (max-width: 1100px) {
+  .bodyHome {
     height: 91%;
     background-image: url('../../assets/terapia2.jpg');
-    background-repeat:space;
+    background-repeat: space;
     background-size: cover;
   }
 
-  .agendar{
+  .schedule {
     font-size: 30px;
     width: 140px;
     height: 50px;
     margin-bottom: 80px;
   }
-  .contact{
+
+  .contact {
     flex-direction: column;
     justify-content: center;
     align-items: center;
   }
 
-  .contact h2{
+  .contact h2 {
     font-size: 30px;
     text-align: center;
   }
-  .llamarPsicologo{
-  height: max-content;
-  width: 150px;
-  font-size: 25px;
-  margin-right: 19px;
+
+  .callPshychologist {
+    height: max-content;
+    width: 150px;
+    font-size: 25px;
+    margin-right: 19px;
   }
- 
+
 }
 
-@media (max-width: 600px ) {
-  .agendar{
+@media (max-width: 600px) {
+  .schedule {
     font-size: 30px;
     padding: 10px;
     margin: 10%;
@@ -118,27 +123,28 @@
     margin-bottom: 80px;
   }
 
-  .contModal{
+  .contModal {
     height: 40%;
     width: 90%;
   }
 
-  .contModal h1{
+  .contModal h1 {
     font-size: 25px;
   }
 
-  .contact{
-  flex-direction: column;
-  justify-content: center;
+  .contact {
+    flex-direction: column;
+    justify-content: center;
   }
 
-  .contact h2{
-  font-size: 20px;
-  text-align: center;
+  .contact h2 {
+    font-size: 20px;
+    text-align: center;
   }
-.llamarPsicologo{
-  font-size: 20px;
-  width: 120px;
-}
+
+  .callPshychologist {
+    font-size: 20px;
+    width: 120px;
+  }
 
 }

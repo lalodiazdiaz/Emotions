@@ -1,4 +1,4 @@
-.modalOpen{
+.modalOpen {
   display: flex;
   height: 100%;
   width: 100%;
@@ -7,11 +7,11 @@
   align-items: center;
 }
 
-.modalClose{
+.modalClose {
   display: none;
 }
 
-.backModal{
+.backModal {
   display: flex;
   position: absolute;
   background-color: #f0eeee;
@@ -21,7 +21,7 @@
 }
 
 
-.contModal{
+.contModal {
   display: flex;
   position: absolute;
   justify-content: space-between;
@@ -33,86 +33,75 @@
   border: 3px #b2b9ba solid;
   border-radius: 5px;
 }
-.contact{
+
+.contact {
   display: flex;
   width: 100%;
   justify-content: space-around;
   align-items: center;
-  
-}
-.llamarPsicologo{
-  color: white;
-  font-size: 20px;
-  margin: 5%;
-  text-align: center;
-  cursor: pointer;
-  padding: 10px;
-  border-radius:5px;
-  width: 130px;
-  background: #66d086;
-  border-color: #66d086;
-}
-.llamarPsicologo:hover{
-  background-color: #64ba7e;
+
 }
 
-.closeModal{
+.closeModal {
   color: white;
   font-size: 20px;
   margin: 5%;
   text-align: center;
   cursor: pointer;
   padding: 10px;
-  border-radius:5px;
+  border-radius: 5px;
   width: 130px;
   background: #fe6272;
-  border-color: #fe6272;
+  border: 0;
 }
 
-.closeModal:hover{
+.closeModal:hover {
   background-color: #e24f5e;
 }
+.contModal h1 {
+  font-size: 30px;
+}
 
 
-@media (max-width: 1100px ) {
-  .contModal{
+@media (max-width: 1100px) {
+  .contModal {
     width: 95%;
   }
 
-  .contModal h1{
+  .contModal h1 {
     font-size: 40px;
   }
 
- 
-  .closeModal{
+  .closeModal {
     height: max-content;
     width: 150px;
     font-size: 25px;
   }
 }
 
-@media (max-width: 600px ) {
-  .contModal{
+@media (max-width: 600px) {
+  .contModal {
     width: 90%;
   }
 
-  .contModal h1{
+  .contModal h1 {
     font-size: 25px;
   }
 
-.contact{
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
+  .contact {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
 
-.contact h2{
-  font-size: 20px;
-  text-align: center;
-}
-.closeModal{
-  height: max-content;
-  width: 120px;
-  font-size: 20px;
-}
+  .contact h2 {
+    font-size: 20px;
+    text-align: center;
+  }
+
+  .closeModal {
+    height: max-content;
+    width: 120px;
+    font-size: 20px;
+  }
 }

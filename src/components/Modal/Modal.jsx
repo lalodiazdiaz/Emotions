@@ -1,13 +1,13 @@
 import React from 'react';
 import styles from './Modal.module.css';
 
-function Modal({ style, onAction, title, Content }) {
+function Modal({ style, onAction, title, children }) {
 	return (
 		<div className={style}>
 			<div className={styles.backModal} />
 			<div className={styles.contModal}>
 				<h1>{title}</h1>
-				<Content />
+				{children}
 				<button
 					className={styles.closeModal}
 					onClick={onAction}

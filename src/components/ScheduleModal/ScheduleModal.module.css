@@ -1,0 +1,67 @@
+
+.contModal {
+  display: flex;
+  position: absolute;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  background-color: white;
+  height: max-content;
+  width: 45%;
+  border: 3px #b2b9ba solid;
+  border-radius: 5px;
+}
+
+.contact {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  align-items: center;
+
+}
+
+.closeModal {
+  color: white;
+  font-size: 20px;
+  margin: 5%;
+  text-align: center;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 5px;
+  width: 130px;
+  background: #fe6272;
+  border: 0;
+}
+
+.closeModal:hover {
+  background-color: #e24f5e;
+}
+.contModal h1 {
+  font-size: 30px;
+}
+
+.contact {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  align-items: center;
+
+}
+
+.callPshychologist {
+  color: white;
+  font-size: 20px;
+  margin: 5%;
+  text-align: center;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 5px;
+  width: 130px;
+  background: #66d086;
+  border-color: #66d086;
+  text-decoration: none;
+}
+
+.callPshychologist:hover {
+  background-color: #64ba7e;
+}

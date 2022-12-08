@@ -1,23 +1,24 @@
-.Navbar{
+.Navbar {
   height: 9%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background:#8fe0d1;
+  background: #8fe0d1;
 }
 
-.Navbar > .navLogo{
+.Navbar>.navLogo {
   font-weight: 700;
   font-size: 30px;
   margin: 15px;
   color: white;
   margin-left: 50px;
 }
-.link{
+
+.link {
   text-decoration: none;
 }
 
-.btnLog{
+.btnLog {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
@@ -29,35 +30,35 @@
   cursor: pointer;
   height: max-content;
   padding: 5px;
-  border-radius:5px;
+  border-radius: 5px;
   width: 130px;
   background: #66d086;
   border: 0;
 }
 
-.btnLog:hover{
+.btnLog:hover {
   background-color: #64ba7e;
 }
 
-@media (max-width: 600px ) {
-  .Navbar{
+@media (max-width: 600px) {
+  .Navbar {
     height: 7%;
     justify-content: space-evenly;
     align-items: center;
   }
 
-  .Navbar > .navLogo{
-  font-size: 30px;
-  margin-left: 10px;
+  .Navbar>.navLogo {
+    font-size: 30px;
+    margin-left: 10px;
   }
 }
 
-@media (max-width: 1335px ) {
-  .Navbar{
+@media (max-width: 1335px) {
+  .Navbar {
     height: 10%;
   }
 
-  .btnLog{
+  .btnLog {
     font-size: 30px;
   }
 }

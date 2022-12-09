@@ -1,10 +1,8 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-// eslint-disable-next-line import/no-unresolved
 import Alertify from 'alertifyjs';
-// import Swal from 'sweetalert2';
-import { useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
+import { useForm } from 'react-hook-form';
 import styles from './Login.module.css';
 import logo from '../../assets/logo.png';
 
@@ -15,7 +13,6 @@ function Login() {
 	const [user] = useState('null');
 	const { register, handleSubmit, formState: { errors } } = useForm();
 	const [body, setBody] = useState({ email: '', password: '' });
-	// const [data, setData] = useState();
 
 	const inputChange = ({ target }) => {
 		const { name, value } = target;
@@ -32,7 +29,7 @@ function Login() {
 					localStorage.setItem('UserLogged', JSON.stringify(data.data.loginData));
 					navigate('/dashboard');
 					Alertify.success(`<b style='color:white;'>Bienvenido
-                    ${data.data.loginData.fullName}</b>`);
+						${data.data.loginData.fullName}</b>`);
 				} else if (data.data.error === true) {
 					Alertify.error(`<b style='color:white;'>${data.data.msg}</b>`);
 				}
@@ -46,17 +43,15 @@ function Login() {
 		<div className={styles.container}>
 			<div className={styles.contLogo}>
 				<img alt="logo" className={styles.imgLogo} src={logo} />
-			</div>
-			<div className={styles.contform}>
-				<form>
+				<div className={styles.contform}>
 					<div className={styles.campo}>
 						<h2 onSubmit={handleSubmit(onSubmit)}>Log In</h2>
 						<div
 							className={`${styles.input}
               			${errors.email && styles.error}`}
 						>
-							<label htmlFor="username">
-								Username
+							<div className={styles.contInput}>
+								<p>Email</p>
 								<input
 									className={styles.btnUser}
 									name="email"
@@ -66,18 +61,17 @@ function Login() {
 											value: true,
 										},
 									})}
-									// eslint-disable-next-line react/jsx-no-bind
 									onChange={inputChange}
 									placeholder="Username"
 									type="text"
 									value={body.email}
 								/>
-							</label>
+							</div>
 						</div>
 						{errors.email && <span>{errors.email.message}</span>}
 						<div className={`${styles.input} ${errors.password && styles.error}`}>
-							<label htmlFor="password">
-								Password
+							<div className={styles.contInput}>
+								<p>Password</p>
 								<input
 									className={styles.btnPass}
 									name="password"
@@ -87,23 +81,22 @@ function Login() {
 											value: true,
 										},
 									})}
-									// eslint-disable-next-line react/jsx-no-bind
 									onChange={inputChange}
 									placeholder="Password"
 									type="password"
 									value={body.password}
 								/>
-							</label>
+							</div>
 						</div>
 						{errors.password && <span>{errors.password.message}</span>}
 						{!user && <span>Contraseña y/o email incorrecta</span>}
 						<input
 							className={styles.btnSend}
 							type="submit"
-							value="Log In"
+							value="Iniciar sesion"
 						/>
 					</div>
-				</form>
+				</div>
 			</div>
 		</div>
 	);

@@ -1,129 +1,163 @@
 .container {
   align-items: center;
-  background: linear-gradient(1turn, #f5efe6, 60%, #aebdca);
+  background: #8fe0d1;
   display: flex;
   flex-direction: column;
-  height: 100%;
   justify-content: center;
   position: absolute;
   width: 100%;
+  height: 100%;
 }
 
 .contLogo {
   align-items: center;
   display: flex;
   flex-direction: column;
-  width: 50%;
+  width: max-content;
+  height: max-content;
 }
 
 .imgLogo {
-  width: 40%;
+  width: 43%;
 }
 
 .contform {
-  align-items: center;
   display: flex;
+  align-items: center;
   flex-direction: column;
-  height: 40%;
+  height: 58%;
   justify-content: center;
   margin: 2%;
-  width: 40%;
+  width: 90%;
+  border: 3px #B2B9BA solid;
+  background: white;
+  border-radius: 5px;
 }
 
-.contform form {
-  align-items: center;
-  border-radius: 12px;
+.input{
   display: flex;
-  flex-direction: column;
   justify-content: center;
-  width: 100%;
+  align-items: center;
+  align-content: center;
+  width: 200%;
+  font-weight: bold;
 }
 
 .campo {
-  align-items: center;
   display: flex;
+  align-items: center;
   flex-direction: column;
-  margin-top: 5%;
-  width: 90%;
+  width: max-content;
+  height: max-content;
 }
 
-.campo label {
-  font-size: 20px;
-  font-weight: bold;
-  height: 30px;
+.campo h2 {
+  font-size: 28px;
+}
+
+.contInput {
+  width: 80%;
 }
 
 .btnUser {
-  border-radius: 5px 5px 5px 5px;
-  border: 1px solid #393939;
+  border-radius: 5px;
   color: #393939;
   font-size: 20px;
   padding: 5px;
-  width: 90%;
+  width: 95%;
 }
 
 .btnPass {
-  border-radius: 5px 5px 5px 5px;
-  border: 1px solid #393939;
+  border-radius: 5px;
   color: #393939;
   font-size: 20px;
   padding: 5px;
-  width: 90%;
+  width: 95%;
 }
 
 .btnSend {
-  background: #aebdca;
-  border-radius: 5px 5px 5px 5px;
-  border: 1px solid #000;
-  color: #000;
+  color: white;
+  background: #66d086;
+  border-radius: 5px;
+  border: 0;
   cursor: pointer;
   font-size: 12px;
   font-size: 20px;
   margin: 5%;
   padding: 5px;
-  width: 90%;
+  width: 60%;
 }
 
 .btnSend:hover {
-  background: #7895b2;
-}
-
-.campo h2 {
-  font-size: 40px;
+  background: #64ba7e;
 }
 
 @media screen and (max-width: 600px) and (orientation: portrait) {
   .contform {
-    width: 80%;
-  }
-
-  .contform form {
+    height: max-content;
     width: 100%;
+    border: 3px #B2B9BA solid;
+    background: white;
+    border-radius: 5px;
   }
 
   .campo {
     margin: 5px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 5%;
     width: 100%;
   }
 
-  .imgLogo {
+  .contInput {
     width: 50%;
   }
 
   .campo h2 {
-    margin-top: -20%;
+    font-size: 28px;
+  }
+
+  .imgLogo {
+    width: 40%;
   }
 }
 
 @media screen and (max-width: 1200px) {
-  .contform form {
-    margin-top: 25px;
-    width: 100%;
+  .contform {
+    height: 200%;
+    width: 90%;
+    border: 3px #B2B9BA solid;
+    background: white;
+    border-radius: 5px;
   }
 
   .campo {
-    margin: 5px;
-    width: 100%;
+    width: 25%;
+  }
+
+  .contInput {
+    width: max-content;
+  }
+
+  .btnUser {
+    align-content: center;
+    align-items: center;
+    width: max-content;
+  }
+
+  .btnPass {
+    align-content: center;
+    align-items: center;
+    width: max-content;
+  }
+
+  .btnSend {
+    width: 150%;
+  }
+
+  .imgLogo {
+    width: 50%;
   }
 
   .contLogo {
@@ -133,6 +167,7 @@
     margin-bottom: 5%;
     margin-top: 10%;
     width: 100%;
+    height: max-content;
   }
 }
 

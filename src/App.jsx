@@ -1,8 +1,5 @@
 import React from 'react';
-import {
-	createBrowserRouter,
-	RouterProvider,
-} from 'react-router-dom';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
 
 import Login from './components/Login/Login';
@@ -10,22 +7,15 @@ import Dashboard from './components/Dashboard/Dashboard';
 import Home from './components/Home/Home';
 
 function App() {
-	const router = createBrowserRouter([
-		{
-			element: <Home />,
-			path: '/',
-		},
-		{
-			element: <Login />,
-			path: 'login',
-		},
-		{
-			element: <Dashboard />,
-			path: '/dashboard',
-		},
-	]);
-
-	return <RouterProvider router={router} />;
+	return (
+		<BrowserRouter>
+			<Routes>
+				<Route element={<Home />} path="/" />
+				<Route element={<Login />} path="login" />
+				<Route element={<Dashboard />} path="dashboard" />
+			</Routes>
+		</BrowserRouter>
+	);
 }
 
 export default App;

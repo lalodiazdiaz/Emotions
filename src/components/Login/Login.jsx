@@ -1,12 +1,10 @@
 import React, { useState } from 'react';
-import axios from 'axios';
 import Alertify from 'alertifyjs';
 import { useNavigate } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import styles from './Login.module.css';
 import logo from '../../assets/logo.png';
-
-const URL = 'http://localhost:5000/api/login';
+import getLogin from '../../services/Login/LoginService';
 
 function Login() {
 	const navigate = useNavigate();
@@ -23,18 +21,13 @@ function Login() {
 	};
 
 	const onSubmit = () => {
-		axios.post(URL, body)
-			.then(({ data }) => {
-				if (data.data.error === false) {
-					localStorage.setItem('UserLogged', JSON.stringify(data.data.loginData));
-					navigate('/dashboard');
-					Alertify.success(`<b style='color:white;'>Bienvenido
+		getLogin(body)
+			.then((data) => {
+				navigate('/dashboard');
+				Alertify.success(`<b style='color:white;'>Bienvenido
 						${data.data.loginData.fullName}</b>`);
-				} else if (data.data.error === true) {
-					Alertify.error(`<b style='color:white;'>${data.data.msg}</b>`);
-				}
 			})
-			// eslint-disable-next-line no-unused-vars
+		// eslint-disable-next-line no-unused-vars
 			.catch(({ response }) => {
 			});
 	};
@@ -48,7 +41,7 @@ function Login() {
 						<h2 onSubmit={handleSubmit(onSubmit)}>Log In</h2>
 						<div
 							className={`${styles.input}
-              			${errors.email && styles.error}`}
+              			${errors.email}`}
 						>
 							<div className={styles.contInput}>
 								<p>Email</p>
@@ -92,6 +85,7 @@ function Login() {
 						{!user && <span>Contraseña y/o email incorrecta</span>}
 						<input
 							className={styles.btnSend}
+							onClick={onSubmit}
 							type="submit"
 							value="Iniciar sesion"
 						/>

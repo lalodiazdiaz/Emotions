@@ -34,11 +34,10 @@
   border-radius: 5px;
 }
 
-.input{
+.input {
   display: flex;
   justify-content: center;
   align-items: center;
-  align-content: center;
   width: 200%;
   font-weight: bold;
 }
@@ -92,10 +91,10 @@
   background: #64ba7e;
 }
 
-@media screen and (max-width: 600px) and (orientation: portrait) {
+@media screen and (min-device-width : 768px) and (max-width: 1024px) and (orientation : portrait) {
   .contform {
-    height: max-content;
-    width: 100%;
+    max-height: 60%;
+    max-width: 50%;
     border: 3px #B2B9BA solid;
     background: white;
     border-radius: 5px;
@@ -103,15 +102,20 @@
 
   .campo {
     margin: 5px;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
     margin-top: 5%;
     width: 100%;
   }
 
   .contInput {
-    width: 50%;
+    max-width: max-content;
+    height: max-content;
+  }
+
+  .input {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
   }
 
   .campo h2 {
@@ -119,7 +123,7 @@
   }
 
   .imgLogo {
-    width: 40%;
+    max-width: 30%;
   }
 }
 

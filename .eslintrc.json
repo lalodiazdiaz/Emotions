@@ -26,6 +26,7 @@
     "react"
   ],
   "rules": {
+    "no-unused-vars": "off",
     "eqeqeq": [
       "error",
       "always",
@@ -52,7 +53,7 @@
       }
     ],
     "react/jsx-no-bind": [
-      2,
+      "off",
       {
         "ignoreRefs": true
       }

@@ -1,9 +1,19 @@
 import axios from 'axios';
 
-const URL = 'https://emociones-be-production.up.railway.app/api/';
+const API_URL = 'http://localhost:5000/api/login';
 
-const getLogin = async (body) => {
-	const resp = await axios.post(URL, body);
+const login = (email, password) => axios
+	.post(API_URL, {
+		email,
+		password,
+	})
+	.then((response) => {
+		if (response.data) {
+			localStorage.setItem('user', JSON.stringify(response.data));
+		}
+		return response.data;
+	});
+
+export default {
+	login,
 };
-
-export default getLogin;

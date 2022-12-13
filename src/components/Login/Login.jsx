@@ -1,36 +1,56 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import Alertify from 'alertifyjs';
-import { useNavigate } from 'react-router-dom';
+import 'alertifyjs/build/css/alertify.css';
+import { Navigate, useNavigate } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import styles from './Login.module.css';
 import logo from '../../assets/logo.png';
-import getLogin from '../../services/Login/LoginService';
+import { login } from '../../actions/auth';
 
 function Login() {
 	const navigate = useNavigate();
-	const [user] = useState('null');
 	const { register, handleSubmit, formState: { errors } } = useForm();
-	const [body, setBody] = useState({ email: '', password: '' });
+	const form = useRef();
+	const checkBtn = useRef();
+	const [email, setEmail] = useState('');
+	const [password, setPassword] = useState('');
+	const [loading, setLoading] = useState(false);
+	const { isLoggedIn } = useSelector((state) => state.auth);
+	const { message } = useSelector((state) => state.message);
+	const dispatch = useDispatch();
 
-	const inputChange = ({ target }) => {
-		const { name, value } = target;
-		setBody({
-			...body,
-			[name]: value,
-		});
+	const onChangeEmail = (e) => {
+		const changeEmail = e.target.value;
+		setEmail(changeEmail);
 	};
 
-	const onSubmit = () => {
-		getLogin(body)
-			.then((data) => {
-				navigate('/dashboard');
-				Alertify.success(`<b style='color:white;'>Bienvenido
-						${data.data.loginData.fullName}</b>`);
-			})
-		// eslint-disable-next-line no-unused-vars
-			.catch(({ response }) => {
-			});
+	const onChangePassword = (e) => {
+		const changePassword = e.target.value;
+		setPassword(changePassword);
 	};
+
+	const handleLogin = (e) => {
+		e.preventDefault();
+		setLoading(true);
+		if (checkBtn) {
+			dispatch(login(email, password))
+				.then(() => {
+					navigate('/dashboard');
+					Alertify.success(`<b style='color:white;'>Bienvenido
+					</b>`);
+				})
+				.catch(() => {
+					setLoading(false);
+				});
+		} else {
+			setLoading(false);
+		}
+	};
+
+	if (isLoggedIn) {
+		return <Navigate to="/dashboard" />;
+	}
 
 	return (
 		<div className={styles.container}>
@@ -38,59 +58,70 @@ function Login() {
 				<img alt="logo" className={styles.imgLogo} src={logo} />
 			</div>
 			<div className={styles.contform}>
-				<div className={styles.campo}>
-					<h2 onSubmit={handleSubmit(onSubmit)}>Log In</h2>
-					<div
-						className={`${styles.input}
-              			${errors.email}`}
-					>
-						<div className={styles.contInput}>
-							<p>Email</p>
-							<input
-								className={styles.btnUser}
-								name="email"
-								{...register('email', {
-									required: {
-										message: 'El email es obligatorio',
-										value: true,
-									},
-								})}
-								onChange={inputChange}
-								placeholder="Username"
-								type="text"
-								value={body.email}
-							/>
+				<form ref={form} onSubmit={handleSubmit(handleLogin)}>
+					<div className={styles.campo}>
+						<h2>Log In</h2>
+						<div
+							className={`${styles.input}
+							${errors.email}`}
+						>
+							<div className={styles.contInput}>
+								<p>Email</p>
+								<input
+									className={styles.btnUser}
+									name="email"
+									{...register('email', {
+										required: {
+											message: 'El email es obligatorio',
+											value: true,
+										},
+									})}
+									onChange={onChangeEmail}
+									placeholder="Username"
+									type="text"
+									value={email}
+								/>
+							</div>
 						</div>
-					</div>
-					{errors.email && <span>{errors.email.message}</span>}
-					<div className={`${styles.input} ${errors.password && styles.error}`}>
-						<div className={styles.contInput}>
-							<p>Password</p>
-							<input
-								className={styles.btnPass}
-								name="password"
-								{...register('password', {
-									required: {
-										message: 'La contraseña es obligatoria',
-										value: true,
-									},
-								})}
-								onChange={inputChange}
-								placeholder="Password"
-								type="password"
-								value={body.password}
-							/>
+						{errors.email && <span>{errors.email.message}</span>}
+						<div className={`${styles.input}
+						${errors.password}`}
+						>
+							<div className={styles.contInput}>
+								<p>Password</p>
+								<input
+									className={styles.btnPass}
+									name="password"
+									{...register('password', {
+										required: {
+											message: 'La contraseña es obligatoria',
+											value: true,
+										},
+									})}
+									onChange={onChangePassword}
+									placeholder="Password"
+									type="password"
+									value={password}
+								/>
+							</div>
 						</div>
+						{errors.password && <span>{errors.password.message}</span>}
+						<input
+							className={styles.btnSend}
+							disabled={loading}
+							type="submit"
+							value="Iniciar sesion"
+						/>
+						{message && (
+							<div className="form-group">
+								<div className="alert alert-danger" role="alert">
+									{message}
+								</div>
+							</div>
+						)}
+						<input ref={checkBtn} style={{ display: 'none' }} />
 					</div>
-					{errors.password && <span>{errors.password.message}</span>}
-					{!user && <span>Contraseña y/o email incorrecta</span>}
-					<input
-						className={styles.btnSend}
-						onClick={onSubmit}
-						type="submit"
-						value="Iniciar sesion"
-					/>
-				</div>
+				</form>
 			</div>
 
 		</div>

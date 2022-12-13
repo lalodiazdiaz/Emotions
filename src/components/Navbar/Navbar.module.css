@@ -32,7 +32,8 @@
   padding: 5px;
   border-radius: 5px;
   width: 130px;
-  background: rgba(13, 177, 108, 0.79);   border: 1px solid black;
+  background: rgba(13, 177, 108, 0.79); 
+  border: 1px solid black;
 }
 
 .btnLog:hover {

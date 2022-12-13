@@ -103,7 +103,7 @@
   .campo {
     margin: 5px;
     margin-top: 5%;
-    width: 100%;
+    width: max-content;
   }
 
   .contInput {
@@ -115,7 +115,7 @@
     display: flex;
     justify-content: center;
     flex-direction: column;
-    width: 100%;
+    width: max-content;
   }
 
   .campo h2 {

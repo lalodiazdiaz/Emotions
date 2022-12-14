@@ -8,16 +8,15 @@ import styles from './Login.module.css';
 import logo from '../../assets/logo.png';
 import { login } from '../../actions/auth';
 
-function Login() {
+function Login(props) {
 	const navigate = useNavigate();
-	const { register, handleSubmit, formState: { errors } } = useForm();
 	const form = useRef();
 	const checkBtn = useRef();
 	const [email, setEmail] = useState('');
 	const [password, setPassword] = useState('');
 	const [loading, setLoading] = useState(false);
+	const { register, handleSubmit, formState: { errors } } = useForm();
 	const { isLoggedIn } = useSelector((state) => state.auth);
-	const { message } = useSelector((state) => state.message);
 	const dispatch = useDispatch();
 
 	const onChangeEmail = (e) => {
@@ -30,8 +29,7 @@ function Login() {
 		setPassword(changePassword);
 	};
 
-	const handleLogin = (e) => {
-		e.preventDefault();
+	const handleLogin = () => {
 		setLoading(true);
 		if (checkBtn) {
 			dispatch(login(email, password))
@@ -41,13 +39,14 @@ function Login() {
 					</b>`);
 				})
 				.catch(() => {
+					Alertify.error(`<b style='color:white;'>Email y/o password erroneos
+					</b>`);
 					setLoading(false);
 				});
 		} else {
 			setLoading(false);
 		}
 	};
-
 	if (isLoggedIn) {
 		return <Navigate to="/dashboard" />;
 	}
@@ -63,7 +62,7 @@ function Login() {
 						<h2>Log In</h2>
 						<div
 							className={`${styles.input}
-							${errors.email}`}
+							${errors.email && styles.error}`}
 						>
 							<div className={styles.contInput}>
 								<p>Email</p>
@@ -77,7 +76,7 @@ function Login() {
 										},
 									})}
 									onChange={onChangeEmail}
-									placeholder="Username"
+									placeholder="Email"
 									type="text"
 									value={email}
 								/>
@@ -85,7 +84,7 @@ function Login() {
 						</div>
 						{errors.email && <span>{errors.email.message}</span>}
 						<div className={`${styles.input}
-						${errors.password}`}
+						${errors.password && styles.error}`}
 						>
 							<div className={styles.contInput}>
 								<p>Password</p>
@@ -112,13 +111,6 @@ function Login() {
 							type="submit"
 							value="Iniciar sesion"
 						/>
-						{message && (
-							<div className="form-group">
-								<div className="alert alert-danger" role="alert">
-									{message}
-								</div>
-							</div>
-						)}
 						<input ref={checkBtn} style={{ display: 'none' }} />
 					</div>
 				</form>

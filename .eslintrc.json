@@ -103,7 +103,7 @@
         }
       }
     ],
-    "default-param-last": "off",
+    "default-param-last": true,
     "sort-keys": "error",
     "linebreak-style": [
       "error",

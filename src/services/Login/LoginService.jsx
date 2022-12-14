@@ -8,7 +8,7 @@ const login = (email, password) => axios
 		password,
 	})
 	.then((response) => {
-		if (response.data) {
+		if (response.data.data.token) {
 			localStorage.setItem('user', JSON.stringify(response.data));
 		}
 		return response.data;

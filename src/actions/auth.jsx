@@ -13,7 +13,6 @@ export const login = (email, password) => (dispatch) => AuthService.login(email,
 				payload: { user: data },
 				type: LOGIN_SUCCESS,
 			});
-
 			return Promise.resolve();
 		},
 		(error) => {

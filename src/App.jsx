@@ -7,8 +7,6 @@ import Home from './components/Home/Home';
 import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute';
 
 function App() {
-	const user = localStorage.getItem('user') || null;
-
 	return (
 		<BrowserRouter>
 			<Routes>
@@ -16,7 +14,7 @@ function App() {
 				<Route element={<Login />} path="login" />
 				<Route
 					element={(
-						<ProtectedRoute user={user}>
+						<ProtectedRoute>
 							<Dashboard />
 						</ProtectedRoute>
 					)}

@@ -1,6 +1,6 @@
 import React from 'react';
 import Modal from '../Modal/Modal';
-import URL from '../../constants';
+import { URL } from '../../constants';
 import styles from './ScheduleModal.module.css';
 
 function ScheduleModal({ onAction, isVisible }) {

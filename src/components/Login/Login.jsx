@@ -6,12 +6,11 @@ import { Navigate, useNavigate } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import styles from './Login.module.css';
 import logo from '../../assets/logo.png';
-import { login } from '../../actions/auth';
+import { login } from '../../slices/auth';
 
 function Login(props) {
 	const navigate = useNavigate();
 	const form = useRef();
-	const checkBtn = useRef();
 	const [email, setEmail] = useState('');
 	const [password, setPassword] = useState('');
 	const [loading, setLoading] = useState(false);
@@ -31,10 +30,11 @@ function Login(props) {
 
 	const handleLogin = () => {
 		setLoading(true);
-		if (checkBtn) {
-			dispatch(login(email, password))
+			dispatch(login({email, password}))
+			.unwrap()
 				.then(() => {
 					navigate('/dashboard');
+					window.location.reload();
 					Alertify.success(`<b style='color:white;'>Bienvenido
 					</b>`);
 				})
@@ -43,9 +43,6 @@ function Login(props) {
 					</b>`);
 					setLoading(false);
 				});
-		} else {
-			setLoading(false);
-		}
 	};
 	if (isLoggedIn) {
 		return <Navigate to="/dashboard" />;
@@ -111,7 +108,6 @@ function Login(props) {
 							type="submit"
 							value="Iniciar sesion"
 						/>
-						<input ref={checkBtn} style={{ display: 'none' }} />
 					</div>
 				</form>
 			</div>

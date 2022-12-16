@@ -28,21 +28,22 @@ function Dashboard({ rol }) {
 		</div>
 	);
 	const Patient = (
-		<><div className={styles.optionsAside}>
-			<Link>
-				Citas y Tareas
-			</Link>
-			<Link>
-				Notas
-			</Link>
-			<Link>
-				Evidencias
-			</Link>
-			<Link>
-				Perfil
-			</Link>
-		</div>
-		<button className={styles.btnEmergency}>911</button>
+		<>
+			<div className={styles.optionsAside}>
+				<Link>
+					Citas y Tareas
+				</Link>
+				<Link>
+					Notas
+				</Link>
+				<Link>
+					Evidencias
+				</Link>
+				<Link>
+					Perfil
+				</Link>
+			</div>
+			<button className={styles.btnEmergency} type="submit">911</button>
 		</>
 	);
 	return (
@@ -61,14 +62,17 @@ function Dashboard({ rol }) {
 				</Link>
 			</div>
 			<div className={styles.resMenu}>
-				<div onClick={asideOpenAction}>
+				<button onClick={asideOpenAction} type="submit">
 					<img alt="Menuicon" className={styles.menuIcon} src={btnMenu} />
-				</div>
-
+				</button>
 			</div>
 			<div className={styles.contPshycologist}>
 				<h2>Proximas Citas</h2>
-				<p>Paciente: Luz Elena Limón de la Cruz</p>
+				<div className={styles.contCitas}>
+					<p>Paciente: Luz Elena Limón de la Cruz</p>
+					<p>Fecha: 16/12/2022</p>
+					<p>Hora: 12:00pm</p>
+				</div>
 			</div>
 		</div>
 	);

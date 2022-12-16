@@ -35,13 +35,7 @@
         "null": "always"
       }
     ],
-    "lit-a11y/click-events-have-key-events": [
-      "error",
-      {
-        "allowList": ["foo-button"],
-        "allowCustomElements": false
-      }
-    ],
+    "lit-a11y/click-events-have-key-events": 0,
     "react/prop-types": 0,
     "react/react-in-jsx-scope": "off",
     "react/jsx-curly-spacing": [
@@ -111,14 +105,14 @@
         }
       }
     ],
-    "default-param-last": true,
+    "default-param-last": 0,
     "sort-keys": "error",
     "linebreak-style": [
       "error",
       "windows"
     ],
     "jsx-a11y/anchor-is-valid": [ "error", {
-      "components": [ "Link" ],
+      "components": [],
       "specialLink": [ "hrefLeft", "hrefRight" ],
       "aspects": [ "noHref", "invalidHref", "preferButton" ]
     }],

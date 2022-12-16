@@ -30,19 +30,19 @@ function Login(props) {
 
 	const handleLogin = () => {
 		setLoading(true);
-			dispatch(login({email, password}))
+		dispatch(login({ email, password }))
 			.unwrap()
-				.then(() => {
-					navigate('/dashboard');
-					window.location.reload();
-					Alertify.success(`<b style='color:white;'>Bienvenido
+			.then(() => {
+				navigate('/dashboard');
+				window.location.reload();
+				Alertify.success(`<b style='color:white;'>Bienvenido
 					</b>`);
-				})
-				.catch(() => {
-					Alertify.error(`<b style='color:white;'>Email y/o password erroneos
+			})
+			.catch(() => {
+				Alertify.error(`<b style='color:white;'>Email y/o password erroneos
 					</b>`);
-					setLoading(false);
-				});
+				setLoading(false);
+			});
 	};
 	if (isLoggedIn) {
 		return <Navigate to="/dashboard" />;

@@ -1,36 +1,52 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import Alertify from 'alertifyjs';
-import { useNavigate } from 'react-router-dom';
+import 'alertifyjs/build/css/alertify.css';
+import { Navigate, useNavigate } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import styles from './Login.module.css';
 import logo from '../../assets/logo.png';
-import getLogin from '../../services/Login/LoginService';
+import { login } from '../../slices/auth';
 
-function Login() {
+function Login(props) {
 	const navigate = useNavigate();
-	const [user] = useState('null');
+	const form = useRef();
+	const [email, setEmail] = useState('');
+	const [password, setPassword] = useState('');
+	const [loading, setLoading] = useState(false);
 	const { register, handleSubmit, formState: { errors } } = useForm();
-	const [body, setBody] = useState({ email: '', password: '' });
+	const { isLoggedIn } = useSelector((state) => state.auth);
+	const dispatch = useDispatch();
 
-	const inputChange = ({ target }) => {
-		const { name, value } = target;
-		setBody({
-			...body,
-			[name]: value,
-		});
+	const onChangeEmail = (e) => {
+		const changeEmail = e.target.value;
+		setEmail(changeEmail);
 	};
 
-	const onSubmit = () => {
-		getLogin(body)
-			.then((data) => {
+	const onChangePassword = (e) => {
+		const changePassword = e.target.value;
+		setPassword(changePassword);
+	};
+
+	const handleLogin = () => {
+		setLoading(true);
+		dispatch(login({ email, password }))
+			.unwrap()
+			.then(() => {
 				navigate('/dashboard');
+				window.location.reload();
 				Alertify.success(`<b style='color:white;'>Bienvenido
-						${data.data.loginData.fullName}</b>`);
+					</b>`);
 			})
-		// eslint-disable-next-line no-unused-vars
-			.catch(({ response }) => {
+			.catch(() => {
+				Alertify.error(`<b style='color:white;'>Email y/o password erroneos
+					</b>`);
+				setLoading(false);
 			});
 	};
+	if (isLoggedIn) {
+		return <Navigate to="/dashboard" />;
+	}
 
 	return (
 		<div className={styles.container}>
@@ -38,59 +54,62 @@ function Login() {
 				<img alt="logo" className={styles.imgLogo} src={logo} />
 			</div>
 			<div className={styles.contform}>
-				<div className={styles.campo}>
-					<h2 onSubmit={handleSubmit(onSubmit)}>Log In</h2>
-					<div
-						className={`${styles.input}
-              			${errors.email}`}
-					>
-						<div className={styles.contInput}>
-							<p>Email</p>
-							<input
-								className={styles.btnUser}
-								name="email"
-								{...register('email', {
-									required: {
-										message: 'El email es obligatorio',
-										value: true,
-									},
-								})}
-								onChange={inputChange}
-								placeholder="Username"
-								type="text"
-								value={body.email}
-							/>
+				<form ref={form} onSubmit={handleSubmit(handleLogin)}>
+					<div className={styles.campo}>
+						<h2>Log In</h2>
+						<div
+							className={`${styles.input}
+							${errors.email && styles.error}`}
+						>
+							<div className={styles.contInput}>
+								<p>Email</p>
+								<input
+									className={styles.btnUser}
+									name="email"
+									{...register('email', {
+										required: {
+											message: 'El email es obligatorio',
+											value: true,
+										},
+									})}
+									onChange={onChangeEmail}
+									placeholder="Email"
+									type="text"
+									value={email}
+								/>
+							</div>
 						</div>
-					</div>
-					{errors.email && <span>{errors.email.message}</span>}
-					<div className={`${styles.input} ${errors.password && styles.error}`}>
-						<div className={styles.contInput}>
-							<p>Password</p>
-							<input
-								className={styles.btnPass}
-								name="password"
-								{...register('password', {
-									required: {
-										message: 'La contraseña es obligatoria',
-										value: true,
-									},
-								})}
-								onChange={inputChange}
-								placeholder="Password"
-								type="password"
-								value={body.password}
-							/>
+						{errors.email && <span>{errors.email.message}</span>}
+						<div className={`${styles.input}
+						${errors.password && styles.error}`}
+						>
+							<div className={styles.contInput}>
+								<p>Password</p>
+								<input
+									className={styles.btnPass}
+									name="password"
+									{...register('password', {
+										required: {
+											message: 'La contraseña es obligatoria',
+											value: true,
+										},
+									})}
+									onChange={onChangePassword}
+									placeholder="Password"
+									type="password"
+									value={password}
+								/>
+							</div>
 						</div>
+						{errors.password && <span>{errors.password.message}</span>}
+						<input
+							className={styles.btnSend}
+							disabled={loading}
+							type="submit"
+							value="Iniciar sesion"
+						/>
 					</div>
-					{errors.password && <span>{errors.password.message}</span>}
-					{!user && <span>Contraseña y/o email incorrecta</span>}
-					<input
-						className={styles.btnSend}
-						onClick={onSubmit}
-						type="submit"
-						value="Iniciar sesion"
-					/>
-				</div>
+				</form>
 			</div>
 
 		</div>

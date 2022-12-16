@@ -35,7 +35,14 @@
         "null": "always"
       }
     ],
-    "react/prop-types": "off",
+    "lit-a11y/click-events-have-key-events": [
+      "error",
+      {
+        "allowList": ["foo-button"],
+        "allowCustomElements": false
+      }
+    ],
+    "react/prop-types": 0,
     "react/react-in-jsx-scope": "off",
     "react/jsx-curly-spacing": [
       2,
@@ -110,6 +117,11 @@
       "error",
       "windows"
     ],
+    "jsx-a11y/anchor-is-valid": [ "error", {
+      "components": [ "Link" ],
+      "specialLink": [ "hrefLeft", "hrefRight" ],
+      "aspects": [ "noHref", "invalidHref", "preferButton" ]
+    }],
     "quotes": [
       "error",
       "single"

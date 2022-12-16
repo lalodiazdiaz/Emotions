@@ -1,0 +1,199 @@
+.contMain {
+  display: flex;
+  position: absolute;
+  width: 20%;
+  height: 100%;
+}
+
+.asideMenu {
+  display: flex;
+  width: 100%;
+  background-color: #8fe0d1;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.asideMenu:hover {
+  background-color: #73c9b9;
+}
+
+.resMenu {
+  display: none;
+  width: 100%;
+  background-color: #8fe0d1;
+  height: 10%;
+}
+
+.headerAside {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.headerAside h2 {
+  color: white;
+}
+
+.logo {
+  margin-top: 20px;
+  width: 180px;
+}
+
+.headerAside p {
+  color: white;
+  text-align: center;
+  width: 200px;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.optionsAside {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  height: 200px;
+}
+
+a {
+  color: white;
+  text-align: center;
+  width: 200px;
+  font-size: 22px;
+  margin: 10px;
+  font-weight: bold;
+}
+
+.btnEmergency {
+  border-radius: 100%;
+  width: 80px;
+  height: 80px;
+  background-color: #fe6272;
+  border: 0;
+  color: white;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.btnEmergency:hover {
+  background-color: #ce3b4a;
+}
+
+@media (max-width: 1200px) {
+  .contMain {
+    width: 100%;
+  }
+
+  .asideMenu {
+    display: none;
+  }
+
+  .asideMenuOpen {
+    display: flex;
+    width: 100%;
+    margin-top: 90px;
+    background-color: #8fe0d1;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .resMenu {
+    display: flex;
+    position: fixed;
+  }
+
+  .menuIcon {
+    width: 80px;
+    height: 80%;
+    margin: 10px;
+    margin-left: 20px;
+  }
+
+  .logo {
+    width: 250px;
+  }
+
+  .headerAside p {
+    color: white;
+    text-align: center;
+    width: 70%;
+    font-size: 40px;
+    font-weight: bold;
+  }
+
+  a {
+    color: white;
+    text-align: center;
+    width: 100%;
+    font-size: 35px;
+    font-weight: bold;
+  }
+
+  .btnEmergency {
+    width: 120px;
+    height: 120px;
+    font-size: 30px;
+  }
+
+  .optionsAside {
+    margin-top: -80px;
+  }
+}
+
+@media (max-width: 700px) {
+  .contMain {
+    width: 100%;
+  }
+
+  .asideMenu {
+    display: none;
+  }
+
+  .asideMenuOpen {
+    display: flex;
+    width: 100%;
+    margin-top: 80px;
+    background-color: #8fe0d1;
+  }
+
+  .resMenu {
+    display: flex;
+  }
+
+  .menuIcon {
+    width: 50px;
+    height: 80%;
+    margin: 10px;
+    margin-left: 20px;
+  }
+
+  .headerAside p {
+    color: white;
+    text-align: center;
+    width: 70%;
+    font-size: 30px;
+    font-weight: bold;
+  }
+
+  a {
+    color: white;
+    text-align: center;
+    width: 100%;
+    font-size: 25px;
+    font-weight: bold;
+  }
+
+  .optionsAside {
+    margin-top: 0;
+  }
+
+  .btnEmergency {
+    height: 80px;
+    width: 80px;
+    font-size: 25px;
+  }
+
+}

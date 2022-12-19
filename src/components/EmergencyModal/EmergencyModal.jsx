@@ -16,7 +16,7 @@ function EmergencyModal() {
 					href={LINEA_VIDA}
 					rel="noreferrer"
 				>
-					Contactar
+					Llamar
 				</a>
 			</div>
 			<div className={styles.contact}>
@@ -26,7 +26,7 @@ function EmergencyModal() {
 					href={VIVETEL}
 					rel="noreferrer"
 				>
-					Contactar
+					Llamar
 				</a>
 			</div>
 		</Modal>

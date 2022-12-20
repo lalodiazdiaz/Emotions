@@ -1,0 +1,39 @@
+.optionsAside {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  height: 200px;
+}
+
+.linkNav{
+  color: white;
+  text-align: center;
+  width: 100%;
+  font-size: 25px;
+  margin: 7px;
+  font-weight: bold;
+}
+
+@media (max-width: 1300px) {
+  .linkNav {
+    color: white;
+    text-align: center;
+    width: 100%;
+    font-size: 35px;
+    font-weight: bold;
+  }
+
+  .optionsAside {
+    margin-top: -80px;
+  }
+}
+
+@media (max-width: 700px) {
+  .linkNav {
+    color: white;
+    text-align: center;
+    width: 100%;
+    font-size: 25px;
+    font-weight: bold;
+  }
+}

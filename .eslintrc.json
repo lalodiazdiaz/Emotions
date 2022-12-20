@@ -35,6 +35,7 @@
         "null": "always"
       }
     ],
+    "react/jsx-closing-bracket-location": "off",
     "lit-a11y/click-events-have-key-events": 0,
     "react/prop-types": 0,
     "react/react-in-jsx-scope": "off",
@@ -71,10 +72,7 @@
       "error",
       "tab"
     ],
-    "indent": [
-      "error",
-      "tab"
-    ],
+    "indent": 0,
     "max-len": [
       "error",
       {

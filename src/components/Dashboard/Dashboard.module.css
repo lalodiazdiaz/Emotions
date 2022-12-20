@@ -16,10 +16,6 @@
   position: absolute;
 }
 
-.asideMenu:hover {
-  background-color: #73c9b9;
-}
-
 .resMenu {
   display: none;
 }
@@ -49,13 +45,6 @@
   font-weight: bold;
 }
 
-.optionsAside {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  height: 200px;
-}
-
 a {
   color: white;
   text-align: center;
@@ -63,21 +52,6 @@ a {
   font-size: 22px;
   margin: 10px;
   font-weight: bold;
-}
-
-.btnEmergency {
-  border-radius: 100%;
-  width: 80px;
-  height: 80px;
-  background-color: #fe6272;
-  color: white;
-  font-size: 20px;
-  cursor: pointer;
-  border: 2px #000000 solid;
-}
-
-.btnEmergency:hover {
-  background-color: #ce3b4a;
 }
 
 @media (max-width: 1300px) {
@@ -148,16 +122,6 @@ a {
     font-size: 35px;
     font-weight: bold;
   }
-
-  .btnEmergency {
-    width: 120px;
-    height: 120px;
-    font-size: 30px;
-  }
-
-  .optionsAside {
-    margin-top: -80px;
-  }
 }
 
 @media (max-width: 700px) {
@@ -204,14 +168,7 @@ a {
     font-weight: bold;
   }
 
-  .btnEmergency {
-    height: 80px;
-    width: 80px;
-    font-size: 25px;
-  }
-
   .logo{
     width: 200px;
   }
-
 }

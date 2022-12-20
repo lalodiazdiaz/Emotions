@@ -65,14 +65,14 @@ a {
 
   .asideMenuOpen {
     position: relative;
-      display: flex;
-      width: 100%;
-      margin-top: 90px;
-      background-color: #8fe0d1;
-      justify-content: space-between;
-      align-items: center;
-      flex-direction: column;
-      z-index: 1;
+    display: flex;
+    width: 100%;
+    margin-top: 90px;
+    background-color: #8fe0d1;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    z-index: 1;
   }
 
   .resMenu {
@@ -83,13 +83,13 @@ a {
     background-color: #8fe0d1;
   }
 
-  .btnImage{
+  .btnImage {
     width: 15%;
     background-color: #8fe0d1;
     border: 0;
   }
 
-  .contImage{
+  .contImage {
     display: flex;
     width: 100%;
     height: 80%;
@@ -168,7 +168,7 @@ a {
     font-weight: bold;
   }
 
-  .logo{
+  .logo {
     width: 200px;
   }
 }

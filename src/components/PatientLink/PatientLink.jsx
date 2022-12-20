@@ -4,20 +4,21 @@ import styles from './PatientLink.module.css';
 
 function PatientLink() {
 	return (
-		<><div className={styles.optionsAside}>
-			<Link className={styles.linkNav}>
-				Citas y Tareas
-			</Link>
-			<Link className={styles.linkNav}>
-				Notas
-			</Link>
-			<Link className={styles.linkNav}>
-				Evidencias
-			</Link>
-			<Link className={styles.linkNav}>
-				Perfil
-			</Link>
-		  </div>
+		<>
+			<div className={styles.optionsAside}>
+				<Link className={styles.linkNav}>
+					Citas y Tareas
+				</Link>
+				<Link className={styles.linkNav}>
+					Notas
+				</Link>
+				<Link className={styles.linkNav}>
+					Evidencias
+				</Link>
+				<Link className={styles.linkNav}>
+					Perfil
+				</Link>
+			</div>
 			<button className={styles.btnEmergency} type="button">911</button>
 		</>
 	);

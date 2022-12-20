@@ -1,17 +1,19 @@
 .contMain {
   display: flex;
   position: absolute;
-  width: 30%;
+  width: 20%;
   height: 100%;
 }
 
 .asideMenu {
   display: flex;
   width: 100%;
+  height: 100%;
   background-color: #8fe0d1;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+  position: absolute;
 }
 
 .asideMenu:hover {
@@ -20,9 +22,6 @@
 
 .resMenu {
   display: none;
-  width: 100%;
-  background-color: #8fe0d1;
-  height: 10%;
 }
 
 .headerAside {
@@ -46,7 +45,7 @@
   color: white;
   text-align: center;
   width: 200px;
-  font-size: 30px;
+  font-size: 25px;
   font-weight: bold;
 }
 
@@ -71,17 +70,17 @@ a {
   width: 80px;
   height: 80px;
   background-color: #fe6272;
-  border: 0;
   color: white;
   font-size: 20px;
-  font-weight: 700;
+  cursor: pointer;
+  border: 2px #000000 solid;
 }
 
 .btnEmergency:hover {
   background-color: #ce3b4a;
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1300px) {
   .contMain {
     width: 100%;
   }
@@ -91,25 +90,43 @@ a {
   }
 
   .asideMenuOpen {
-    display: flex;
-    width: 100%;
-    margin-top: 90px;
-    background-color: #8fe0d1;
-    justify-content: space-between;
-    align-items: center;
-    flex-direction: column;
+    position: relative;
+      display: flex;
+      width: 100%;
+      margin-top: 90px;
+      background-color: #8fe0d1;
+      justify-content: space-between;
+      align-items: center;
+      flex-direction: column;
+      z-index: 1;
   }
 
   .resMenu {
     display: flex;
     position: fixed;
+    width: 100%;
+    height: 10%;
+    background-color: #8fe0d1;
+  }
+
+  .btnImage{
+    width: 15%;
+    background-color: #8fe0d1;
+    border: 0;
+  }
+
+  .contImage{
+    display: flex;
+    width: 100%;
+    height: 80%;
+    margin: 0;
+    justify-content: center;
+    align-items: center;
   }
 
   .menuIcon {
-    width: 80px;
+    width: 60%;
     height: 80%;
-    margin: 10px;
-    margin-left: 20px;
   }
 
   .logo {
@@ -176,6 +193,7 @@ a {
     width: 70%;
     font-size: 30px;
     font-weight: bold;
+    margin-bottom: 15%;
   }
 
   a {
@@ -186,14 +204,14 @@ a {
     font-weight: bold;
   }
 
-  .optionsAside {
-    margin-top: 0;
-  }
-
   .btnEmergency {
     height: 80px;
     width: 80px;
     font-size: 25px;
+  }
+
+  .logo{
+    width: 200px;
   }
 
 }

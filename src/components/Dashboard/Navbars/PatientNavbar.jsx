@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import styles from '../Dashboard.module.css';
 import logo from '../../../assets/logo.png';
 import btnMenu from '../../../assets/menuIcon.png';
@@ -23,23 +23,23 @@ function PatientNavbar() {
 					<p>Luz Elena Limón de la Cruz</p>
 				</div>
 				<div className={styles.optionsAside}>
-					<Link>
+					<NavLink className={styles.btnDatesHomeworks} to="/datesHomeworks">
 						Citas y Tareas
-					</Link>
-					<Link>
+					</NavLink>
+					<NavLink>
 						Notas
-					</Link>
-					<Link>
+					</NavLink>
+					<NavLink>
 						Evidencias
-					</Link>
-					<Link>
+					</NavLink>
+					<NavLink>
 						Perfil
-					</Link>
+					</NavLink>
 				</div>
 				<button className={styles.btnEmergency} type="submit">911</button>
-				<Link to="/">
+				<NavLink to="/">
 					Cerrar sesion
-				</Link>
+				</NavLink>
 			</div>
 			<div className={styles.resMenu}>
 				<button

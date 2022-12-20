@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import styles from '../Dashboard.module.css';
 import logo from '../../../assets/logo.png';
 import btnMenu from '../../../assets/menuIcon.png';
@@ -16,15 +16,15 @@ function PshycologistNavbar() {
 	};
 	const Pshycologist = (
 		<div className={styles.optionsAside}>
-			<Link>
+			<NavLink className={styles.btnDates} to="/dates">
 				Citas
-			</Link>
-			<Link className={styles.btnPatients} to="/patients">
+			</NavLink>
+			<NavLink>
 				Pacientes
-			</Link>
-			<Link className={styles.btnanVideo} to="analysis">
+			</NavLink>
+			<NavLink>
 				Analisis de video
-			</Link>
+			</NavLink>
 		</div>
 	);
 	return (
@@ -36,9 +36,9 @@ function PshycologistNavbar() {
 					<p>Claudia Patricia González Moreno</p>
 				</div>
 				{Pshycologist}
-				<Link to="/home">
+				<NavLink to="/home">
 					Cerrar sesion
-				</Link>
+				</NavLink>
 			</div>
 			<div className={styles.resMenu}>
 				<button onClick={asideOpenAction} type="submit">

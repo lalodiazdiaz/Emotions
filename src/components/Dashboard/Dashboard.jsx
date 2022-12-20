@@ -41,7 +41,7 @@ function Dashboard() {
 				</Link>
 			</div>
 			<div className={styles.resMenu}>
-				<button onClick={asideOpenAction} type="submit">
+				<button onClick={asideOpenAction} type="button">
 					<img alt="Menuicon" className={styles.menuIcon} src={btnMenu} />
 				</button>
 			</div>
@@ -49,7 +49,7 @@ function Dashboard() {
 				<button
 					className={styles.btnImage}
 					onClick={asideOpenAction}
-					type="submit"
+					type="button"
 				>
 					<div className={styles.contImage}>
 						<img alt="Menuicon" className={styles.menuIcon} src={btnMenu} />

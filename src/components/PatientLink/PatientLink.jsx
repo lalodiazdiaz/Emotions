@@ -18,7 +18,7 @@ function PatientLink() {
 				Perfil
 			</Link>
 		  </div>
-			<button className={styles.btnEmergency} type="submit">911</button>
+			<button className={styles.btnEmergency} type="button">911</button>
 		</>
 	);
 }

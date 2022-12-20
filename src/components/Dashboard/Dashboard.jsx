@@ -7,10 +7,11 @@ import PatientLink from '../PatientLink/PatientLink';
 import PhichologistLink from '../PsychologistLink/PhichologistLink';
 
 function Dashboard() {
-	const USER_LOGGED = JSON.parse(localStorage.getItem('user'));
+	const loggedUser = window.localStorage.getItem('user');
+	const userLogged = JSON.parse(loggedUser);
 	const [state, setState] = useState(false);
 
-	const ASIDE_OPEN_ACTION = () => {
+	const asideOpenAction = () => {
 		if (!state) {
 			setState(true);
 		} else {
@@ -27,7 +28,7 @@ function Dashboard() {
 					<p>Claudia Patricia González Moreno</p>
 				</div>
 				<div>
-					{USER_LOGGED.data.range === 1
+					{userLogged.data.range === 1
 						? (
 							<PatientLink />
 						)
@@ -40,14 +41,14 @@ function Dashboard() {
 				</Link>
 			</div>
 			<div className={styles.resMenu}>
-				<button onClick={ASIDE_OPEN_ACTION} type="button">
+				<button onClick={asideOpenAction} type="button">
 					<img alt="Menuicon" className={styles.menuIcon} src={btnMenu} />
 				</button>
 			</div>
 			<div className={styles.resMenu}>
 				<button
 					className={styles.btnImage}
-					onClick={ASIDE_OPEN_ACTION}
+					onClick={asideOpenAction}
 					type="button"
 				>
 					<div className={styles.contImage}>

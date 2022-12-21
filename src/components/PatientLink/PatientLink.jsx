@@ -24,7 +24,8 @@ function PatientLink({ onAction }) {
 				className={styles.btnEmergency}
 				 onClick={onAction}
 				type="button"
-			>911
+			>
+			911
 			</button>
 		</>
 	);

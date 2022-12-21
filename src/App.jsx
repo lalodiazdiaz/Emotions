@@ -6,6 +6,7 @@ import Home from './components/Home/Home';
 import Dates from './components/Psychologist/Dates/Dates';
 import DatesAndHomeworks from './components/Patient/DatesHomeworks/DatesHomeworks';
 import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute';
+import EmergencyModal from './components/EmergencyModal/EmergencyModal';
 
 function App() {
 	return (

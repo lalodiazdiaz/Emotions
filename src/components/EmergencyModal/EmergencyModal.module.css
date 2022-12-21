@@ -1,0 +1,74 @@
+.contact {
+  display: flex;
+  width: 100%;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.callEmergency {
+  color: white;
+  font-size: 20px;
+  margin: 5%;
+  text-align: center;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 5px;
+  width: 110px;
+  background: #66d086;
+  border-color: #66d086;
+  text-decoration: none;
+}
+
+.contact h2 {
+  font-size: 28px;
+  text-align: start;
+  width: 70%;
+  margin-left: 20px;
+}
+
+.callEmergency:hover {
+  background-color: #64ba7e;
+}
+
+@media (max-width: 1100px) {
+  .contact {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .contact h2 {
+    font-size: 35px;
+    text-align: center;
+    width: 100%;
+    margin: 0;
+  }
+
+  .callEmergency {
+    height: max-content;
+    width: 140px;
+    font-size: 25px;
+    margin-top: 10px;
+  }
+}
+
+
+@media (max-width: 600px) {
+  .contact {
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .contact h2 {
+    font-size: 25px;
+    text-align: center;
+    width: 100%;
+    margin: 0;
+  }
+
+  .callEmergency {
+    margin-top: 10px;
+    font-size: 20px;
+    width: 110px;
+  }
+}

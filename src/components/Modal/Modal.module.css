@@ -5,6 +5,7 @@
   position: absolute;
   justify-content: center;
   align-items: center;
+  z-index: 2;
 }
 
 .modalClose {
@@ -13,7 +14,7 @@
 
 .backModal {
   display: flex;
-  position: absolute;
+  position: relative;
   background-color: #f0eeee;
   height: 100%;
   width: 100%;

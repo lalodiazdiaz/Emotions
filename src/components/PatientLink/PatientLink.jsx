@@ -2,7 +2,7 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import styles from './PatientLink.module.css';
 
-function PatientLink() {
+function PatientLink({ onAction }) {
 	return (
 		<>
 			<div className={styles.optionsAside}>
@@ -19,7 +19,13 @@ function PatientLink() {
 					Perfil
 				</NavLink>
 			</div>
-			<button className={styles.btnEmergency} type="button">911</button>
+			<button
+				className={styles.btnEmergency}
+				onClick={onAction}
+				type="button"
+			>
+				911
+			</button>
 		</>
 	);
 }

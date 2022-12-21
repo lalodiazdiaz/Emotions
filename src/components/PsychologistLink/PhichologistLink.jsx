@@ -1,19 +1,19 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import styles from './PhichologistLink.module.css';
 
 function PhichologistLink() {
 	return (
 		<div className={styles.optionsAside}>
-			<Link className={styles.linkNav}>
+			<NavLink className={styles.linkNav} to="/dates">
 				Citas
-			</Link>
-			<Link className={styles.linkNav}>
+			</NavLink>
+			<NavLink className={styles.linkNav}>
 				Pacientes
-			</Link>
-			<Link className={styles.linkNav}>
+			</NavLink>
+			<NavLink className={styles.linkNav}>
 				Analisis de video
-			</Link>
+			</NavLink>
 		</div>
 	);
 }

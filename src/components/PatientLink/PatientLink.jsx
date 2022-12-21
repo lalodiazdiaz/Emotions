@@ -1,23 +1,23 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import styles from './PatientLink.module.css';
 
 function PatientLink() {
 	return (
 		<>
 			<div className={styles.optionsAside}>
-				<Link className={styles.linkNav}>
+				<NavLink className={styles.linkNav} to="/datesHomeworks">
 					Citas y Tareas
-				</Link>
-				<Link className={styles.linkNav}>
+				</NavLink>
+				<NavLink className={styles.linkNav}>
 					Notas
-				</Link>
-				<Link className={styles.linkNav}>
+				</NavLink>
+				<NavLink className={styles.linkNav}>
 					Evidencias
-				</Link>
-				<Link className={styles.linkNav}>
+				</NavLink>
+				<NavLink className={styles.linkNav}>
 					Perfil
-				</Link>
+				</NavLink>
 			</div>
 			<button className={styles.btnEmergency} type="button">911</button>
 		</>

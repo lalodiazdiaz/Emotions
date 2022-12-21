@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import styles from './Dashboard.module.css';
 import logo from '../../assets/logo.png';
 import btnMenu from '../../assets/menuIcon.png';
@@ -36,9 +36,9 @@ function Dashboard() {
 							<PhichologistLink />
 						)}
 				</div>
-				<Link to="/home">
+				<NavLink to="/">
 					Cerrar sesion
-				</Link>
+				</NavLink>
 			</div>
 			<div className={styles.resMenu}>
 				<button onClick={asideOpenAction} type="button">

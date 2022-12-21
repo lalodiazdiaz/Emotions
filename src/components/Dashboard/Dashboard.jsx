@@ -40,7 +40,7 @@ function Dashboard() {
 					<p>{NAME}</p>
 				</div>
 				<div>
-					{userLogged.data.range !== 1
+					{userLogged.data.range === 1
 						? (
 							<PatientLink onAction={modalOpenAction} />
 						)

@@ -1,6 +1,5 @@
 import React, { useCallback, useState } from 'react';
 import { Link } from 'react-router-dom';
-import EmergencyModal from '../EmergencyModal/EmergencyModal';
 import styles from './PatientLink.module.css';
 
 function PatientLink({ onAction }) {

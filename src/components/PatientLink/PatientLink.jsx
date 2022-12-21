@@ -22,10 +22,10 @@ function PatientLink({ onAction }) {
 			</div>
 			<button
 				className={styles.btnEmergency}
-				 onClick={onAction}
+				onClick={onAction}
 				type="button"
 			>
-			911
+				911
 			</button>
 		</>
 	);

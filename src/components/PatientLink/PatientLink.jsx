@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useCallback, useState } from 'react';
 import { Link } from 'react-router-dom';
+import EmergencyModal from '../EmergencyModal/EmergencyModal';
 import styles from './PatientLink.module.css';
 
-function PatientLink() {
+function PatientLink({ onAction }) {
 	return (
 		<>
 			<div className={styles.optionsAside}>
@@ -19,7 +20,12 @@ function PatientLink() {
 					Perfil
 				</Link>
 			</div>
-			<button className={styles.btnEmergency} type="button">911</button>
+			<button
+				className={styles.btnEmergency}
+				 onClick={onAction}
+				type="button"
+			>911
+			</button>
 		</>
 	);
 }

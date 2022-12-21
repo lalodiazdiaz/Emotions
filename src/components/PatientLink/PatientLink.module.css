@@ -22,7 +22,7 @@
   color: white;
   font-size: 20px;
   cursor: pointer;
-  border: 2px #000000 solid;
+  border: 0;
   transform: translate(56%, -1%);
 }
 

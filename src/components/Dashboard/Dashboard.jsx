@@ -1,5 +1,5 @@
 import React, { useCallback, useState } from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, Outlet } from 'react-router-dom';
 import styles from './Dashboard.module.css';
 import logo from '../../assets/logo.png';
 import btnMenu from '../../assets/menuIcon.png';
@@ -68,6 +68,10 @@ function Dashboard() {
 					</div>
 				</button>
 			</div>
+			<main>
+				<Outlet />
+			</main>
+
 		</div>
 	);
 }

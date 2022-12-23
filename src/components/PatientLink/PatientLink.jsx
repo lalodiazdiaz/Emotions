@@ -6,7 +6,7 @@ function PatientLink({ onAction }) {
 	return (
 		<>
 			<div className={styles.optionsAside}>
-				<NavLink className={styles.linkNav} to="/datesHomeworks">
+				<NavLink className={styles.linkNav} to="/dashboardP/">
 					Citas y Tareas
 				</NavLink>
 				<NavLink className={styles.linkNav}>

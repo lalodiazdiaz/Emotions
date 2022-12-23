@@ -74,7 +74,7 @@ a {
     flex-direction: column;
     z-index: 1;
   }
-
+  
   .resMenu {
     display: flex;
     position: fixed;

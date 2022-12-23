@@ -49,6 +49,10 @@
   text-decoration: none;
 }
 
+.linkNav:hover {
+  background-color: rgb(109, 231, 127);
+}
+
 a {
   color: white;
   text-align: center;

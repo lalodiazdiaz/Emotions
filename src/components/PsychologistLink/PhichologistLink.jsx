@@ -10,7 +10,7 @@ function PhichologistLink() {
 				style={({ isActive }) => ({
 					textDecoration: isActive ? 'underline' : 'none',
 				})}
-				to="/dashboardT/"
+				to="/dashboard/"
 			>
 				Citas
 			</NavLink>

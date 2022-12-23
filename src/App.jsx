@@ -6,7 +6,10 @@ import Home from './components/Home/Home';
 import Dates from './components/Psychologist/Dates/Dates';
 import DatesAndHomeworks from './components/Patient/DatesHomeworks/DatesHomeworks';
 import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute';
+import { RANGE } from './constants';
 
+const userLog = JSON.parse(localStorage.getItem('user'));
+const { range } = userLog ? userLog.data : '';
 function App() {
 	return (
 		<BrowserRouter>
@@ -19,19 +22,30 @@ function App() {
 							<Dashboard />
 						</ProtectedRoute>
 					)}
-					path="dashboardP/"
+					path="dashboard/"
 				>
-					<Route element={<DatesAndHomeworks />} path="/dashboardP/" />
-				</Route>
-				<Route
-					element={(
-						<ProtectedRoute>
-							<Dashboard />
-						</ProtectedRoute>
-					)}
-					path="dashboardT/"
-				>
-					<Route element={<Dates />} path="/dashboardT/" />
+					{range === RANGE.patient
+						? (
+							<Route
+								element={(
+									<ProtectedRoute>
+										<DatesAndHomeworks />
+									</ProtectedRoute>
+								)}
+								path="/dashboard/"
+							/>
+						)
+						: 			(
+							<Route
+								element={(
+									<ProtectedRoute>
+										<Dates />
+									</ProtectedRoute>
+								)}
+								path="/dashboard/"
+							/>
+						)}
+
 				</Route>
 			</Routes>
 		</BrowserRouter>

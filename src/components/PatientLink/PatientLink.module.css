@@ -15,6 +15,10 @@
   text-decoration: none;
 }
 
+.linkNav:hover {
+  background-color: rgb(109, 231, 127);
+}
+
 .btnEmergency {
   border-radius: 100%;
   width: 80px;

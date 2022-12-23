@@ -33,7 +33,7 @@ function Login(props) {
 		dispatch(login({ email, password }))
 			.unwrap()
 			.then(() => {
-				let range = JSON.parse(localStorage.getItem('user'));
+				const range = JSON.parse(localStorage.getItem('user'));
 				if (range.data.range === 1) {
 					navigate('/dashboardP');
 				} else {
@@ -50,7 +50,7 @@ function Login(props) {
 			});
 	};
 	if (isLoggedIn) {
-		let range = JSON.parse(localStorage.getItem('user'));
+		const range = JSON.parse(localStorage.getItem('user'));
 		if (range.data.range === 1) {
 			return <Navigate to="/dashboardP" />;
 		} if (range.data.range === 2) {

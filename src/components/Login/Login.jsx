@@ -33,8 +33,8 @@ function Login(props) {
 		dispatch(login({ email, password }))
 			.unwrap()
 			.then(() => {
-				const RANGE = JSON.parse(localStorage.getItem('user'));
-				if (RANGE.data.range === 1) {
+				let range = JSON.parse(localStorage.getItem('user'));
+				if (range.data.range === 1) {
 					navigate('/dashboardP');
 				} else {
 					navigate('/dashboardT');
@@ -50,10 +50,10 @@ function Login(props) {
 			});
 	};
 	if (isLoggedIn) {
-		const RANGE = JSON.parse(localStorage.getItem('user'));
-		if (RANGE.data.range === 1) {
+		let range = JSON.parse(localStorage.getItem('user'));
+		if (range.data.range === 1) {
 			return <Navigate to="/dashboardP" />;
-		} if (RANGE.data.range === 2) {
+		} if (range.data.range === 2) {
 			return <Navigate to="/dashboardT" />;
 		}
 	}

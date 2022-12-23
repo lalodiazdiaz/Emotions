@@ -1,5 +1,5 @@
 import React, { useCallback, useState } from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, Outlet } from 'react-router-dom';
 import styles from './Dashboard.module.css';
 import logo from '../../assets/logo.png';
 import btnMenu from '../../assets/menuIcon.png';
@@ -28,7 +28,7 @@ function Dashboard() {
 
 	const modalCloseAction = useCallback(() => {
 		setModal(false);
-	 }, []);
+	}, []);
 
 	return (
 		<div className={styles.contMain}>
@@ -48,14 +48,9 @@ function Dashboard() {
 							<PhichologistLink />
 						)}
 				</div>
-				<NavLink to="/">
+				<NavLink className={styles.linkNav} to="/">
 					Cerrar sesion
 				</NavLink>
-			</div>
-			<div className={styles.resMenu}>
-				<button onClick={asideOpenAction} type="button">
-					<img alt="Menuicon" className={styles.menuIcon} src={btnMenu} />
-				</button>
 			</div>
 			<div className={styles.resMenu}>
 				<button
@@ -68,6 +63,10 @@ function Dashboard() {
 					</div>
 				</button>
 			</div>
+			<main>
+				<Outlet />
+			</main>
+
 		</div>
 	);
 }

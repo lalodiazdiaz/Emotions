@@ -6,7 +6,6 @@ import Home from './components/Home/Home';
 import Dates from './components/Psychologist/Dates/Dates';
 import DatesAndHomeworks from './components/Patient/DatesHomeworks/DatesHomeworks';
 import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute';
-import EmergencyModal from './components/EmergencyModal/EmergencyModal';
 
 function App() {
 	return (
@@ -14,16 +13,26 @@ function App() {
 			<Routes>
 				<Route element={<Home />} path="/" />
 				<Route element={<Login />} path="login" />
-				<Route element={<Dates />} path="dates" />
-				<Route element={<DatesAndHomeworks />} path="datesHomeworks" />
 				<Route
 					element={(
 						<ProtectedRoute>
 							<Dashboard />
 						</ProtectedRoute>
 					)}
-					path="dashboard"
-				/>
+					path="dashboardP/"
+				>
+					<Route element={<DatesAndHomeworks />} path="/dashboardP/" />
+				</Route>
+				<Route
+					element={(
+						<ProtectedRoute>
+							<Dashboard />
+						</ProtectedRoute>
+					)}
+					path="dashboardT/"
+				>
+					<Route element={<Dates />} path="/dashboardT/" />
+				</Route>
 			</Routes>
 		</BrowserRouter>
 	);

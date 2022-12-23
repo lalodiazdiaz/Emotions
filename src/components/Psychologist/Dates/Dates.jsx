@@ -1,9 +1,12 @@
 import React from 'react';
+import styles from './Dates.module.css';
 
 function Dates() {
 	return (
-		<div>
-			<h1>Hello Welcome to the Dates</h1>
+		<div className={styles.contAppointments}>
+			<div className={styles.Appointments}>
+				<h1>Hello Welcome Doctor to the Dates</h1>
+			</div>
 		</div>
 	);
 }

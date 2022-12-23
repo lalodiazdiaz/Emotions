@@ -5,7 +5,13 @@ import styles from './PhichologistLink.module.css';
 function PhichologistLink() {
 	return (
 		<div className={styles.optionsAside}>
-			<NavLink className={styles.linkNav} to="/dashboardT/">
+			<NavLink
+				className={styles.linkNav}
+				style={({ isActive }) => ({
+					textDecoration: isActive ? 'underline' : 'none',
+				})}
+				to="/dashboardT/"
+			>
 				Citas
 			</NavLink>
 			<NavLink className={styles.linkNav}>

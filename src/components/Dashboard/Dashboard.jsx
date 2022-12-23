@@ -48,7 +48,7 @@ function Dashboard() {
 							<PhichologistLink />
 						)}
 				</div>
-				<NavLink to="/">
+				<NavLink className={styles.linkNav} to="/">
 					Cerrar sesion
 				</NavLink>
 			</div>

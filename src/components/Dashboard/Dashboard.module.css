@@ -45,6 +45,10 @@
   font-weight: bold;
 }
 
+.linkNav {
+  text-decoration: none;
+}
+
 a {
   color: white;
   text-align: center;
@@ -91,6 +95,10 @@ main {
     width: 15%;
     background-color: #8fe0d1;
     border: 0;
+  }
+
+  .linkNav {
+    text-decoration: none;
   }
 
   .contImage {
@@ -157,6 +165,10 @@ main {
     height: 80%;
     margin: 10px;
     margin-left: 20px;
+  }
+
+  .linkNav {
+    text-decoration: none;
   }
 
   .headerAside p {

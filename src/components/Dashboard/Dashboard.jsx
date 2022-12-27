@@ -23,6 +23,10 @@ function Dashboard() {
 	};
 	const [modal, setModal] = useState(false);
 
+	const closeMenu = useCallback(() => {
+		setState(false);
+	}, []);
+
 	const modalOpenAction = useCallback(() => {
 		setModal(true);
 	}, []);
@@ -43,10 +47,10 @@ function Dashboard() {
 				<div>
 					{userLogged.data.range === RANGE.patient
 						? (
-							<PatientLink onAction={modalOpenAction} />
+							<PatientLink onAction={modalOpenAction} onClick={closeMenu} />
 						)
 						: (
-							<PhichologistLink />
+							<PhichologistLink onClick={closeMenu} />
 						)}
 				</div>
 				<NavLink className={styles.linkNav} to="/">

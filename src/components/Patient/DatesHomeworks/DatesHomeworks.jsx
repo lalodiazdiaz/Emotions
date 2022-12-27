@@ -5,7 +5,7 @@ function DatesAndHomeworks() {
 	return (
 		<div className={styles.contAppointments}>
 			<div className={styles.Appointments}>
-				<h1>Hello Welcome User to the Dates</h1>
+				<h1>Hello Welcome User to the Appointments and Homeworks</h1>
 			</div>
 		</div>
 	);

@@ -16,13 +16,22 @@ function PatientLink({ onAction, onClick }) {
 				>
 					Citas y Tareas
 				</NavLink>
-				<NavLink className={styles.linkNav}>
+				<NavLink
+					className={styles.linkNav}
+					onClick={onClick}
+				>
 					Notas
 				</NavLink>
-				<NavLink className={styles.linkNav}>
+				<NavLink
+					className={styles.linkNav}
+					onClick={onClick}
+				>
 					Evidencias
 				</NavLink>
-				<NavLink className={styles.linkNav}>
+				<NavLink
+					className={styles.linkNav}
+					onClick={onClick}
+				>
 					Perfil
 				</NavLink>
 			</div>

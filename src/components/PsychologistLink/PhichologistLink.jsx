@@ -15,10 +15,16 @@ function PhichologistLink({ onClick }) {
 			>
 				Citas
 			</NavLink>
-			<NavLink className={styles.linkNav}>
+			<NavLink
+				className={styles.linkNav}
+				onClick={onClick}
+			>
 				Pacientes
 			</NavLink>
-			<NavLink className={styles.linkNav}>
+			<NavLink
+				className={styles.linkNav}
+				onClick={onClick}
+			>
 				Analisis de video
 			</NavLink>
 		</div>

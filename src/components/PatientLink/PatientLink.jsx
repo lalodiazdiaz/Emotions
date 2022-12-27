@@ -2,16 +2,17 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import styles from './PatientLink.module.css';
 
-function PatientLink({ onAction }) {
+function PatientLink({ onAction, onClick }) {
 	return (
 		<>
 			<div className={styles.optionsAside}>
 				<NavLink
 					className={styles.linkNav}
+					onClick={onClick}
 					style={({ isActive }) => ({
 						textDecoration: isActive ? 'underline' : 'none',
 					})}
-					to="/dashboardP/"
+					to="/dashboardP"
 				>
 					Citas y Tareas
 				</NavLink>

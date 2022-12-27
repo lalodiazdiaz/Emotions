@@ -77,14 +77,16 @@ main {
   }
 
   .asideMenuOpen {
-    position: relative;
+    position: absolute;
     display: flex;
     width: 100%;
     margin-top: 90px;
+    height: 90%;
     background-color: #8fe0d1;
     justify-content: space-between;
     align-items: center;
     flex-direction: column;
+    align-self: flex-end;
   }
   
   .resMenu {

@@ -8,7 +8,7 @@ function EmergencyModal({ onAction, isVisible }) {
 		<Modal
 			isVisible={isVisible}
 			onAction={onAction}
-			title="Numeros de Emergencia"
+			title="Lineas de Emergencia"
 		>
 			<div className={styles.contact}>
 				<h2>Línea de la vida</h2>

@@ -1,6 +1,6 @@
 .contact {
   display: flex;
-  width: 100%;
+  width: 90%;
   justify-content: space-evenly;
   align-items: center;
 }
@@ -13,9 +13,8 @@
   cursor: pointer;
   padding: 10px;
   border-radius: 5px;
-  width: 110px;
+  width: 150px;
   background: #66d086;
-  border-color: #66d086;
   text-decoration: none;
 }
 
@@ -23,7 +22,6 @@
   font-size: 28px;
   text-align: start;
   width: 70%;
-  margin-left: 20px;
 }
 
 .callEmergency:hover {
@@ -32,23 +30,20 @@
 
 @media (max-width: 1100px) {
   .contact {
-    flex-direction: column;
-    justify-content: center;
+    flex-direction: row;
     align-items: center;
+    justify-content: center;
   }
 
   .contact h2 {
     font-size: 35px;
-    text-align: center;
-    width: 100%;
-    margin: 0;
+    width: 60%;
   }
 
   .callEmergency {
     height: max-content;
-    width: 140px;
+    width: 150px;
     font-size: 25px;
-    margin-top: 10px;
   }
 }
 

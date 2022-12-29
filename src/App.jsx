@@ -8,9 +8,9 @@ import DatesAndHomeworks from './components/Patient/DatesHomeworks/DatesHomework
 import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute';
 import { RANGE } from './constants';
 
-const userLog = JSON.parse(localStorage.getItem('user'));
-const { range } = userLog ? userLog.data : '';
 function App() {
+	const userLog = JSON.parse(localStorage.getItem('user'));
+	const { range } = userLog ? userLog.data : '';
 	return (
 		<BrowserRouter>
 			<Routes>

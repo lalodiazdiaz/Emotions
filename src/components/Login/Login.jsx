@@ -33,12 +33,7 @@ function Login(props) {
 		dispatch(login({ email, password }))
 			.unwrap()
 			.then(() => {
-				const RANGE = JSON.parse(localStorage.getItem('user'));
-				if (RANGE.data.range === 1) {
-					navigate('/dashboardP');
-				} else {
-					navigate('/dashboardT');
-				}
+				navigate('/dashboard');
 				window.location.reload();
 				Alertify.success(`<b style='color:white;'>Bienvenido
 					</b>`);
@@ -50,12 +45,7 @@ function Login(props) {
 			});
 	};
 	if (isLoggedIn) {
-		const RANGE = JSON.parse(localStorage.getItem('user'));
-		if (RANGE.data.range === 1) {
-			return <Navigate to="/dashboardP" />;
-		} if (RANGE.data.range === 2) {
-			return <Navigate to="/dashboardT" />;
-		}
+		return <Navigate to="/dashboard" />;
 	}
 
 	return (

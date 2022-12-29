@@ -6,6 +6,7 @@ import btnMenu from '../../assets/menuIcon.png';
 import PatientLink from '../PatientLink/PatientLink';
 import PhichologistLink from '../PsychologistLink/PhichologistLink';
 import EmergencyModal from '../EmergencyModal/EmergencyModal';
+import { RANGE } from '../../constants';
 
 function Dashboard() {
 	const loggedUser = window.localStorage.getItem('user');
@@ -44,7 +45,7 @@ function Dashboard() {
 					<p>{NAME}</p>
 				</div>
 				<div>
-					{userLogged.data.range === 1
+					{userLogged.data.range === RANGE.patient
 						? (
 							<PatientLink onAction={modalOpenAction} onClick={closeMenu} />
 						)

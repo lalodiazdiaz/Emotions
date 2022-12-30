@@ -77,6 +77,8 @@ main {
     width: 100%;
     left: -100%;
     transition: 850ms;
+    align-self: flex-end;
+    margin-top: 10%;
   }
 
   .asideMenuOpen {
@@ -161,6 +163,8 @@ main {
     width: 100%;
     left: -100%;
     transition: 850ms;
+    align-self: flex-end;
+    margin-top: 10%;
   }
 
   .asideMenuOpen {

@@ -73,6 +73,8 @@ main {
   }
 
   .asideMenu {
+    height: 90%;
+    width: 100%;
     left: -100%;
     transition: 850ms;
   }
@@ -155,6 +157,8 @@ main {
   }
 
   .asideMenu {
+    height: 90%;
+    width: 100%;
     left: -100%;
     transition: 850ms;
   }

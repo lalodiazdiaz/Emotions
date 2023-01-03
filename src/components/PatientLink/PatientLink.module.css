@@ -2,7 +2,8 @@
   display: flex;
   align-items: center;
   flex-direction: column;
-  height: 200px;
+  justify-content: center;
+  width: 100%;
 }
 
 .linkNav {
@@ -20,7 +21,7 @@
 }
 
 .btnEmergency {
-  border-radius: 100%;
+  border-radius: 50%;
   width: 80px;
   height: 80px;
   background-color: #fe6272;
@@ -28,11 +29,21 @@
   font-size: 20px;
   cursor: pointer;
   border: 0;
-  transform: translate(56%, -1%);
+  align-self: center;
 }
 
 .btnEmergency:hover {
   background-color: #ce3b4a;
+}
+
+.contOptions {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  height: 100%;
 }
 
 @media (max-width: 1300px) {
@@ -40,7 +51,7 @@
     color: white;
     text-align: center;
     width: 100%;
-    font-size: 35px;
+    font-size: 40px;
     font-weight: bold;
     text-decoration: none;
   }
@@ -48,12 +59,7 @@
   .btnEmergency {
     width: 120px;
     height: 120px;
-    font-size: 30px;
-    transform: translate(48%, 45%);
-  }
-
-  .optionsAside {
-    margin-top: -80px;
+    font-size: 40px;
   }
 }
 
@@ -62,15 +68,15 @@
     color: white;
     text-align: center;
     width: 100%;
-    font-size: 25px;
+    font-size: 30px;
     font-weight: bold;
     text-decoration: none;
+    margin-top: 15px;
   }
 
   .btnEmergency {
     height: 80px;
     width: 80px;
-    font-size: 25px;
-    transform: translate(58%, 15%);
+    font-size: 30px;
   }
 }

@@ -5,16 +5,38 @@ import getNextAppointment from '../../../services/Appointments/appointmentsServi
 
 function DatesAndHomeworks() {
 	const [next, setNext] = useState('');
+	const [loading, setloading] = useState(false);
 
+	const local = JSON.parse(localStorage.getItem('user'));
+	const { data } = local;
+	const AuthStr = `Bearer ${data.token}`;
 	useEffect(() => {
-		const res = getNextAppointment();
-		setNext(res);
+		getNextAppointment(AuthStr)
+			.then((result) => {
+				setNext(result[0]);
+			})
+			.finally(() => setloading(true));
 	}, []);
+
+	const { therapistName } = next;
+	const { date } = next;
+	const dateObject = new Date(date);
+	const dateAppointment = dateObject.toLocaleDateString();
+	const timeAppointment = dateObject.toLocaleTimeString();
 	return (
 		<div className={styles.contAppointments}>
 			<div className={styles.Appointments}>
 				<h2>Proxima cita</h2>
-				<NextAppointment title="Psicologo" />
+				{loading
+					? (
+						<NextAppointment
+							date={dateAppointment}
+							name={therapistName}
+							time={timeAppointment}
+							title="Psicologo"
+						/>
+					)
+					: <span>Loading...</span>}
 			</div>
 		</div>
 	);

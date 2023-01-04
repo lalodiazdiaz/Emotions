@@ -5,7 +5,9 @@ function Dates() {
 	return (
 		<div className={styles.contAppointments}>
 			<div className={styles.Appointments}>
-				<h1>Hello Welcome Doctor to the Dates</h1>
+				<div className={styles.nextAppointments}>
+					<h1>Citas</h1>
+				</div>
 			</div>
 		</div>
 	);

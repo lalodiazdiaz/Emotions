@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import NextAppointment from '../NextAppointment/NextAppointment';
+import NextAppointment from '../../NextAppointment/NextAppointent';
 import styles from './DatesHomeworks.module.css';
 import getNextAppointment from '../../../services/Appointments/appointmentsService';
 

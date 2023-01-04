@@ -16,8 +16,16 @@
   height: 100%;
   background-color: #f0eeee;
 }
+.nextAppointments{
+  background-color: white ;
+  display: flex;
+  height: 90%;
+  width: 50%;
+  align-self: flex-start;
+  margin-left: 30px;
+}
 
-@media (max-width:1200px) {
+@media (max-width:1300px) {
   .contAppointments {
     display: flex;
     width: 100%;

@@ -13,12 +13,13 @@
   align-items: center;
   display: flex;
   flex-direction: column;
-  width: max-content;
-  height: max-content;
+  width: 35%;
+  height: 30%;
+  justify-content: center;
 }
 
 .imgLogo {
-  width: 43%;
+  width: 100%;
 }
 
 .contform {
@@ -94,12 +95,16 @@
 @media screen and (max-width: 1200px) {
   .contform {
     height: max-content;
-    width: 55%;
+    width: 70%;
     border: 3px #B2B9BA solid;
     background: white;
     border-radius: 5px;
     justify-content: center;
     align-items: center;
+  }
+
+  .contForm {
+    width: 100%;
   }
 
   .campo {
@@ -115,6 +120,7 @@
     align-items: center;
     padding-left: 10px;
     padding-right: 10px;
+    font-size: 25px;
   }
 
   .input {
@@ -124,22 +130,26 @@
     width: 100%;
   }
 
+  .btnUser {
+    font-size: 25px;
+  }
+
   .btnSend {
     width: 50%;
     height: 40px;
   }
 
   .imgLogo {
-    width: 40%;
+    width: 100%;
   }
 
   .contLogo {
-    align-items: center;
     display: flex;
+    align-items: center;
     justify-content: center;
     margin-bottom: 5%;
     margin-top: 10%;
-    width: 100%;
+    width: 60%;
     height: max-content;
   }
 }
@@ -164,7 +174,7 @@
     justify-content: center;
     flex-direction: column;
     width: 95%;
-  } 
+  }
 
   .contInput {
     flex-direction: column;
@@ -172,7 +182,7 @@
     width: 100%;
   }
 
-  .contInput p{
+  .contInput p {
     font-size: 20px;
     margin-left: 3px;
   }
@@ -195,7 +205,7 @@
   }
 
   .imgLogo {
-    width: 40%;
+    width: 100%;
   }
 
   .contLogo {
@@ -204,8 +214,8 @@
     justify-content: center;
     margin-bottom: 5%;
     margin-top: 10%;
-    width: 100%;
-    height: max-content;
+    width: 80%;
+    height: 20%;
   }
 }
 

@@ -5,7 +5,7 @@ import 'alertifyjs/build/css/alertify.css';
 import { Navigate, useNavigate } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import styles from './Login.module.css';
-import logo from '../../assets/logo.png';
+import logo from '../../assets/logo1.png';
 import { login } from '../../slices/auth';
 
 function Login(props) {
@@ -54,7 +54,7 @@ function Login(props) {
 				<img alt="logo" className={styles.imgLogo} src={logo} />
 			</div>
 			<div className={styles.contform}>
-				<form ref={form} onSubmit={handleSubmit(handleLogin)}>
+				<form ref={form} className={styles.contForm} onSubmit={handleSubmit(handleLogin)}>
 					<div className={styles.campo}>
 						<h2>Log In</h2>
 						<div

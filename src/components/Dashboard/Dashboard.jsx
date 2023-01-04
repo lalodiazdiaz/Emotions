@@ -1,7 +1,7 @@
 import React, { useCallback, useState } from 'react';
 import { NavLink, Outlet } from 'react-router-dom';
 import styles from './Dashboard.module.css';
-import logo from '../../assets/logo.png';
+import logo from '../../assets/logo1.png';
 import btnMenu from '../../assets/menuIcon.png';
 import PatientLink from '../PatientLink/PatientLink';
 import PhichologistLink from '../PsychologistLink/PhichologistLink';
@@ -40,11 +40,10 @@ function Dashboard() {
 			<EmergencyModal isVisible={modal} onAction={modalCloseAction} />
 			<div className={state ? styles.asideMenuOpen : styles.asideMenu}>
 				<div className={styles.headerAside}>
-					<h2>BEGINNING</h2>
 					<img alt="logo" className={styles.logo} src={logo} />
 					<p>{NAME}</p>
 				</div>
-				<div>
+				<div className={styles.options}>
 					{userLogged.data.range === RANGE.patient
 						? (
 							<PatientLink onAction={modalOpenAction} onClick={closeMenu} />

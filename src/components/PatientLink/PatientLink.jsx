@@ -19,18 +19,30 @@ function PatientLink({ onAction, onClick }) {
 				<NavLink
 					className={styles.linkNav}
 					onClick={onClick}
+					style={({ isActive }) => ({
+						textDecoration: isActive ? 'underline' : 'none',
+					})}
+					to="/dashboard/note/"
 				>
 					Notas
 				</NavLink>
 				<NavLink
 					className={styles.linkNav}
 					onClick={onClick}
+					style={({ isActive }) => ({
+						textDecoration: isActive ? 'underline' : 'none',
+					})}
+					to="/dashboard/evidence/"
 				>
 					Evidencias
 				</NavLink>
 				<NavLink
 					className={styles.linkNav}
 					onClick={onClick}
+					style={({ isActive }) => ({
+						textDecoration: isActive ? 'underline' : 'none',
+					})}
+					to="/dashboard/profile/"
 				>
 					Perfil
 				</NavLink>

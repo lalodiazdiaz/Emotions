@@ -18,12 +18,20 @@ function PhichologistLink({ onClick }) {
 			<NavLink
 				className={styles.linkNav}
 				onClick={onClick}
+				style={({ isActive }) => ({
+					textDecoration: isActive ? 'underline' : 'none',
+				})}
+				to="/dashboard/patients"
 			>
 				Pacientes
 			</NavLink>
 			<NavLink
 				className={styles.linkNav}
 				onClick={onClick}
+				style={({ isActive }) => ({
+					textDecoration: isActive ? 'underline' : 'none',
+				})}
+				to="/dashboard/analysis/"
 			>
 				Analisis de video
 			</NavLink>

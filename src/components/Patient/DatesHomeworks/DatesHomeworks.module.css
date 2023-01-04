@@ -9,12 +9,14 @@
 .Appointments {
   display: flex;
   position: absolute;
-  justify-content: center;
   flex-direction: column;
   align-items: center;
   width: 100%;
   height: 100%;
   background-color: #f0eeee;
+}
+h2 {
+  font-size: 35px;
 }
 
 @media (max-width:1200px) {

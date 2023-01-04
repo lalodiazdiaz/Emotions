@@ -4,7 +4,7 @@ import styles from './PatientLink.module.css';
 
 function PatientLink({ onAction, onClick }) {
 	return (
-		<>
+		<div className={styles.contOptions}>
 			<div className={styles.optionsAside}>
 				<NavLink
 					className={styles.linkNav}
@@ -54,7 +54,7 @@ function PatientLink({ onAction, onClick }) {
 			>
 				911
 			</button>
-		</>
+		</div>
 	);
 }
 

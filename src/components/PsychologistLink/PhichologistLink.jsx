@@ -12,7 +12,7 @@ function PhichologistLink({ onClick }) {
 					style={({ isActive }) => ({
 						textDecoration: isActive ? 'underline' : 'none',
 					})}
-					to="/dashboard"
+					to="/dashboard/"
 				>
 					Citas
 				</NavLink>
@@ -22,7 +22,7 @@ function PhichologistLink({ onClick }) {
 					style={({ isActive }) => ({
 						textDecoration: isActive ? 'underline' : 'none',
 					})}
-					to="/dashboard/patients"
+					to="/dashboard/patients/"
 				>
 					Pacientes
 				</NavLink>

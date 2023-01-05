@@ -38,38 +38,6 @@ function PhichologistLink({ onClick }) {
 				</NavLink>
 			</div>
 		</div>
-		<div className={styles.optionsAside}>
-			<NavLink
-				className={styles.linkNav}
-				onClick={onClick}
-				style={({ isActive }) => ({
-					textDecoration: isActive ? 'underline' : 'none',
-				})}
-				to="/dashboard/"
-			>
-				Citas
-			</NavLink>
-			<NavLink
-				className={styles.linkNav}
-				onClick={onClick}
-				style={({ isActive }) => ({
-					textDecoration: isActive ? 'underline' : 'none',
-				})}
-				to="/dashboard/patients"
-			>
-				Pacientes
-			</NavLink>
-			<NavLink
-				className={styles.linkNav}
-				onClick={onClick}
-				style={({ isActive }) => ({
-					textDecoration: isActive ? 'underline' : 'none',
-				})}
-				to="/dashboard/analysis/"
-			>
-				Analisis de video
-			</NavLink>
-		</div>
 	);
 }
 

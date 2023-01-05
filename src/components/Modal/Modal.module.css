@@ -14,8 +14,8 @@
 
 .backModal {
   display: flex;
-  position: relative;
-  background-color: #f0eeee;
+  position: fixed;
+  background-color: #b2b9ba;
   height: 100%;
   width: 100%;
   opacity: .7;

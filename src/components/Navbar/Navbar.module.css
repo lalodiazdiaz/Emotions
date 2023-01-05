@@ -7,11 +7,9 @@
 }
 
 .Navbar>.navLogo {
-  font-weight: 700;
-  font-size: 30px;
-  margin: 15px;
-  color: white;
-  margin-left: 50px;
+  margin-left: 15px;
+  width: 10%;
+  
 }
 
 .link {
@@ -40,18 +38,18 @@
   background-color: #64ba7e;
 }
 
-.logo{
-  height: 80%;
-  margin: 15px;
-}
-
-@media (max-width: 1335px) {
+@media (max-width: 1300px) {
   .Navbar {
     height: 10%;
   }
 
   .btnLog {
     font-size: 30px;
+  }
+
+  .Navbar>.navLogo {
+    margin-left: 10px;
+    width: 30%;
   }
 }
 
@@ -71,9 +69,7 @@
   .navItems{
     width: 40%;
   }
-  .logo{
-    height: 60%;
-  }
+  
   .btnLog{
     padding: 0;
     height: 50px;

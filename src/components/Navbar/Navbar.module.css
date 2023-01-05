@@ -65,10 +65,18 @@
   .Navbar>.navLogo {
     font-size: 30px;
     margin-left: 10px;
+    width: 50%;
   }
-
+ 
+  .navItems{
+    width: 40%;
+  }
   .logo{
     height: 60%;
+  }
+  .btnLog{
+    padding: 0;
+    height: 50px;
   }
 }
 

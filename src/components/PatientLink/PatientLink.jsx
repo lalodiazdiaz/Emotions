@@ -12,7 +12,7 @@ function PatientLink({ onAction, onClick }) {
 					style={({ isActive }) => ({
 						textDecoration: isActive ? 'underline' : 'none',
 					})}
-					to="/dashboard"
+					to="/dashboard/"
 				>
 					Citas y Tareas
 				</NavLink>

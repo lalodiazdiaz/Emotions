@@ -5,7 +5,7 @@ import logo from '../../assets/logo1.png';
 function Navbar() {
 	return (
 		<div className={styles.Navbar}>
-			<img alt="Conectate" className={styles.logo} src={logo} />
+			<img alt="Conectate" className={styles.navLogo} src={logo} />
 			<div className={styles.navItems}>
 				<Link className={styles.btnLog} to="login">
 					LogIn

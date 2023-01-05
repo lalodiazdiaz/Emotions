@@ -1,11 +1,22 @@
 .contNextAppointment {
   display: flex;
   flex-direction: row;
-  width: 85%;
+  width: 50%;
   height: 20%;
   background-color: white;
   border-radius: 5px;
   border: 3px solid #B2B9BA;
+}
+
+.contNextAppointments {
+  display: flex;
+  flex-direction: row;
+  width: 95%;
+  height: 25%;
+  background-color: white;
+  border-radius: 5px;
+  border: 3px solid #B2B9BA;
+  margin-top: 15px;
 }
 
 .contInfomation {
@@ -16,13 +27,23 @@
   height: 100%;
 }
 
-.name {
+.patient {
   width: 100%;
 }
 
-.name p {
+.patient p {
   font-size: 30px;
   margin: 15px;
+}
+
+.therapist {
+  width: 100%;
+}
+
+.therapist p {
+  font-size: 25px;
+  margin: 0px;
+  margin-left: 15px;
 }
 
 .date {
@@ -36,7 +57,20 @@
 .date p {
   font-size: 30px;
   margin: 15px;
+}
 
+.dates {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.dates p {
+  font-size: 25px;
+  margin: 0px;
+  margin-left: 15px;
 }
 
 .contButtons {
@@ -48,7 +82,7 @@
 }
 
 .btnVideocall {
-  width: 50%;
+  width: 0%;
   height: 25%;
   font-size: 25px;
   background-color: #66d086;
@@ -58,10 +92,32 @@
   visibility: hidden;
 }
 
+.btnVideocalls {
+  width: 75%;
+  height: 25%;
+  font-size: 18px;
+  background-color: #66d086;
+  border: 0;
+  border-radius: 5px;
+  color: white;
+  visibility: hidden;
+
+}
+
 .btnCancel {
   width: 50%;
   height: 25%;
   font-size: 25px;
+  background-color: #fe6272;
+  border: 0;
+  border-radius: 5px;
+  color: white;
+}
+
+.btnsCancel {
+  width: 75%;
+  height: 25%;
+  font-size: 18px;
   background-color: #fe6272;
   border: 0;
   border-radius: 5px;

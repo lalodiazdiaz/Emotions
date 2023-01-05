@@ -11,7 +11,7 @@
   position: absolute;
   justify-content: center;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   width: 100%;
   height: 100%;
   background-color: #f0eeee;
@@ -19,11 +19,30 @@
 .nextAppointments{
   background-color: white ;
   display: flex;
-  height: 90%;
-  width: 50%;
+  height: 85%;
+  width: 100%;
   align-self: flex-start;
+  align-items: center;
   margin-left: 30px;
+  flex-direction: column;
+  border-radius: 5px;
+  border: 3px solid #B2B9BA;
+ overflow: auto;
+ overflow-y: scroll;
 }
+.contNextAppointment{
+  position: absolute;
+  display: flex;
+  height: 100%;
+  width: 50%;
+  justify-content: flex-start;
+  align-self: flex-start;
+  flex-direction: column;
+}
+ h1{
+  text-align: center;
+  width: 100%;
+ }
 
 @media (max-width:1300px) {
   .contAppointments {
@@ -35,6 +54,7 @@
     background-color: black;
     z-index: -1;
   }
+
 
   .Appointments {
     position: absolute;

@@ -27,7 +27,7 @@ function App() {
 							<Dashboard />
 						</ProtectedRoute>
 					)}
-					path="dashboard/"
+					path="/dashboard/"
 				>
 					{range === RANGE.patient
 						? (

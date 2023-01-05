@@ -8,6 +8,11 @@ import DatesAndHomeworks from './components/Patient/DatesHomeworks/DatesHomework
 import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute';
 import { RANGE } from './constants';
 
+import { VideoCallContextProvider } from './components/VideoCall/VideoCall';
+import Video from './components/VideoCall/Video';
+import Options from './components/VideoCall/Options';
+import Notifications from './components/VideoCall/Notifications';
+
 function App() {
 	const userLog = JSON.parse(localStorage.getItem('user'));
 	const { range } = userLog ? userLog.data : '';
@@ -16,6 +21,17 @@ function App() {
 			<Routes>
 				<Route element={<Home />} path="/" />
 				<Route element={<Login />} path="login" />
+				<Route
+					element={(
+						<VideoCallContextProvider>
+							<Video />
+							<Options>
+								<Notifications />
+							</Options>
+						</VideoCallContextProvider>
+					)}
+					path="/videoCall"
+				/>
 				<Route
 					element={(
 						<ProtectedRoute>

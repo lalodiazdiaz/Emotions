@@ -4,6 +4,11 @@ import Login from './components/Login/Login';
 import Dashboard from './components/Dashboard/Dashboard';
 import Home from './components/Home/Home';
 import Dates from './components/Psychologist/Dates/Dates';
+import Analysis from './components/Psychologist/Analysis/Analysis';
+import Patients from './components/Psychologist/Patients/Patients';
+import Note from './components/Patient/Note/Note';
+import Evidence from './components/Patient/Evidence/Evidence';
+import Profile from './components/Patient/Profile/Profile';
 import DatesAndHomeworks from './components/Patient/DatesHomeworks/DatesHomeworks';
 import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute';
 import { RANGE } from './constants';
@@ -22,7 +27,7 @@ function App() {
 							<Dashboard />
 						</ProtectedRoute>
 					)}
-					path="dashboard/"
+					path="/dashboard/"
 				>
 					{range === RANGE.patient
 						? (
@@ -45,7 +50,46 @@ function App() {
 								path="/dashboard/"
 							/>
 						)}
-
+					<Route
+						element={(
+							<ProtectedRoute>
+								<Analysis />
+							</ProtectedRoute>
+						)}
+						path="/dashboard/analysis/"
+					/>
+					<Route
+						element={(
+							<ProtectedRoute>
+								<Patients />
+							</ProtectedRoute>
+						)}
+						path="/dashboard/patients/"
+					/>
+					<Route
+						element={(
+							<ProtectedRoute>
+								<Note />
+							</ProtectedRoute>
+						)}
+						path="/dashboard/note/"
+					/>
+					<Route
+						element={(
+							<ProtectedRoute>
+								<Evidence />
+							</ProtectedRoute>
+						)}
+						path="/dashboard/evidence/"
+					/>
+					<Route
+						element={(
+							<ProtectedRoute>
+								<Profile />
+							</ProtectedRoute>
+						)}
+						path="/dashboard/profile/"
+					/>
 				</Route>
 			</Routes>
 		</BrowserRouter>

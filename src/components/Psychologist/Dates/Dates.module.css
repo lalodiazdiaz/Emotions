@@ -17,21 +17,78 @@
   background-color: #f0eeee;
 }
 
+.schedule {
+  font-size: 20px;
+  margin: 1%;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 5px;
+  width: 180px;
+  background: #66d086;
+  border: 0;
+	color: #ffffff; 
+	letter-spacing: 2px; 
+	padding: 18px 30px; 
+	position: fixed;
+	bottom: 40px;
+	right: 40px;
+}
+
+.schedule:hover {
+  background-color: #64ba7e;
+}
+
 @media (max-width:1200px) {
   .contAppointments {
     display: flex;
     width: 100%;
     margin-left: 0px;
-    height: 100%;
-    flex-direction: column-reverse;
-    background-color: black;
-    z-index: -1;
-  }
+    height: 90%;
+    margin-top: 13%;
+    }
 
   .Appointments {
     position: absolute;
     display: flex;
     width: 100%;
-    height: 90%;
+    height: 100%;
+  }
+
+  .schedule {
+    position: absolute;
+  }
+}
+
+@media (max-width: 600px) {
+  .contAppointments {
+    display: flex;
+    width: 100%;
+    margin-left: 0px;
+    height: 100%;
+    margin-top: 20%;
+    }
+
+  .Appointments {
+    position: absolute;
+    display: flex;
+    width: 100%;
+    height: 100%;
+  }
+
+  .schedule {
+    position: absolute;
+    font-size: 20px;
+    margin: 15%;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 5px;
+    width: 180px;
+    background: #66d086;
+    border: 0;
+    color: #ffffff; 
+    letter-spacing: 2px; 
+    padding: 18px 30px; 
+    bottom: 40px;
+    right: -9%;
   }
 }

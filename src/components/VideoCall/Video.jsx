@@ -8,14 +8,14 @@ function Video() {
 		<>
 			<div>
 				<h1>My Video</h1>
-				<video ref={myVideo} autoPlay />
+				<video ref={myVideo} autoPlay><track kind="captions" /></video>
 			</div>
 			<div>
 				{!callEnded && callAccepted
 					&& (
 						<>
 							<h1>User Video</h1>
-							<video ref={userVideo} autoPlay />
+							<video ref={userVideo} autoPlay><track kind="captions" /></video>
 						</>
 					)}
 			</div>

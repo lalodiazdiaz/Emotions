@@ -6,12 +6,11 @@ import Home from './components/Home/Home';
 import Dates from './components/Psychologist/Dates/Dates';
 import DatesAndHomeworks from './components/Patient/DatesHomeworks/DatesHomeworks';
 import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute';
-import { RANGE } from './constants';
-
-import { VideoCallContextProvider } from './components/VideoCall/VideoCall';
 import Video from './components/VideoCall/Video';
 import Options from './components/VideoCall/Options';
 import Notifications from './components/VideoCall/Notifications';
+import { RANGE } from './constants';
+import { VideoCallContextProvider } from './components/VideoCall/VideoCall';
 
 function App() {
 	const userLog = JSON.parse(localStorage.getItem('user'));
@@ -23,12 +22,14 @@ function App() {
 				<Route element={<Login />} path="login" />
 				<Route
 					element={(
-						<VideoCallContextProvider>
-							<Video />
-							<Options>
-								<Notifications />
-							</Options>
-						</VideoCallContextProvider>
+						<ProtectedRoute>
+							<VideoCallContextProvider>
+								<Video />
+								<Options>
+									<Notifications />
+								</Options>
+							</VideoCallContextProvider>
+						</ProtectedRoute>
 					)}
 					path="/videoCall"
 				/>

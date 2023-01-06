@@ -19,6 +19,16 @@
   background-color: rgb(109, 231, 127);
 }
 
+.contOptions {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
 @media (max-width: 1300px) {
   .linkNav {
     color: white;

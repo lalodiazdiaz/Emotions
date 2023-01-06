@@ -1,10 +1,11 @@
 import { Link } from 'react-router-dom';
 import styles from './Navbar.module.css';
+import logo from '../../assets/logo1.png';
 
 function Navbar() {
 	return (
 		<div className={styles.Navbar}>
-			<span className={styles.navLogo}>BEGINNING</span>
+			<img alt="Conectate" className={styles.navLogo} src={logo} />
 			<div className={styles.navItems}>
 				<Link className={styles.btnLog} to="login">
 					LogIn

@@ -4,7 +4,7 @@ import styles from './PatientLink.module.css';
 
 function PatientLink({ onAction, onClick }) {
 	return (
-		<>
+		<div className={styles.contOptions}>
 			<div className={styles.optionsAside}>
 				<NavLink
 					className={styles.linkNav}
@@ -12,25 +12,37 @@ function PatientLink({ onAction, onClick }) {
 					style={({ isActive }) => ({
 						textDecoration: isActive ? 'underline' : 'none',
 					})}
-					to="/dashboard"
+					to="/dashboard/"
 				>
 					Citas y Tareas
 				</NavLink>
 				<NavLink
 					className={styles.linkNav}
 					onClick={onClick}
+					style={({ isActive }) => ({
+						textDecoration: isActive ? 'underline' : 'none',
+					})}
+					to="/dashboard/note/"
 				>
 					Notas
 				</NavLink>
 				<NavLink
 					className={styles.linkNav}
 					onClick={onClick}
+					style={({ isActive }) => ({
+						textDecoration: isActive ? 'underline' : 'none',
+					})}
+					to="/dashboard/evidence/"
 				>
 					Evidencias
 				</NavLink>
 				<NavLink
 					className={styles.linkNav}
 					onClick={onClick}
+					style={({ isActive }) => ({
+						textDecoration: isActive ? 'underline' : 'none',
+					})}
+					to="/dashboard/profile/"
 				>
 					Perfil
 				</NavLink>
@@ -42,7 +54,7 @@ function PatientLink({ onAction, onClick }) {
 			>
 				911
 			</button>
-		</>
+		</div>
 	);
 }
 

@@ -7,11 +7,9 @@
 }
 
 .Navbar>.navLogo {
-  font-weight: 700;
-  font-size: 30px;
-  margin: 15px;
-  color: white;
-  margin-left: 50px;
+  margin-left: 15px;
+  width: 10%;
+  
 }
 
 .link {
@@ -40,20 +38,7 @@
   background-color: #64ba7e;
 }
 
-@media (max-width: 600px) {
-  .Navbar {
-    height: 7%;
-    justify-content: space-evenly;
-    align-items: center;
-  }
-
-  .Navbar>.navLogo {
-    font-size: 30px;
-    margin-left: 10px;
-  }
-}
-
-@media (max-width: 1335px) {
+@media (max-width: 1300px) {
   .Navbar {
     height: 10%;
   }
@@ -61,4 +46,33 @@
   .btnLog {
     font-size: 30px;
   }
+
+  .Navbar>.navLogo {
+    margin-left: 10px;
+    width: 30%;
+  }
 }
+
+@media (max-width: 600px) {
+  .Navbar {
+    height: 10%;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+
+  .Navbar>.navLogo {
+    font-size: 30px;
+    margin-left: 10px;
+    width: 50%;
+  }
+ 
+  .navItems{
+    width: 40%;
+  }
+  
+  .btnLog{
+    padding: 0;
+    height: 50px;
+  }
+}
+

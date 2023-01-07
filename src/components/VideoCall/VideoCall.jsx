@@ -22,6 +22,9 @@ function VideoCallContextProvider({ children }) {
 	const socket = useRef();
 
 	useEffect(() => {
+		if (connectionRef.current) {
+			connectionRef.current.destroy();
+		}
 		const checkUser = localStorage.getItem('user');
 		const user = JSON.parse(localStorage.getItem('user')).data;
 		socket.current = io('http://localhost:5000', {
@@ -31,21 +34,19 @@ function VideoCallContextProvider({ children }) {
 			},
 			reconnectionDelayMax: 10000,
 		});
-		if (checkUser) {
-			const peer = new Peer();
+		const peer = new Peer();
 
-			peer.on('open', (id) => {
-				setmyPeer(id);
+		peer.on('open', (id) => {
+			setmyPeer(id);
+		});
+
+		connectionRef.current = peer;
+
+		navigator.mediaDevices.getUserMedia({ audio: true, video: true })
+			.then((currentStream) => {
+				setstream(currentStream);
+				myVideo.current.srcObject = currentStream;
 			});
-
-			connectionRef.current = peer;
-
-			navigator.mediaDevices.getUserMedia({ audio: true, video: true })
-				.then((currentStream) => {
-					setstream(currentStream);
-					myVideo.current.srcObject = currentStream;
-				});
-		}
 
 		socket.current.on('me', (id) => setMe(id));
 
@@ -59,22 +60,20 @@ function VideoCallContextProvider({ children }) {
 		});
 
 		socket.current.on('destroyPeer', () => {
-			setcallState(!callState);
 			dataConnection.current.close();
 			connectionRef.current.destroy();
+			setcallState(!callState);
 		});
 	}, [callState]);
 
 	const answerCall = () => {
 		setCallAccepted(true);
 		setCall({ isReceivingCall: false });
-		socket.current.emit('answerCall', { from: myPeer, fromId: me, to: call.from });
 
 		connectionRef.current.on('connection', (conn) => {
 			conn.on('open', () => {
 				conn.on('data', (data) => {
 					if (data === 'end') {
-						socket.current.emit('destroyPeer', call.from);
 						connectionRef.current.removeAllListeners();
 						connectionRef.current.destroy();
 						socket.current.disconnect();
@@ -87,6 +86,8 @@ function VideoCallContextProvider({ children }) {
 
 			dataConnection.current = conn;
 		});
+
+		socket.current.emit('answerCall', { from: myPeer, fromId: me, to: call.from });
 
 		connectionRef.current.on('close', () => {
 			setCallAccepted(false);
@@ -114,6 +115,7 @@ function VideoCallContextProvider({ children }) {
 		socket.current.on('callAccepted', (from) => {
 			setCallAccepted(true);
 			clearInterval(interval.current);
+
 			const conn = connectionRef.current.connect(from);
 			conn.on('open', () => {
 				conn.on('data', (data) => {

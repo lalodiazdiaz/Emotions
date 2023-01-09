@@ -27,13 +27,15 @@ function VideoCallContextProvider({ children }) {
 		}
 		const checkUser = localStorage.getItem('user');
 		const user = JSON.parse(localStorage.getItem('user')).data;
-		socket.current = io('http://localhost:5000', {
+		socket.current = io(process.env.REACT_APP_SOCKET_URL, {
 			auth: {
 				id: user.id,
 				token: user.token,
 			},
 			reconnectionDelayMax: 10000,
+			transports: ['websocket'],
 		});
+
 		const peer = new Peer();
 
 		peer.on('open', (id) => {

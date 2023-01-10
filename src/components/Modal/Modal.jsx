@@ -10,12 +10,6 @@ function Modal({ isVisible, onAction, title, children }) {
 				{children}
 				<div className={styles.buttons}>
 					<button
-						className={styles.btnAdd}
-						onClick={onAction}
-						type="button"
-					>Agregar
-					</button>
-					<button
 						className={styles.closeModal}
 						onClick={onAction}
 						type="button"

@@ -12,6 +12,7 @@ function Dates() {
 	const modalCloseAction = useCallback(() => {
 		setModal(false);
 	}, []);
+
 	return (
 		<div className={styles.contAppointments}>
 			<div className={styles.Appointments}>

@@ -51,7 +51,11 @@ function AppointmentModal({ onAction, isVisible }) {
 			onAction={onAction}
 			title="Agendar Cita"
 		>
-			<form ref={form} onSubmit={handleSubmit(handleAppointments)}>
+			<form
+				ref={form}
+				className={styles.data}
+				onSubmit={handleSubmit(handleAppointments)}
+			>
 				<div className={styles.data}>
 					{/* <div className={styles.form}>
 					<h2>Nombre:</h2>

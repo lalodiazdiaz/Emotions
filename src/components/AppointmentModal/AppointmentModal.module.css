@@ -76,6 +76,12 @@
         flex-direction: row;
         width: 100%;
     }
+
+    .btnAdd {
+        height: max-content;
+        width: 160px;
+        font-size: 25px;
+    }
 }
 
 @media (max-width: 600px) {
@@ -111,5 +117,11 @@
         width: 100%;
         justify-content: center;
         align-items: center;
+    }
+
+    .btnAdd {
+        height: max-content;
+        width: 130px;
+        font-size: 20px;
     }
 }

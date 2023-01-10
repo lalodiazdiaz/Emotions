@@ -7,7 +7,7 @@ const userLogged = JSON.parse(loggedUser);
 const ACCESS_TOKEN = userLogged.data.token;
 
 const headers = {
-	headers: { Authorization: `token ${ACCESS_TOKEN}` },
+	headers: { Authorization: `Bearer ${ACCESS_TOKEN}` },
 };
 
 console.log(headers);
@@ -25,8 +25,9 @@ const getappointments = (date, time) => axios
 	});
 
 const postappointments = (idUser, idPatient, date) => {
-	axios.post(API_URL, headers, {
+	axios.post(API_URL, {
 		date,
+		headers,
 		idPatient,
 		idUser,
 	})

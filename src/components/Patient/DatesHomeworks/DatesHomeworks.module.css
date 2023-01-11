@@ -21,7 +21,7 @@ h2 {
   font-size: 35px;
 }
 
-.loaderContainer{
+.notAppointments {
   display: flex;
   width: 90%;
   height: 20%;
@@ -32,18 +32,7 @@ h2 {
   justify-content: center;
 }
 
-.notAppointments{
-  display: flex;
-  width: 90%;
-  height: 20%;
-  background-color: white;
-  border-radius: 5px;
-  border: 3px solid #B2B9BA;
-  align-items: center;
-  justify-content: center;
-}
-
-.notAppointments p{
+.notAppointments p {
 font-size: 25px;
 color: gray;
 }

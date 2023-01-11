@@ -68,7 +68,7 @@ function Dates() {
 							</div>
 						)
 						: (
-							<div className={styles.loaderContainer}>
+							<div className={styles.notAppointment}>
 								<p>No tienes citas pendientes</p>
 							</div>
 						)}

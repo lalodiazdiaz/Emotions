@@ -14,7 +14,6 @@ function NextAppointment({ onAction, date, name, time, title, id }) {
 	const AuthStr = `Bearer ${token}`;
 
 	const handleDeleteAppointment = async () => {
-		const btnCancel = document.getElementById('btnCancel');
 		setIsVisible(true);
 		await dispatch(deleteAppoitnment({ AuthStr, id }))
 			.then((res) => {
@@ -62,7 +61,8 @@ function NextAppointment({ onAction, date, name, time, title, id }) {
 						? styles.btnVideocall
 						: styles.btnVideocalls}
 					type="button"
-				>Videollamada
+				>
+					Videollamada
 				</button>
 				<button
 					className={range === RANGE.patient
@@ -71,7 +71,8 @@ function NextAppointment({ onAction, date, name, time, title, id }) {
 					disabled={isVisible}
 					onClick={handleDeleteAppointment}
 					type="button"
-				>Cancelar
+				>
+					Cancelar
 				</button>
 			</div>
 		</div>

@@ -18,7 +18,6 @@ function NextAppointment({ onAction, date, name, time, title, id }) {
 		setIsVisible(true);
 		await dispatch(deleteAppoitnment({ AuthStr, id }))
 			.then((res) => {
-				console.log(res);
 				if (res.payload.isValid) {
 					Alertify.success(`<b style='color:white;'>Cita cancelada
 					</b>`);

@@ -1,10 +1,28 @@
 import React from 'react';
+import { useDispatch } from 'react-redux';
+import Alertify from 'alertifyjs';
 import styles from './NextAppointment.module.css';
 import { RANGE } from '../../constants';
+import { deleteAppoitnment } from '../../slices/Appointmrent';
+import 'alertifyjs/build/css/alertify.css';
 
-function NextAppointment({ action, date, name, time, title }) {
+function NextAppointment({ onAction, date, name, time, title, id }) {
+	 const dispatch = useDispatch();
 	const local = JSON.parse(localStorage.getItem('user'));
-	const { range } = local.data;
+	const { token, range } = local.data;
+	const AuthStr = `Bearer ${token}`;
+
+	const handleDeleteAppointment = () => {
+		dispatch(deleteAppoitnment({ AuthStr, id }))
+			.then((res) => {
+				if (res.payload.isValidate) {
+					Alertify.success(`<b style='color:white;'>Bienvenido
+					</b>`);
+				}
+			});
+		onAction();
+	};
+
 	return (
 		<div className={range === RANGE.patient
 			? styles.contNextAppointment
@@ -38,15 +56,16 @@ function NextAppointment({ action, date, name, time, title }) {
 			<div className={styles.contButtons}>
 				<button
 					className={range === RANGE.patient
-					 ? styles.btnVideocall
-					 : styles.btnVideocalls}
+						? styles.btnVideocall
+						: styles.btnVideocalls}
 					type="button"
-				>{action}
+				>Videollamada
 				</button>
 				<button
 					className={range === RANGE.patient
-					 ? styles.btnCancel
-					 : styles.btnsCancel}
+						? styles.btnCancel
+						: styles.btnsCancel}
+					onClick={handleDeleteAppointment}
 					type="button"
 				>Cancelar
 				</button>

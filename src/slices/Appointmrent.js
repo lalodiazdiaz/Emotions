@@ -21,6 +21,7 @@ export const getappointment = createAsyncThunk(
 		}
 	},
 );
+
 export const deleteAppoitnment = createAsyncThunk(
 	'auth/appointments',
 	async ({ AuthStr, id }, thunkAPI) => {

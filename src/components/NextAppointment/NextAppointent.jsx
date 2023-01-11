@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import Alertify from 'alertifyjs';
 import styles from './NextAppointment.module.css';
@@ -7,16 +7,20 @@ import { deleteAppoitnment } from '../../slices/Appointmrent';
 import 'alertifyjs/build/css/alertify.css';
 
 function NextAppointment({ onAction, date, name, time, title, id }) {
+	const [isVisible, setIsVisible] = useState(false);
 	 const dispatch = useDispatch();
 	const local = JSON.parse(localStorage.getItem('user'));
 	const { token, range } = local.data;
 	const AuthStr = `Bearer ${token}`;
 
-	const handleDeleteAppointment = () => {
-		dispatch(deleteAppoitnment({ AuthStr, id }))
+	const handleDeleteAppointment = async () => {
+		const btnCancel = document.getElementById('btnCancel');
+		setIsVisible(true);
+		await dispatch(deleteAppoitnment({ AuthStr, id }))
 			.then((res) => {
-				if (res.payload.isValidate) {
-					Alertify.success(`<b style='color:white;'>Bienvenido
+				console.log(res);
+				if (res.payload.isValid) {
+					Alertify.success(`<b style='color:white;'>Cita cancelada
 					</b>`);
 				}
 			});
@@ -65,6 +69,7 @@ function NextAppointment({ onAction, date, name, time, title, id }) {
 					className={range === RANGE.patient
 						? styles.btnCancel
 						: styles.btnsCancel}
+					disabled={isVisible}
 					onClick={handleDeleteAppointment}
 					type="button"
 				>Cancelar

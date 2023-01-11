@@ -139,6 +139,15 @@
 }
 
 
+.btnVideocalls:hover {
+  background-color: #64ba7e;
+}
+
+.btnsCancel:hover {
+  background-color: #e24f5e;
+}
+
+
 
 @media (max-width:1200px) {
   .contNextAppointment {

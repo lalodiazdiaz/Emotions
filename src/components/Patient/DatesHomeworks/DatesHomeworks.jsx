@@ -24,10 +24,10 @@ function DatesAndHomeworks() {
 			.then((res) => {
 				setNext(res.data);
 			}).finally(() => setloading(true));
-	}, []);
+	}, [setNext]);
 
-	const updateList = () => {
-		dispatch(getappointment({ AuthStr, params }))
+	const updateList = async () => {
+	 await	dispatch(getappointment({ AuthStr, params }))
 			.unwrap()
 			.then((res) => {
 				setNext(res.data);

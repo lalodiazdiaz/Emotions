@@ -12,8 +12,8 @@ export const createAppointment = createAsyncThunk(
 			idPacient,
 			idUser,
 		});
-		console.log(res.data);
-		return res.data;
+		console.log(res);
+		return res;
 	},
 );
 

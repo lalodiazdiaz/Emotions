@@ -27,8 +27,10 @@ function AppointmentModal({ onAction, isVisible }) {
 
 	const saveAppointment = () => {
 		const { date, hour, idPacient, idUser } = appointment;
+		console.log(hour);
+		console.log(appointment);
 
-		dispatch(createAppointment({ date, hour, idPacient, idUser }))
+		dispatch(createAppointment(appointment))
 			.unwrap()
 			.then(() => {
 				setAppointment({
@@ -55,21 +57,20 @@ function AppointmentModal({ onAction, isVisible }) {
 			<div className={styles.data}>
 				<div className={styles.data}>
 					{/* <div className={styles.form}>
-					<h2>Nombre:</h2>
-					<input
-						className={styles.input}
-						name="userName"
-						placeholder="Nombre del Usuario"
-						type="text"
-					/>
-				</div> */}
+						<h2>Nombre:</h2>
+						<input
+							className={styles.input}
+							name="pacient"
+							placeholder="Nombre del Usuario"
+							type="text"
+						/>
+					</div> */}
 					<div className={styles.form}>
 						<h2>Fecha:</h2>
 						<input
 							className={styles.input}
 							name="date"
 							onChange={handleInputChange}
-							placeholder="Fecha de la cita"
 							type="date"
 							value={appointment.date || ''}
 						/>
@@ -78,9 +79,10 @@ function AppointmentModal({ onAction, isVisible }) {
 						<h2>Hora:</h2>
 						<input
 							className={styles.input}
+							// defaultValue="hh:mm:ss"
+							format="hh:mm:ss"
 							name="hour"
 							onChange={handleInputChange}
-							placeholder="Hora de la cita"
 							type="time"
 							value={appointment.hour || ''}
 						/>

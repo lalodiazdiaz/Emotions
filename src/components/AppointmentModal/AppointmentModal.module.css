@@ -19,7 +19,7 @@
     cursor: pointer;
     padding: 10px;
     border-radius: 5px;
-    width: 550px;
+    width: 130%;
     text-decoration: none;
 }
 
@@ -37,7 +37,7 @@
     cursor: pointer;
     padding: 10px;
     border-radius: 5px;
-    width: 130px;
+    width: 120px;
     background: #66d086;
     border: 0;
     flex-direction: row;
@@ -67,7 +67,7 @@
         cursor: pointer;
         padding: 10px;
         border-radius: 5px;
-        width: 650px;
+        width: 100%;
         text-decoration: none;
         }
 
@@ -79,7 +79,7 @@
 
     .btnAdd {
         height: max-content;
-        width: 160px;
+        width: 142px;
         font-size: 25px;
     }
 }
@@ -121,7 +121,7 @@
 
     .btnAdd {
         height: max-content;
-        width: 130px;
+        width: 115px;
         font-size: 20px;
     }
 }

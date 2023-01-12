@@ -4,13 +4,16 @@ const API_URL = `${process.env.REACT_APP_API_BASE_URL}/appointments`;
 
 const loggedUser = window.localStorage.getItem('user');
 const userLogged = JSON.parse(loggedUser);
-const ACCESS_TOKEN = userLogged.data.token;
+let ACCESS_TOKEN = '';
 
-const headers = {
-	headers: { Authorization: `Bearer ${ACCESS_TOKEN}` },
+if (userLogged) {
+	ACCESS_TOKEN = userLogged.data.token;
+}
+
+const header = {
+	Authorization: `Bearer ${ACCESS_TOKEN}`,
+	'Content-type': 'application/json; charset=UTF-8',
 };
-
-console.log(headers);
 
 const getappointments = (date, time) => axios
 	.get(API_URL, {
@@ -24,16 +27,13 @@ const getappointments = (date, time) => axios
 		return response.data;
 	});
 
-const postappointments = (idUser, idPatient, date) => {
-	axios.post(API_URL, {
-		date,
-		headers,
-		idPatient,
-		idUser,
+const postappointments = (data) => {
+	axios.post(API_URL, data, {
+		headers: header,
 	})
 		.then((response) => {
-			if (response.data.data.token) { return response.data; }
-			return 0;
+			console.log(response.data);
+			return response.data;
 		})
 		.catch((error) => {
 			console.log(error);

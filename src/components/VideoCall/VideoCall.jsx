@@ -64,22 +64,28 @@ function VideoCallContextProvider({ children }) {
 		socket.current.on('destroyPeer', () => {
 			dataConnection.current.close();
 			connectionRef.current.destroy();
+			socket.current.disconnect();
 			setcallState(!callState);
+		});
+
+		connectionRef.current.on('call', (myCall) => {
+			myCall.answer(myVideo.current.srcObject);
+			myCall.on('stream', (currentStream) => {
+				userVideo.current.srcObject = currentStream;
+			});
 		});
 	}, [callState]);
 
 	const answerCall = () => {
-		setCallAccepted(true);
 		setCall({ isReceivingCall: false });
 
 		connectionRef.current.on('connection', (conn) => {
 			conn.on('open', () => {
 				conn.on('data', (data) => {
 					if (data === 'end') {
-						connectionRef.current.removeAllListeners();
+						conn.close();
 						connectionRef.current.destroy();
 						socket.current.disconnect();
-						conn.close();
 						setCallAccepted(false);
 						setcallState(!callState);
 					}
@@ -96,12 +102,7 @@ function VideoCallContextProvider({ children }) {
 			setcallState(!callState);
 		});
 
-		connectionRef.current.on('call', (myCall) => {
-			myCall.answer(myVideo.current.srcObject);
-			myCall.on('stream', (currentStream) => {
-				userVideo.current.srcObject = currentStream;
-			});
-		});
+		setCallAccepted(true);
 	};
 
 	const callUser = (id) => {
@@ -122,11 +123,9 @@ function VideoCallContextProvider({ children }) {
 			conn.on('open', () => {
 				conn.on('data', (data) => {
 					if (data === 'end') {
-						socket.current.emit('destroyPeer', id);
-						connectionRef.current.removeAllListeners();
+						conn.close();
 						connectionRef.current.destroy();
 						socket.current.disconnect();
-						conn.close();
 						setCallAccepted(false);
 						setcallState(!callState);
 					}
@@ -141,6 +140,7 @@ function VideoCallContextProvider({ children }) {
 		});
 
 		connectionRef.current.on('close', () => {
+			dataConnection.current.close();
 			setCallAccepted(false);
 			setcallState(!callState);
 		});

@@ -68,6 +68,23 @@ a {
   font-weight: bold;
 }
 
+.btnLogout{
+  background-color: #8fe0d1;
+  color: white;
+  text-align: center;
+  width: 100%;
+  font-size: 25px;
+  font-weight: bold;
+  text-decoration: none;
+  margin-top: 15px;
+  border: 0;
+  margin-bottom: 10px;
+}
+
+.btnLogout:hover {
+  background-color: rgb(109, 231, 127);
+}
+
 main {
   display: flex;
   align-self: flex-start;
@@ -167,6 +184,10 @@ main {
   .options {
     height: 60%;
   }
+
+  .btnLogout{
+    font-size: 35px;
+  }
 }
 
 @media (max-width: 700px) {
@@ -235,5 +256,9 @@ main {
 
   .options {
     height: 50%;
+  }
+
+  .btnLogout{
+    font-size: 28px;
   }
 }

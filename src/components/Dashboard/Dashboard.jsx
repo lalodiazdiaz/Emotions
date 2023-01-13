@@ -1,5 +1,7 @@
 import React, { useCallback, useState } from 'react';
-import { NavLink, Outlet } from 'react-router-dom';
+import { NavLink, Outlet, useNavigate } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import Alertify from 'alertifyjs';
 import styles from './Dashboard.module.css';
 import logo from '../../assets/logo1.png';
 import btnMenu from '../../assets/menuIcon.png';
@@ -7,12 +9,18 @@ import PatientLink from '../PatientLink/PatientLink';
 import PhichologistLink from '../PsychologistLink/PhichologistLink';
 import EmergencyModal from '../EmergencyModal/EmergencyModal';
 import { RANGE } from '../../constants';
+import logout from '../../slices/Logout';
 
 function Dashboard() {
 	const loggedUser = window.localStorage.getItem('user');
 	const userLogged = JSON.parse(loggedUser);
 	const [state, setState] = useState(false);
 	const NAME = userLogged.data.fullName;
+	const dispatch = useDispatch();
+	const local = JSON.parse(localStorage.getItem('user'));
+	const { token } = local.data;
+	const AuthStr = `Bearer ${token}`;
+	const navigate = useNavigate();
 
 	const asideOpenAction = () => {
 		if (!state) {
@@ -35,6 +43,17 @@ function Dashboard() {
 		setModal(false);
 	}, []);
 
+	const logoutSession = async () => {
+		await dispatch(logout({ AuthStr }))
+			.then((result) => {
+				console.log(result.payload.isValid);
+				setState(false);
+			}).catch((err) => {
+			});
+		navigate('/login', { replace: true });
+		navigate(0);
+	};
+
 	return (
 		<div className={styles.contMain}>
 			<EmergencyModal isVisible={modal} onAction={modalCloseAction} />
@@ -52,9 +71,9 @@ function Dashboard() {
 							<PhichologistLink onClick={closeMenu} />
 						)}
 				</div>
-				<NavLink className={styles.linkNav} to="/">
+				<button className={styles.btnLogout} onClick={logoutSession} type="button">
 					Cerrar sesion
-				</NavLink>
+				</button>
 			</div>
 			<div className={styles.resMenu}>
 				<button

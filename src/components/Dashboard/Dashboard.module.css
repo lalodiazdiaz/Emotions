@@ -68,7 +68,7 @@ a {
   font-weight: bold;
 }
 
-.btnLogout{
+.btnLogout {
   background-color: #8fe0d1;
   color: white;
   text-align: center;
@@ -185,7 +185,7 @@ main {
     height: 60%;
   }
 
-  .btnLogout{
+  .btnLogout {
     font-size: 35px;
   }
 }
@@ -258,7 +258,7 @@ main {
     height: 50%;
   }
 
-  .btnLogout{
+  .btnLogout {
     font-size: 28px;
   }
 }

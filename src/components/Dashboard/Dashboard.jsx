@@ -46,7 +46,6 @@ function Dashboard() {
 	const logoutSession = async () => {
 		await dispatch(logout({ AuthStr }))
 			.then((result) => {
-				console.log(result.payload.isValid);
 				setState(false);
 			}).catch((err) => {
 			});

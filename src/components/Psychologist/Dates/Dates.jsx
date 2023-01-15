@@ -28,7 +28,7 @@ function Dates() {
 	const AuthStr = `Bearer ${data.token}`;
 	const params = `/appointments?page=${page}&size=10&order=date&way=1`;
 	useEffect(() => {
-		 dispatch(getappointment({ AuthStr, params }))
+		dispatch(getappointment({ AuthStr, params }))
 			.unwrap()
 			.then((res) => {
 				setNext(res.data);
@@ -84,7 +84,6 @@ function Dates() {
 						)}
 
 				</div>
-				<h1>Hello Welcome Doctor to the Dates</h1>
 				<button
 					className={styles.schedule}
 					onClick={modalOpenAction}

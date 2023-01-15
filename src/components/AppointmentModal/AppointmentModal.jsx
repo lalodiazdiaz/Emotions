@@ -1,12 +1,99 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import Alertify from 'alertifyjs';
+import Autosuggest from 'react-autosuggest';
 import Modal from '../Modal/Modal';
 import 'alertifyjs/build/css/alertify.css';
 import styles from './AppointmentModal.module.css';
 import { createAppointment } from '../../slices/appointments';
+import searchService from '../../services/Users/usersServices';
 
 function AppointmentModal({ onAction, isVisible }) {
+	const [data, setData] = useState([]);
+	const [users, setUsers] = useState([]);
+	const [value, setValue] = useState('');
+	const [userSeleccionado, setUserSeleccionado] = useState({});
+	const getDataUsers = () => {
+		searchService.searchUsers()
+			.then((response) => {
+				setUsers(response.data.data);
+				setData(response.data.data);
+			})
+			.catch((e) => {
+				console.log(e);
+			});
+	};
+
+	useEffect(() => {
+		getDataUsers();
+	}, []);
+
+	// eslint-disable-next-line no-shadow
+	const onSuggestionsFetchRequested = ({ value }) => {
+		// eslint-disable-next-line no-use-before-define
+		setUsers(filtrarUsers(value));
+	};
+
+	// eslint-disable-next-line no-shadow
+	const filtrarUsers = (value) => {
+		const inputValue = value.trim().toLowerCase();
+		const inputLength = inputValue.length;
+
+		const filtrado = data.filter((user) => {
+			const textoCompleto = user.name;
+
+			if (textoCompleto.toLowerCase()
+				.normalize('NFD')
+				.replace(/[\u0300-\u036f]/g, '')
+				.includes(inputValue)) {
+				return user;
+			}
+			return 0;
+		});
+		return inputLength <= 2 ? [] : filtrado;
+	};
+
+	const onSuggestionsClearRequested = () => {
+		setUsers([]);
+	};
+
+	const getSuggestionValue = (suggestion) => `${suggestion.name}`;
+
+	const renderSuggestion = (suggestion) => (
+		<div
+			className="sugerencia"
+			// eslint-disable-next-line no-use-before-define
+			onChange={() => seleccionarUser(suggestion)}
+		>
+			{`${suggestion.name} ${suggestion.middleName} ${suggestion.lastName}`}
+		</div>
+	);
+
+	const seleccionarUser = (user) => {
+		setUserSeleccionado(user);
+	};
+
+	const onChange = (e, { newValue }) => {
+		setValue(newValue);
+	};
+
+	const inputProps = {
+		onChange,
+		placeholder: 'Nombre del usuario',
+		value,
+	};
+
+	const eventEnter = (e) => {
+		if (e.key === 'Enter') {
+			const userActual = data.filter((u) => u.name === e.target.value.trim());
+			const user = {
+				// eslint-disable-next-line no-underscore-dangle
+				id: userActual[0]._id,
+			};
+			seleccionarUser(user);
+		}
+	};
+
 	const loggedUser = window.localStorage.getItem('user');
 	const userLogged = JSON.parse(loggedUser);
 	const dispatch = useDispatch();
@@ -14,21 +101,20 @@ function AppointmentModal({ onAction, isVisible }) {
 	const initialAppointmentState = {
 		date: '',
 		hour: '',
-		idPacient: '63ab303d9523e22c9ca14583',
+		idPacient: '63b70b02c58705e228d6c34a',
 		idUser: userLogged.data.id,
 	};
 
 	const [appointment, setAppointment] = useState(initialAppointmentState);
 
 	const handleInputChange = (event) => {
+		// eslint-disable-next-line no-shadow
 		const { name, value } = event.target;
 		setAppointment({ ...appointment, [name]: value });
 	};
 
 	const saveAppointment = () => {
 		const { date, hour, idPacient, idUser } = appointment;
-		console.log(hour);
-		console.log(appointment);
 
 		dispatch(createAppointment(appointment))
 			.unwrap()
@@ -39,13 +125,6 @@ function AppointmentModal({ onAction, isVisible }) {
 					idPacient,
 					idUser,
 				});
-				Alertify.success(`<b style='color:white;'>Se registro su cita correctamente.
-				</b>`);
-			})
-			.catch((e) => {
-				console.log(e);
-				Alertify.error(`<b style='color:white;'>No se logro registrar su cita.
-				</b>`);
 			});
 	};
 	return (
@@ -56,21 +135,27 @@ function AppointmentModal({ onAction, isVisible }) {
 		>
 			<div className={styles.data}>
 				<div className={styles.data}>
-					{/* <div className={styles.form}>
+					<div className={styles.form}>
 						<h2>Nombre:</h2>
-						<input
-							className={styles.input}
-							name="pacient"
-							placeholder="Nombre del Usuario"
-							type="text"
-						/>
-					</div> */}
+						{/* <Autosuggest
+							className={styles.autocomplete}
+							getSuggestionValue={getSuggestionValue}
+							inputProps={inputProps}
+							onChange={handleInputChange}
+							onSuggestionsClearRequested={onSuggestionsClearRequested}
+							onSuggestionSelected={eventEnter}
+							onSuggestionsFetchRequested={onSuggestionsFetchRequested}
+							renderSuggestion={renderSuggestion}
+							suggestions={users}
+						/> */}
+					</div>
 					<div className={styles.form}>
 						<h2>Fecha:</h2>
 						<input
 							className={styles.input}
 							name="date"
 							onChange={handleInputChange}
+							required
 							type="date"
 							value={appointment.date || ''}
 						/>
@@ -79,10 +164,10 @@ function AppointmentModal({ onAction, isVisible }) {
 						<h2>Hora:</h2>
 						<input
 							className={styles.input}
-							// defaultValue="hh:mm:ss"
-							format="hh:mm:ss"
 							name="hour"
 							onChange={handleInputChange}
+							required
+							step="30"
 							type="time"
 							value={appointment.hour || ''}
 						/>

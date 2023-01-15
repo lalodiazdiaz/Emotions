@@ -1,7 +1,9 @@
 import axios from 'axios';
+import Alertify from 'alertifyjs';
+import 'alertifyjs/build/css/alertify.css';
 
-const API_URL = `${process.env.REACT_APP_API_BASE_URL}/appointments`;
-
+// const API_URL = `${process.env.REACT_APP_API_BASE_URL}/appointments`;
+const API_URL = 'http://localhost:5000/api/appointments';
 const loggedUser = window.localStorage.getItem('user');
 const userLogged = JSON.parse(loggedUser);
 let ACCESS_TOKEN = '';
@@ -32,6 +34,14 @@ const postappointments = (data) => {
 		headers: header,
 	})
 		.then((response) => {
+			if (response.data.isValid === true) {
+				Alertify.success(`<b style='color:white;'>Se registro su cita correctamente.
+				</b>`);
+			}
+			if (response.data.isValid === false) {
+				Alertify.error(`<b style='color:white;'>Esta fecha y hora no están disponibles.
+				</b>`);
+			}
 			console.log(response.data);
 			return response.data;
 		})

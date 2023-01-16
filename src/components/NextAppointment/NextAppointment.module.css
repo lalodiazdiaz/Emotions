@@ -189,12 +189,13 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 50%;
+    height: 100%;
   }
 
-  .dates p {
+  .date p {
     margin: 0;
-    font-size: 25px;
+    font-size: 30px;
+    text-align: center;
   }
 
   .patient {
@@ -213,20 +214,6 @@
   .therapist p {
     font-size: 25px;
     margin: 0px;
-    margin-left: 15px;
-  }
-
-  .date {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
-    width: 100%;
-  }
-
-  .date p {
-    font-size: 30px;
-    margin: 0;
     margin-left: 15px;
   }
 

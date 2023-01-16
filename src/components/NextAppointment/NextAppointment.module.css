@@ -29,11 +29,12 @@
 
 .patient {
   width: 100%;
+  margin-left: 2%;
 }
 
 .patient p {
-  font-size: 30px;
-  margin: 15px;
+  font-size: 35px;
+  margin: 0
 }
 
 .therapist {
@@ -51,12 +52,15 @@
   flex-direction: row;
   justify-content: flex-start;
   align-items: flex-start;
-  width: 100%;
+  width: 40%;
+  margin-left: 2%;
 }
 
 .date p {
-  font-size: 30px;
-  margin: 15px;
+  font-size: 35px;
+  margin: 0;
+  margin-left: 10px;
+  text-align: start;
 }
 
 .dates {

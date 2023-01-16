@@ -11,13 +11,8 @@ function Video() {
 				<video ref={myVideo} autoPlay><track kind="captions" /></video>
 			</div>
 			<div>
-				{!callEnded && callAccepted
-					&& (
-						<>
-							<h1>User Video</h1>
-							<video ref={userVideo} autoPlay><track kind="captions" /></video>
-						</>
-					)}
+				<h1>User Video</h1>
+				<video ref={userVideo} autoPlay><track kind="captions" /></video>
 			</div>
 		</>
 	);

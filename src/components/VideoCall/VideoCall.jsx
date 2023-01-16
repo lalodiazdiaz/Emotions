@@ -25,7 +25,6 @@ function VideoCallContextProvider({ children }) {
 		if (connectionRef.current) {
 			connectionRef.current.destroy();
 		}
-		const checkUser = localStorage.getItem('user');
 		const user = JSON.parse(localStorage.getItem('user')).data;
 		socket.current = io(process.env.REACT_APP_SOCKET_URL, {
 			auth: {

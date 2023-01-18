@@ -17,6 +17,36 @@
   background-color: #f0eeee;
 }
 
+.highlight {
+  font-weight: 900;
+  color:rgba(0, 156, 247, 0.886);
+}
+
+.calendar {
+  margin-left: auto;
+  /* position: absolute;  */
+  display: flex;
+  flex-direction: column;
+  background-color: yellowgreen;
+  height: 80%;
+  width: 50%;
+  
+}
+
+.indicators {
+  margin-left: auto;
+  position: relative; 
+}
+
+.box {
+  width: 25vh;
+  max-width: 15px;
+  height: 25vh;
+  max-height: 15px;
+  position: relative;
+  background:red;
+}
+
 @media (max-width:1200px) {
   .contAppointments {
     display: flex;
@@ -33,5 +63,19 @@
     display: flex;
     width: 100%;
     height: 90%;
+  }
+
+  .calendar {
+    margin-right: auto;
+    padding: 10px;
+    position: relative; 
+    top: -80px;
+  }
+  
+  .indicators {
+    margin-right: auto;
+    padding: 150px;
+    position: relative; 
+    top: -230px;
   }
 }

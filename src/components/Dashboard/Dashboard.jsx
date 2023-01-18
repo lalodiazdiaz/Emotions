@@ -11,6 +11,7 @@ import { RANGE } from '../../constants';
 function Dashboard() {
 	const loggedUser = window.localStorage.getItem('user');
 	const userLogged = JSON.parse(loggedUser);
+	const { range } = userLogged.data;
 	const [state, setState] = useState(false);
 	const NAME = userLogged.data.fullName;
 
@@ -49,7 +50,7 @@ function Dashboard() {
 							<PatientLink onAction={modalOpenAction} onClick={closeMenu} />
 						)
 						: (
-							<PhichologistLink onClick={closeMenu} />
+							<PhichologistLink onClick={closeMenu} Range={range} />
 						)}
 				</div>
 				<NavLink className={styles.linkNav} to="/">

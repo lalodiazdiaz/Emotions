@@ -11,7 +11,7 @@
   position: absolute;
   justify-content: center;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   width: 100%;
   height: 100%;
   background-color: #f0eeee;
@@ -24,21 +24,29 @@
 
 .calendar {
   margin-left: auto;
-  /* position: absolute;  */
   display: flex;
   flex-direction: column;
-  background-color: yellowgreen;
-  height: 80%;
+  height: 100%;
   width: 50%;
-  
+  justify-content: center;
+  align-items: center;
 }
 
 .indicators {
-  margin-left: auto;
-  position: relative; 
+  display: flex;
+  flex-direction: row;
+  width: 100%;
 }
 
-.box {
+.ContainerBox {
+  display: flex;
+  width: 33%;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.FirstBox {
   width: 25vh;
   max-width: 15px;
   height: 25vh;
@@ -47,7 +55,71 @@
   background:red;
 }
 
-@media (max-width:1200px) {
+.SecondBox {
+  width: 25vh;
+  max-width: 15px;
+  height: 25vh;
+  max-height: 15px;
+  position: relative;
+  background:rgba(0, 156, 247, 0.886);
+}
+
+.ThirdBox {
+  width: 25vh;
+  max-width: 15px;
+  height: 25vh;
+  max-height: 15px;
+  position: relative;
+  background: black;
+}
+
+.contNextAppointments {
+  display: flex;
+  height: 95%;
+  width: 45%;
+  justify-content: flex-start;
+  align-self: flex-start;
+  flex-direction: column;
+  align-items: center;
+  margin-left: 30px;
+}
+
+.gridNextAppointments {
+  display: grid;
+  grid-auto-rows: 25%;
+  overflow: auto;
+  grid-gap: 10px;
+  background-color: white;
+  padding-bottom: 5px;
+  border-radius: 5px;
+  border: 3px solid #B2B9BA;
+  height: 100%;
+  width: 100%;
+}
+
+h1 {
+  text-align: center;
+  width: 100%;
+}
+
+.notAppointment {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  border-radius: 5px;
+  border: 3px solid #B2B9BA;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.notAppointment p {
+  font-size: 25px;
+  color: gray;
+}
+
+@media (max-width:1300px) {
   .contAppointments {
     display: flex;
     width: 100%;
@@ -63,19 +135,90 @@
     display: flex;
     width: 100%;
     height: 90%;
+    justify-content: flex-start;
+    flex-direction: column;
+  }
+
+  .contNextAppointments {
+    display: flex;
+    height: 45%;
+    width: 90%;
+    justify-content: flex-start;
+    align-self: flex-start;
+    flex-direction: column;
+    margin-left: 30px;
+  }
+
+  .gridNextAppointments {
+    display: grid;
+    grid-auto-rows: 45%;
+    overflow: auto;
+    grid-gap: 10px;
+    background-color: white;
+    padding-bottom: 5px;
+    border-radius: 5px;
+    border: 3px solid #B2B9BA;
   }
 
   .calendar {
-    margin-right: auto;
-    padding: 10px;
-    position: relative; 
-    top: -80px;
+    height: 50%;
+    width: 100%;
   }
   
   .indicators {
-    margin-right: auto;
-    padding: 150px;
-    position: relative; 
-    top: -230px;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+  }
+}
+
+@media (max-width:600px) {
+  .contAppointments {
+    display: flex;
+    width: 100%;
+    margin-left: 0px;
+    height: 100%;
+    flex-direction: column-reverse;
+    background-color: black;
+  }
+
+  .Appointments {
+    position: absolute;
+    display: flex;
+    width: 100%;
+    height: 90%;
+    justify-content: flex-start;
+  }
+
+  .contNextAppointments {
+    display: flex;
+    height: 50%;
+    width: 90%;
+    justify-content: flex-start;
+    align-self: center;
+    flex-direction: column;
+    margin-left: 0;
+  }
+
+  .gridNextAppointments {
+    display: grid;
+    grid-auto-rows: 60%;
+    overflow: auto;
+    grid-gap: 10px;
+    background-color: white;
+    padding-bottom: 5px;
+    border-radius: 5px;
+    border: 3px solid #B2B9BA;
+  }
+
+  .calendar {
+    height: 50%;
+    width: 100%;
+  }
+  
+  .indicators {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
   }
 }

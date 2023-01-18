@@ -33,7 +33,7 @@ function Login(props) {
 		dispatch(login({ email, password }))
 			.unwrap()
 			.then(() => {
-				navigate('/dashboard');
+				navigate('/dashboard/');
 				window.location.reload();
 				Alertify.success(`<b style='color:white;'>Bienvenido
 					</b>`);
@@ -45,7 +45,7 @@ function Login(props) {
 			});
 	};
 	if (isLoggedIn) {
-		return <Navigate to="/dashboard" />;
+		return <Navigate to="/dashboard/" />;
 	}
 
 	return (

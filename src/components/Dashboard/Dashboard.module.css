@@ -76,6 +76,7 @@ main {
 @media (max-width: 1300px) {
   .contMain {
     width: 100%;
+    z-index: -1;
   }
 
   .asideMenu {
@@ -171,6 +172,7 @@ main {
 @media (max-width: 700px) {
   .contMain {
     width: 100%;
+    z-index: -1;
   }
 
   .asideMenu {

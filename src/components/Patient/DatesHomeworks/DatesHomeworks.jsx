@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import ClipLoader from 'react-spinners/ClipLoader';
 import { useDispatch } from 'react-redux';
 import NextAppointment from '../../NextAppointment/NextAppointent';
 import styles from './DatesHomeworks.module.css';

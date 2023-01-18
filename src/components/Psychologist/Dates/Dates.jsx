@@ -1,10 +1,8 @@
 import React, { useEffect, useState, useCallback } from 'react';
-import ClipLoader from 'react-spinners/ClipLoader';
 import { useDispatch } from 'react-redux';
 import AppointmentModal from '../../AppointmentModal/AppointmentModal';
 import styles from './Dates.module.css';
 import NextAppontment from '../../NextAppointment/NextAppointent';
-import { getNextAppointment } from '../../../services/Appointments/appointmentsService';
 import Loader from '../../Loader/Loader';
 import { getappointment } from '../../../slices/Appointmrent';
 

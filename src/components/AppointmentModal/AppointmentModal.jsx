@@ -1,9 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-import Alertify from 'alertifyjs';
 import Autosuggest from 'react-autosuggest';
 import Modal from '../Modal/Modal';
-import 'alertifyjs/build/css/alertify.css';
 import styles from './AppointmentModal.module.css';
 import { createAppointment } from '../../slices/appointments';
 import searchService from '../../services/Users/usersServices';
@@ -81,6 +79,7 @@ function AppointmentModal({ onAction, isVisible }) {
 		onChange,
 		placeholder: 'Nombre del usuario',
 		value,
+		styles: 
 	};
 
 	const eventEnter = (e) => {
@@ -101,7 +100,8 @@ function AppointmentModal({ onAction, isVisible }) {
 	const initialAppointmentState = {
 		date: '',
 		hour: '',
-		idPacient: '63b70b02c58705e228d6c34a',
+		idPacient: '',
+		// idPacient: '63b70b02c58705e228d6c34a',
 		idUser: userLogged.data.id,
 	};
 
@@ -137,7 +137,7 @@ function AppointmentModal({ onAction, isVisible }) {
 				<div className={styles.data}>
 					<div className={styles.form}>
 						<h2>Nombre:</h2>
-						{/* <Autosuggest
+						<Autosuggest
 							className={styles.autocomplete}
 							getSuggestionValue={getSuggestionValue}
 							inputProps={inputProps}
@@ -147,7 +147,7 @@ function AppointmentModal({ onAction, isVisible }) {
 							onSuggestionsFetchRequested={onSuggestionsFetchRequested}
 							renderSuggestion={renderSuggestion}
 							suggestions={users}
-						/> */}
+						/>
 					</div>
 					<div className={styles.form}>
 						<h2>Fecha:</h2>

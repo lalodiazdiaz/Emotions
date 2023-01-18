@@ -29,6 +29,10 @@
     width: 100%;
 }
 
+.form Autosuggest {
+    background-color: blueviolet;
+}
+
 .btnAdd {
     color: white;
     font-size: 20px;

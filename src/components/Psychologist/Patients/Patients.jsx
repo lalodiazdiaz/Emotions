@@ -5,7 +5,9 @@ function Patients() {
 	return (
 		<div className={styles.contAppointments}>
 			<div className={styles.Appointments}>
-				<h1>Hello Welcome Doctor to the Patients</h1>
+				<div className={styles.contNextAppointments}>
+					<h1>Pacientes</h1>
+				</div>
 			</div>
 		</div>
 	);

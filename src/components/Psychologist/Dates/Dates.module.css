@@ -138,9 +138,9 @@ h1 {
 
   .gridNextAppointments {
     display: grid;
-    grid-auto-rows: 60%;
+    grid-auto-rows: 50%;
     overflow: auto;
-    grid-gap: 10px;
+    grid-gap: 0px;
     background-color: white;
     padding-bottom: 5px;
     border-radius: 5px;

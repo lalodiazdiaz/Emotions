@@ -29,10 +29,6 @@
     width: 100%;
 }
 
-.form Autosuggest {
-    background-color: blueviolet;
-}
-
 .btnAdd {
     color: white;
     font-size: 20px;
@@ -49,6 +45,31 @@
 
 .btnAdd:hover {
     background-color: #64ba7e;
+}
+
+.btnAutocomplete {
+    font-size: 20px;
+    text-align: center;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 5px;
+    text-decoration: none;
+    margin-top: 20px;
+    width: 242px;
+    margin-right: 18px;
+}
+
+.subgerencia {
+    list-style-type: none;
+    list-style: none;
+    background:#cac7c7;
+    padding: 5px;
+    width: 150px;
+    margin-right: auto;
+    margin-bottom: 5px;
+    margin-left: auto;
+    border-radius: 10px;
+    font-size: 18px;
 }
 
 @media (max-width: 1100px) {
@@ -85,6 +106,17 @@
         height: max-content;
         width: 142px;
         font-size: 25px;
+    }
+
+    .btnAutocomplete {
+        font-size: 20px;
+        text-align: center;
+        cursor: pointer;
+        padding: 10px;
+        border-radius: 5px;
+        width: 180px;
+        text-decoration: none;
+        margin-left: 20px;
     }
 }
 
@@ -127,5 +159,17 @@
         height: max-content;
         width: 115px;
         font-size: 20px;
+    }
+
+    .btnAutocomplete {
+        font-size: 20px;
+        margin: 5%;
+        text-align: center;
+        cursor: pointer;
+        padding: 10px;
+        border-radius: 5px;
+        width: 240px;
+        text-decoration: none;
+        margin-right: 30px;
     }
 }

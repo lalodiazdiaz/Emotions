@@ -45,6 +45,9 @@
         "children": true
       }
     ],
+    "no-shadow": 0,
+    "no-underscore-dangle":  [0, { "allow": ["_place"] }],
+    "no-use-before-define": ["error", { "variables": false }],
     "react/jsx-filename-extension": [
       1,
       {

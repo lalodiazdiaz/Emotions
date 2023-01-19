@@ -18,7 +18,6 @@ function AppointmentModal({ onAction, isVisible }) {
 				setData(response.data.data);
 			})
 			.catch((e) => {
-				console.log(e);
 			});
 	};
 
@@ -26,13 +25,10 @@ function AppointmentModal({ onAction, isVisible }) {
 		getDataUsers();
 	}, []);
 
-	// eslint-disable-next-line no-shadow
 	const onSuggestionsFetchRequested = ({ value }) => {
-		// eslint-disable-next-line no-use-before-define
 		setUsers(filtrarUsers(value));
 	};
 
-	// eslint-disable-next-line no-shadow
 	const filtrarUsers = (value) => {
 		const inputValue = value.trim().toLowerCase();
 		const inputLength = inputValue.length;
@@ -57,36 +53,34 @@ function AppointmentModal({ onAction, isVisible }) {
 
 	const getSuggestionValue = (suggestion) => `${suggestion.name}`;
 
+	const seleccionarUser = (user) => {
+		setUserSeleccionado(user);
+	};
+
 	const renderSuggestion = (suggestion) => (
 		<div
-			className="sugerencia"
-			// eslint-disable-next-line no-use-before-define
+			className={styles.subgerencia}
 			onChange={() => seleccionarUser(suggestion)}
 		>
 			{`${suggestion.name} ${suggestion.middleName} ${suggestion.lastName}`}
 		</div>
 	);
 
-	const seleccionarUser = (user) => {
-		setUserSeleccionado(user);
-	};
-
 	const onChange = (e, { newValue }) => {
 		setValue(newValue);
 	};
 
 	const inputProps = {
+		className: styles.btnAutocomplete,
 		onChange,
 		placeholder: 'Nombre del usuario',
 		value,
-		styles: 
 	};
 
 	const eventEnter = (e) => {
 		if (e.key === 'Enter') {
 			const userActual = data.filter((u) => u.name === e.target.value.trim());
 			const user = {
-				// eslint-disable-next-line no-underscore-dangle
 				id: userActual[0]._id,
 			};
 			seleccionarUser(user);
@@ -100,15 +94,13 @@ function AppointmentModal({ onAction, isVisible }) {
 	const initialAppointmentState = {
 		date: '',
 		hour: '',
-		idPacient: '',
-		// idPacient: '63b70b02c58705e228d6c34a',
+		idPacient: userSeleccionado.id,
 		idUser: userLogged.data.id,
 	};
 
 	const [appointment, setAppointment] = useState(initialAppointmentState);
 
 	const handleInputChange = (event) => {
-		// eslint-disable-next-line no-shadow
 		const { name, value } = event.target;
 		setAppointment({ ...appointment, [name]: value });
 	};

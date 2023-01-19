@@ -1,5 +1,5 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-import appointmentsService from '../services/Appointments/Appointments';
+import appointmentsService from '../services/Appointments/appointmentsService';
 
 const initialState = [];
 
@@ -12,7 +12,6 @@ export const createAppointment = createAsyncThunk(
 			idPacient,
 			idUser,
 		});
-		console.log(res);
 		return res;
 	},
 );

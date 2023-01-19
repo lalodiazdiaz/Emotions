@@ -13,7 +13,8 @@ function Modal({ isVisible, onAction, title, children }) {
 						className={styles.closeModal}
 						onClick={onAction}
 						type="button"
-					>Cerrar
+					>
+						Cerrar
 					</button>
 				</div>
 			</div>

@@ -8,7 +8,7 @@
 
 .data h2 {
     font-size: 30px;
-    text-align: start;
+    left: 100%;
     width: 70%;
 }
 
@@ -59,7 +59,7 @@
     margin-right: 18px;
 }
 
-.subgerencia {
+.suggestion {
     list-style-type: none;
     list-style: none;
     background:#cac7c7;

@@ -10,7 +10,7 @@ function AppointmentModal({ onAction, isVisible }) {
 	const [data, setData] = useState([]);
 	const [users, setUsers] = useState([]);
 	const [value, setValue] = useState('');
-	const [userSeleccionado, setUserSeleccionado] = useState({});
+	const [userSelected, setUserSelected] = useState({});
 	const getDataUsers = () => {
 		searchService.searchUsers()
 			.then((response) => {
@@ -26,17 +26,17 @@ function AppointmentModal({ onAction, isVisible }) {
 	}, []);
 
 	const onSuggestionsFetchRequested = ({ value }) => {
-		setUsers(filtrarUsers(value));
+		setUsers(filteringUsers(value));
 	};
 
-	const filtrarUsers = (value) => {
+	const filteringUsers = (value) => {
 		const inputValue = value.trim().toLowerCase();
 		const inputLength = inputValue.length;
 
 		const filtrado = data.filter((user) => {
-			const textoCompleto = user.name;
+			const fullText = user.name;
 
-			if (textoCompleto.toLowerCase()
+			if (fullText.toLowerCase()
 				.normalize('NFD')
 				.replace(/[\u0300-\u036f]/g, '')
 				.includes(inputValue)) {
@@ -53,14 +53,14 @@ function AppointmentModal({ onAction, isVisible }) {
 
 	const getSuggestionValue = (suggestion) => `${suggestion.name}`;
 
-	const seleccionarUser = (user) => {
-		setUserSeleccionado(user);
+	const selectUser = (user) => {
+		setUserSelected(user);
 	};
 
 	const renderSuggestion = (suggestion) => (
 		<div
-			className={styles.subgerencia}
-			onChange={() => seleccionarUser(suggestion)}
+			className={styles.suggestion}
+			onChange={() => selectUser(suggestion)}
 		>
 			{`${suggestion.name} ${suggestion.middleName} ${suggestion.lastName}`}
 		</div>
@@ -83,7 +83,7 @@ function AppointmentModal({ onAction, isVisible }) {
 			const user = {
 				id: userActual[0]._id,
 			};
-			seleccionarUser(user);
+			selectUser(user);
 		}
 	};
 
@@ -94,7 +94,7 @@ function AppointmentModal({ onAction, isVisible }) {
 	const initialAppointmentState = {
 		date: '',
 		hour: '',
-		idPacient: userSeleccionado.id,
+		idPacient: userSelected.id,
 		idUser: userLogged.data.id,
 	};
 

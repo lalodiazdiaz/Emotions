@@ -39,7 +39,9 @@ function Dates() {
 				<div className={styles.Appointments}>
 					<div className={styles.contNextAppointments}>
 						<h1>Proximas Citas</h1>
-						<Loader />
+						<div className={styles.loaderContainer}>
+							<Loader />
+						</div>
 					</div>
 				</div>
 			</div>

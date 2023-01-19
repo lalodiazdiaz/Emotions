@@ -1,0 +1,110 @@
+.contCard {
+  display: flex;
+  flex-direction: row;
+  width: 95%;
+  background-color: white;
+  border-radius: 5px;
+  border: 3px solid #B2B9BA;
+  justify-self: center;
+  margin-top: 10px;
+}
+
+.contInformation {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  justify-content: center;
+}
+
+.contButtons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 20%;
+  height: 100%;
+}
+
+.btnDelete {
+  width: 80%;
+  height: 35%;
+  font-size: 20px;
+  background: #fe6272;
+  border: 0;
+  border-radius: 5px;
+  color: white;
+}
+
+.btnDelete:hover {
+  background-color: #e24f5e;
+}
+
+.dataCard {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.dataCard p {
+  font-size: 30px;
+  margin: 0;
+  margin-left: 20px;
+}
+
+@media (max-width:1300px) {
+  .contInformation {
+    width: 70%;
+  }
+
+  .contButtons {
+    width: 30%;
+  }
+
+  .dataCard p {
+    font-size: 25px;
+    margin: 10px;
+  }
+
+  .btnDetails {
+    width: 90%;
+    height: 30%;
+  }
+
+  .btnDelete {
+    width: 90%;
+    height: 30%;
+  }
+
+}
+
+@media (max-width:600px) {
+  .contCard {
+    flex-direction: column;
+  }
+
+  .contInformation {
+    height: 65%;
+    width: 100%;
+  }
+
+  .contButtons {
+    height: 35%;
+    width: 100%;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .contInformation p {
+    font-size: 20px;
+  }
+
+  .btnDelete {
+    width: 40%;
+    height: 90%;
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+
+}

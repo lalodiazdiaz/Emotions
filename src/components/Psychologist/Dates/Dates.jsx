@@ -85,41 +85,40 @@ function Dates() {
 								<p>No tienes citas pendientes</p>
 							</div>
 						)}
-
 				</div>
-				<div className={styles.calendar}>
-					<Calendar
-						onChange={setTgl}
-						tileClassName={({ date }) => {
-							let day = date.getDate();
-							let month = date.getMonth() + 1;
-							if (date.getMonth() < 10) {
-								month = `0${month}`;
-							}
-							if (date.getDate() < 10) {
-								day = `0${day}`;
-							}
-							const realDate = `${date.getFullYear()}/${month}/${day}`;
-							if (dataD.find((val) => val === realDate)) {
-								return styles.highlight;
-							}
-							return 0;
-						}}
-						value={tgl}
-					/>
-					<div className={styles.indicators}>
-						<div className={styles.ContainerBox}>
-							<div className={styles.FirstBox} />
-							<p>• Días inhábiles.</p>
-						</div>
-						<div className={styles.ContainerBox}>
-							<div className={styles.SecondBox} />
-							<p>• Días con citas registradas.</p>
-						</div>
-						<div className={styles.ContainerBox}>
-							<div className={styles.ThirdBox} />
-							<p>• Días disponibles.</p>
-						</div>
+			</div>
+			<div className={styles.calendar}>
+				<Calendar
+					onChange={setTgl}
+					tileClassName={({ date }) => {
+						let day = date.getDate();
+						let month = date.getMonth() + 1;
+						if (date.getMonth() < 10) {
+							month = `0${month}`;
+						}
+						if (date.getDate() < 10) {
+							day = `0${day}`;
+						}
+						const realDate = `${date.getFullYear()}/${month}/${day}`;
+						if (dataD.find((val) => val === realDate)) {
+							return styles.highlight;
+						}
+						return 0;
+					}}
+					value={tgl}
+				/>
+				<div className={styles.indicators}>
+					<div className={styles.ContainerBox}>
+						<div className={styles.FirstBox} />
+						<p>• Días inhábiles.</p>
+					</div>
+					<div className={styles.ContainerBox}>
+						<div className={styles.SecondBox} />
+						<p>• Días con citas registradas.</p>
+					</div>
+					<div className={styles.ContainerBox}>
+						<div className={styles.ThirdBox} />
+						<p>• Días disponibles.</p>
 					</div>
 				</div>
 			</div>

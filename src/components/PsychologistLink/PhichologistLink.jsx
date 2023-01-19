@@ -1,8 +1,9 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import { RANGE } from '../../constants';
 import styles from './PhichologistLink.module.css';
 
-function PhichologistLink({ onClick }) {
+function PhichologistLink({ onClick, Range }) {
 	return (
 		<div className={styles.contOptions}>
 			<div className={styles.optionsAside}>
@@ -16,6 +17,20 @@ function PhichologistLink({ onClick }) {
 				>
 					Citas
 				</NavLink>
+				{Range === RANGE.admin
+					? (
+						<NavLink
+							className={styles.linkNav}
+							onClick={onClick}
+							style={({ isActive }) => ({
+								textDecoration: isActive ? 'underline' : 'none',
+							})}
+							to="/dashboard/therapist/"
+						>
+							Psicologos
+						</NavLink>
+					)
+					:					null}
 				<NavLink
 					className={styles.linkNav}
 					onClick={onClick}

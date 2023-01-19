@@ -16,6 +16,7 @@ import Options from './components/VideoCall/Options';
 import Notifications from './components/VideoCall/Notifications';
 import { RANGE } from './constants';
 import { VideoCallContextProvider } from './components/VideoCall/VideoCall';
+import PsychologistScreen from './components/AdminTherapist/PsychologistScreen';
 
 function App() {
 	const userLog = JSON.parse(localStorage.getItem('user'));
@@ -82,6 +83,14 @@ function App() {
 							</ProtectedRoute>
 						)}
 						path="/dashboard/patients/"
+					/>
+					<Route
+						element={(
+							<ProtectedRoute>
+								<PsychologistScreen />
+							</ProtectedRoute>
+						)}
+						path="/dashboard/therapist/"
 					/>
 					<Route
 						element={(

@@ -44,7 +44,6 @@ function Dashboard() {
 	const logoutSession = async () => {
 		await dispatch(logout())
 			.then((result) => {
-				console.log(result);
 				setState(false);
 			}).catch((err) => {
 			});

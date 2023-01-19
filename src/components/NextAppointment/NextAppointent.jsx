@@ -23,6 +23,7 @@ function NextAppointment({ onAction, date, name, time, title, id }) {
 				}
 			});
 		onAction();
+		setIsVisible(false);
 	};
 
 	return (

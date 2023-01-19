@@ -4,9 +4,9 @@ import { setMessage } from './message';
 
 const logout = createAsyncThunk(
 	'auth/logout',
-	async ({ AuthStr }, thunkAPI) => {
+	async (thunkAPI) => {
 		try {
-			const data = await logOutSession(AuthStr);
+			const data = await logOutSession();
 			return data;
 		} catch (error) {
 			const message =

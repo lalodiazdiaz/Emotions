@@ -17,9 +17,7 @@ function Dashboard() {
 	const [state, setState] = useState(false);
 	const NAME = userLogged.data.fullName;
 	const dispatch = useDispatch();
-	const local = JSON.parse(localStorage.getItem('user'));
-	const { token } = local.data;
-	const AuthStr = `Bearer ${token}`;
+
 	const navigate = useNavigate();
 
 	const asideOpenAction = () => {
@@ -44,12 +42,13 @@ function Dashboard() {
 	}, []);
 
 	const logoutSession = async () => {
-		await dispatch(logout({ AuthStr }))
+		await dispatch(logout())
 			.then((result) => {
+				console.log(result);
 				setState(false);
 			}).catch((err) => {
 			});
-		navigate('/login', { replace: true });
+		navigate('/login');
 		navigate(0);
 	};
 

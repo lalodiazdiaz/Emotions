@@ -38,9 +38,17 @@ const postappointments = (data) => {
 				Alertify.success(`<b style='color:white;'>Se registro su cita correctamente.
 				</b>`);
 			}
-			if (response.data.isValid === false) {
-				Alertify.error(`<b style='color:white;'>Esta fecha y hora no están disponibles.
+			if (response.data.message
+				=== 'The therapist does not have available this day and time') {
+				Alertify.error(`<b style='color:white;'>Esta fecha y hora ya están registrados.
 				</b>`);
+			}
+			if (response.data.message
+				=== 'idPacient length must be at least 24 characters long') {
+				Alertify.warning(
+					`<b style='color:dark;'>¿Usted está de acuerdo con los datos ingresados?
+				</b>`,
+				);
 			}
 			return response.data;
 		})

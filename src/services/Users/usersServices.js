@@ -1,7 +1,6 @@
 import axios from 'axios';
 
-// const API_URL = `${process.env.REACT_APP_API_BASE_URL}/user/autoComplete`;
-const API_URL = 'http://localhost:5000/api/user/autoComplete';
+const API_URL = `${process.env.REACT_APP_API_BASE_URL}/user/autoComplete`;
 const loggedUser = window.localStorage.getItem('user');
 const userLogged = JSON.parse(loggedUser);
 let ACCESS_TOKEN = '';

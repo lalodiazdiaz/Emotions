@@ -9,7 +9,6 @@ import searchService from '../../services/Users/usersServices';
 function AppointmentModal({ onAction, isVisible }) {
 	const [data, setData] = useState([]);
 	const [users, setUsers] = useState([]);
-	const [value, setValue] = useState('');
 	const [userSelected, setUserSelected] = useState({});
 	const getDataUsers = () => {
 		searchService.searchUsers()
@@ -25,15 +24,11 @@ function AppointmentModal({ onAction, isVisible }) {
 		getDataUsers();
 	}, []);
 
-	const onSuggestionsFetchRequested = ({ value }) => {
-		setUsers(filteringUsers(value));
-	};
-
 	const filteringUsers = (value) => {
 		const inputValue = value.trim().toLowerCase();
 		const inputLength = inputValue.length;
 
-		const filtrado = data.filter((user) => {
+		const filtering = data.filter((user) => {
 			const fullText = user.name;
 
 			if (fullText.toLowerCase()
@@ -44,7 +39,11 @@ function AppointmentModal({ onAction, isVisible }) {
 			}
 			return 0;
 		});
-		return inputLength <= 2 ? [] : filtrado;
+		return inputLength <= 2 ? [] : filtering;
+	};
+
+	const onSuggestionsFetchRequested = ({ value }) => {
+		setUsers(filteringUsers(value));
 	};
 
 	const onSuggestionsClearRequested = () => {
@@ -66,22 +65,11 @@ function AppointmentModal({ onAction, isVisible }) {
 		</div>
 	);
 
-	const onChange = (e, { newValue }) => {
-		setValue(newValue);
-	};
-
-	const inputProps = {
-		className: styles.btnAutocomplete,
-		onChange,
-		placeholder: 'Nombre del usuario',
-		value,
-	};
-
 	const eventEnter = (e) => {
 		if (e.key === 'Enter') {
-			const userActual = data.filter((u) => u.name === e.target.value.trim());
+			const userCurrent = data.filter((u) => u.name === e.target.value.trim());
 			const user = {
-				id: userActual[0]._id,
+				id: userCurrent[0].id,
 			};
 			selectUser(user);
 		}
@@ -105,6 +93,19 @@ function AppointmentModal({ onAction, isVisible }) {
 		setAppointment({ ...appointment, [name]: value });
 	};
 
+	const [value, setValue] = useState('');
+
+	const onChange = (e, { newValue }) => {
+		setValue(newValue);
+	};
+
+	const inputProps = {
+		className: styles.btnAutocomplete,
+		onChange,
+		placeholder: 'Nombre del usuario',
+		value,
+	};
+
 	const saveAppointment = () => {
 		const { date, hour, idPacient, idUser } = appointment;
 
@@ -114,7 +115,7 @@ function AppointmentModal({ onAction, isVisible }) {
 				setAppointment({
 					date,
 					hour,
-					idPacient,
+					idPacient: userSelected.id,
 					idUser,
 				});
 			});

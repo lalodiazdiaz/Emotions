@@ -26,12 +26,12 @@
   width: 180px;
   background: #66d086;
   border: 0;
-	color: #ffffff; 
-	letter-spacing: 2px; 
-	padding: 18px 30px; 
-	position: fixed;
-	bottom: 40px;
-	right: 40px;
+  color: #ffffff;
+  letter-spacing: 2px;
+  padding: 18px 30px;
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
 }
 
 .schedule:hover {

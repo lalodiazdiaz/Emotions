@@ -22,6 +22,23 @@ function Dates() {
 		};
 		getAppointments();
 	}, []);
+
+	const tileClassName = ({ date }) => {
+		let day = date.getDate();
+		let month = date.getMonth() + 1;
+		if (date.getMonth() < 10) {
+			month = `0${month}`;
+		}
+		if (date.getDate() < 10) {
+			day = `0${day}`;
+		}
+		const realDate = `${date.getFullYear()}/${month}/${day}`;
+		if (dataD.find((val) => val === realDate)) {
+			return styles.highlight;
+		}
+		return 0;
+	};
+
 	const [next, setNext] = useState('');
 	const [loading, setloading] = useState(false);
 	const [page, setPage] = useState(1);
@@ -90,21 +107,7 @@ function Dates() {
 			<div className={styles.calendar}>
 				<Calendar
 					onChange={setTgl}
-					tileClassName={({ date }) => {
-						let day = date.getDate();
-						let month = date.getMonth() + 1;
-						if (date.getMonth() < 10) {
-							month = `0${month}`;
-						}
-						if (date.getDate() < 10) {
-							day = `0${day}`;
-						}
-						const realDate = `${date.getFullYear()}/${month}/${day}`;
-						if (dataD.find((val) => val === realDate)) {
-							return styles.highlight;
-						}
-						return 0;
-					}}
+					tileClassName={tileClassName}
 					value={tgl}
 				/>
 				<div className={styles.indicators}>

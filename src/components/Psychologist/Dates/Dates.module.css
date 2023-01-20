@@ -23,13 +23,14 @@
 }
 
 .calendar {
-  margin-left: auto;
+  margin-left: 600px;
   display: flex;
   flex-direction: column;
   height: 100%;
   width: 50%;
   justify-content: center;
   align-items: center;
+  position: absolute;  
 }
 
 .indicators {
@@ -161,6 +162,8 @@ h1 {
   .calendar {
     height: 50%;
     width: 100%;
+    position: absolute; 
+    margin-left: 0px;
   }
   
   .indicators {

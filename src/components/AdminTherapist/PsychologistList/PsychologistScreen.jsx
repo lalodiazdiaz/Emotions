@@ -12,13 +12,10 @@ function PsychologistScreen() {
 	const [loading, setloading] = useState(false);
 	const [page, setPage] = useState(1);
 	const dispatch = useDispatch();
-	const local = JSON.parse(localStorage.getItem('user'));
-	const { data } = local;
-	const AuthStr = `Bearer ${data.token}`;
 	const params = `/appointments?page=${page}&size=10&order=date&way=1`;
 
 	useEffect(() => {
-		dispatch(getTherapist({ AuthStr, params }))
+		dispatch(getTherapist({ params }))
 			.unwrap()
 			.then((res) => {
 				setTherapist(res.data);
@@ -26,7 +23,7 @@ function PsychologistScreen() {
 	}, [setTherapist]);
 
 	const updateList = () => {
-		dispatch(getTherapist({ AuthStr, params }))
+		dispatch(getTherapist({ params }))
 			.unwrap()
 			.then((res) => {
 				setTherapist(res.data);

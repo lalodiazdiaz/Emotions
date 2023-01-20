@@ -5,9 +5,9 @@ import { setMessage } from './message';
 
 export const getTherapist = createAsyncThunk(
 	'auth/allPsychologist',
-	async ({ AuthStr, params }, thunkAPI) => {
+	async ({ params }, thunkAPI) => {
 		try {
-			const data = await getAllPsychologist(AuthStr, params);
+			const data = await getAllPsychologist(params);
 			return data.data;
 		} catch (error) {
 			const message =
@@ -24,9 +24,9 @@ export const getTherapist = createAsyncThunk(
 
 export const deleteTherapist = createAsyncThunk(
 	'auth/deletePsychologist',
-	async ({ AuthStr, id }, thunkAPI) => {
+	async ({ id }, thunkAPI) => {
 		try {
-			const data = await deletePsychologist(AuthStr, { id });
+			const data = await deletePsychologist({ id });
 			return data.data;
 		} catch (error) {
 			const message =

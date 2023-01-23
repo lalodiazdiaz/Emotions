@@ -7,6 +7,10 @@ function Options({ children }) {
 	const { me, callAccepted, name, setName, leaveCall, callUser, callEnded } =
       useContext(SocketContext);
 
+	function getInCall() {
+		callUser(idToCall);
+	}
+
 	return (
 		<div>
 			<input onChange={(e) => setIdToCall(e.target.value)} type="text" />
@@ -14,15 +18,13 @@ function Options({ children }) {
 				<button onClick={leaveCall} type="button">Salir</button>
 			) : (
 				<button
-					onClick={() => {
-						callUser(idToCall);
-					}}
+					onClick={getInCall()}
 					type="button"
-				>Entrar a llamada
+				>
+					Entrar a llamada
 				</button>
 			)}
 			{children}
-
 		</div>
 	);
 }

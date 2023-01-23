@@ -11,7 +11,11 @@ import Evidence from './components/Patient/Evidence/Evidence';
 import Profile from './components/Patient/Profile/Profile';
 import DatesAndHomeworks from './components/Patient/DatesHomeworks/DatesHomeworks';
 import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute';
+import Video from './components/VideoCall/Video';
+import Options from './components/VideoCall/Options';
+import Notifications from './components/VideoCall/Notifications';
 import { RANGE } from './constants';
+import { VideoCallContextProvider } from './components/VideoCall/VideoCall';
 import PsychologistScreen from './components/AdminTherapist/PsychologistScreen';
 
 function App() {
@@ -22,6 +26,19 @@ function App() {
 			<Routes>
 				<Route element={<Home />} path="/" />
 				<Route element={<Login />} path="/login" />
+				<Route
+					element={(
+						<ProtectedRoute>
+							<VideoCallContextProvider>
+								<Video />
+								<Options>
+									<Notifications />
+								</Options>
+							</VideoCallContextProvider>
+						</ProtectedRoute>
+					)}
+					path="/videoCall"
+				/>
 				<Route
 					element={(
 						<ProtectedRoute>

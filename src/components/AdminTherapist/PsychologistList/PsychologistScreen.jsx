@@ -47,7 +47,6 @@ function PsychologistScreen() {
 		);
 	}
 
-	console.log(therapist);
 	return (
 		<div className={styles.mainContainer}>
 			<div className={styles.Psychologist}>

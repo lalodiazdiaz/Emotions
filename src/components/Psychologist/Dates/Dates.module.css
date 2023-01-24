@@ -147,4 +147,12 @@ h1 {
     border: 3px solid #B2B9BA;
   }
 
+  h1  {
+    margin: 0;
+    margin-bottom: 10px;
+    font-size: 20px;
+  }
+  .gridNextAppointments {
+    height: 75%;
+  }
 }

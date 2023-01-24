@@ -12,7 +12,7 @@ function PsychologistScreen() {
 	const [loading, setloading] = useState(false);
 	const [page, setPage] = useState(1);
 	const dispatch = useDispatch();
-	const params = `/appointments?page=${page}&size=10&order=date&way=1`;
+	const params = `/user?page=${page}&size=10&order=date&way=1`;
 
 	useEffect(() => {
 		dispatch(getTherapist({ params }))
@@ -46,12 +46,21 @@ function PsychologistScreen() {
 			</div>
 		);
 	}
+
+	console.log(therapist);
 	return (
 		<div className={styles.mainContainer}>
 			<div className={styles.Psychologist}>
 				<h1>Psicologos</h1>
 				<div className={styles.gridPsychologist}>
-					<PsycologistCard onAction={updateList} />
+					{therapist.map((data) => (
+						<PsycologistCard
+							key={data.id}
+							data={data}
+							id={data.id}
+							onAction={updateList}
+						/>
+					))}
 				</div>
 				<button
 					className={styles.btnAdd}

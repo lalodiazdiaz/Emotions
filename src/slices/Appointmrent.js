@@ -5,7 +5,7 @@ import { setMessage } from './message';
 
 export const getappointment = createAsyncThunk(
 	'auth/appointments',
-	async ({ AuthStr, params }, thunkAPI) => {
+	async ({ params }, thunkAPI) => {
 		try {
 			const data = await getNextAppointment(params);
 			return data.data;
@@ -24,9 +24,9 @@ export const getappointment = createAsyncThunk(
 
 export const deleteAppoitnment = createAsyncThunk(
 	'auth/appointments',
-	async ({ AuthStr, id }, thunkAPI) => {
+	async ({ id }, thunkAPI) => {
 		try {
-			const data = await deleteAppointment(AuthStr, { id });
+			const data = await deleteAppointment(id);
 			return data.data;
 		} catch (error) {
 			const message =

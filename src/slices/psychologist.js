@@ -25,8 +25,9 @@ export const getTherapist = createAsyncThunk(
 export const deleteTherapist = createAsyncThunk(
 	'auth/deletePsychologist',
 	async ({ id }, thunkAPI) => {
+		console.log(id);
 		try {
-			const data = await deletePsychologist({ id });
+			const data = await deletePsychologist(id);
 			return data.data;
 		} catch (error) {
 			const message =

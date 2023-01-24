@@ -1,13 +1,32 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import Alertify from 'alertifyjs';
 import styles from './PsychologistCard.module.css';
+import 'alertifyjs/build/css/alertify.css';
+import { deleteTherapist } from '../../../slices/psychologist';
 
-function PsycologistCard({ onAction }) {
+function PsycologistCard({ onAction, data, id }) {
+	const [isVisible, setIsVisible] = useState(false);
+	const dispatch = useDispatch();
+
+	const handleDeleteAppointment = async () => {
+		setIsVisible(true);
+		await dispatch(deleteTherapist({ id }))
+			.then((res) => {
+				if (res.payload.isValid) {
+					Alertify.success(`<b style='color:white;'>Cita cancelada
+					</b>`);
+				}
+			});
+		onAction();
+		setIsVisible(false);
+	};
 	return (
 		<div className={styles.contCard}>
 			<div className={styles.contInformation}>
 
 				<div className={styles.dataCard}>
-					<p>Psicologo: Claudia Patricia Moreno Gonzalez</p>
+					<p>Psicologo: {data.fullName}</p>
 				</div>
 			</div>
 
@@ -15,7 +34,8 @@ function PsycologistCard({ onAction }) {
 
 				<button
 					className={styles.btnDelete}
-					onClick={onAction}
+					disabled={isVisible}
+					onClick={handleDeleteAppointment}
 					type="button"
 				>
 					Eliminar

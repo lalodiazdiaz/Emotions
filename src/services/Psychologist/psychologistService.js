@@ -14,9 +14,8 @@ export const getAllPsychologist = async (params) => {
 	return res;
 };
 
-export const deletePsychologist = async ({ id }) => {
-	const res = await axios.delete(`${API_URL}/appointments`, {
-		data: { _id: id },
+export const deletePsychologist = async (id) => {
+	const res = await axios.delete(`${API_URL}/user/deleteTherapist?_id=${id}`, {
 		headers: { Authorization: authStr },
 	});
 	return res;

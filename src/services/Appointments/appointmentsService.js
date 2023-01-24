@@ -13,9 +13,8 @@ export const getNextAppointment = async (params) => {
 	return res;
 };
 
-export const deleteAppointment = async ({ id }) => {
-	const res = await axios.delete(`${API_URL}/appointments`, {
-		data: { _id: id },
+export const deleteAppointment = async (id) => {
+	const res = await axios.delete(`${API_URL}/appointments?_id=${id}`, {
 		headers: { Authorization: authStr },
 	});
 	return res;

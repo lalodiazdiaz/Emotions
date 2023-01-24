@@ -189,7 +189,7 @@ h1 {
 
   .contNextAppointments {
     display: flex;
-    height: 50%;
+    height: 30%;
     width: 90%;
     justify-content: flex-start;
     align-self: center;
@@ -199,22 +199,28 @@ h1 {
 
   .gridNextAppointments {
     display: grid;
-    grid-auto-rows: 60%;
+    grid-auto-rows: 70%;
     overflow: auto;
-    grid-gap: 10px;
+    grid-gap: 0px;
     background-color: white;
     padding-bottom: 5px;
     border-radius: 5px;
     border: 3px solid #B2B9BA;
-    height: 40%;
+    height: 100%;
   }
 
   .calendar {
-    height: 50%;
+    height: 75%;
     width: 100%;
     margin-top: 100px;
   }
   
+  h1  {
+    margin: 0;
+    margin-bottom: 10px;
+    font-size: 20px;
+  }
+
   .indicators {
     display: flex;
     flex-direction: row;

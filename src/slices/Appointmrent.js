@@ -7,7 +7,7 @@ export const getappointment = createAsyncThunk(
 	'auth/appointments',
 	async ({ AuthStr, params }, thunkAPI) => {
 		try {
-			const data = await getNextAppointment(AuthStr, params);
+			const data = await getNextAppointment(params);
 			return data.data;
 		} catch (error) {
 			const message =

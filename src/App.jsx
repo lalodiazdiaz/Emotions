@@ -13,6 +13,8 @@ import DatesAndHomeworks from './components/Patient/DatesHomeworks/DatesHomework
 import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute';
 import { RANGE } from './constants';
 import PsychologistScreen from './components/AdminTherapist/PsychologistScreen';
+import DetailsPatients from './components/DetailsPatients/DetailsPatients';
+import AddPatients from './components/AddPatients/AddPatients';
 
 function App() {
 	const userLog = JSON.parse(localStorage.getItem('user'));
@@ -21,7 +23,7 @@ function App() {
 		<BrowserRouter>
 			<Routes>
 				<Route element={<Home />} path="/" />
-				<Route element={<Login />} path="login" />
+				<Route element={<Login />} path="/login" />
 				<Route
 					element={(
 						<ProtectedRoute>
@@ -100,6 +102,22 @@ function App() {
 						path="/dashboard/profile/"
 					/>
 				</Route>
+				<Route
+					element={(
+						<ProtectedRoute>
+							<DetailsPatients />
+						</ProtectedRoute>
+					)}
+					path="/dashboard/DetailsPatients/"
+				/>
+				<Route
+					element={(
+						<ProtectedRoute>
+							<AddPatients />
+						</ProtectedRoute>
+					)}
+					path="/dashboard/AddPatients/"
+				/>
 			</Routes>
 		</BrowserRouter>
 	);

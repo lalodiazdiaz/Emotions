@@ -29,11 +29,12 @@
 
 .patient {
   width: 100%;
+  margin-left: 3%;
 }
 
 .patient p {
-  font-size: 30px;
-  margin: 15px;
+  font-size: 35px;
+  margin: 0
 }
 
 .therapist {
@@ -51,12 +52,15 @@
   flex-direction: row;
   justify-content: flex-start;
   align-items: flex-start;
-  width: 100%;
+  width: 40%;
+  margin-left: 2%;
 }
 
 .date p {
-  font-size: 30px;
-  margin: 15px;
+  font-size: 35px;
+  margin: 0;
+  margin-left: 10px;
+  text-align: start;
 }
 
 .dates {
@@ -185,12 +189,13 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 50%;
+    height: 100%;
   }
 
-  .dates p {
+  .date p {
     margin: 0;
-    font-size: 25px;
+    font-size: 30px;
+    text-align: center;
   }
 
   .patient {
@@ -209,20 +214,6 @@
   .therapist p {
     font-size: 25px;
     margin: 0px;
-    margin-left: 15px;
-  }
-
-  .date {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
-    width: 100%;
-  }
-
-  .date p {
-    font-size: 30px;
-    margin: 0;
     margin-left: 15px;
   }
 
@@ -283,14 +274,17 @@
     height: 70%;
     width: 100%;
     flex-direction: column;
+    margin: 0;
   }
 
   .contDate {
     display: flex;
     flex-direction: row;
     width: 100%;
-    height: 50%;
+    height: 60%;
     align-items: flex-start;
+    margin: 0;
+
   }
 
   .patient {
@@ -307,14 +301,15 @@
   .therapist {
     display: flex;
     width: 100%;
-    height: 50%;
+    height: 40%;
     text-align: center;
     align-items: center;
   }
 
   .therapist p {
-    font-size: 20px;
+    font-size: 17px;
     text-align: left;
+    width: 100%;
   }
 
   .date {
@@ -341,7 +336,7 @@
 
   .dates p {
     width: 100%;
-    font-size: 20px;
+    font-size: 17px;
     margin: 0px;
     margin-left: 15px;
   }

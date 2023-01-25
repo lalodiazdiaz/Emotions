@@ -2,14 +2,14 @@ import React, { useContext, useState } from 'react';
 import { SocketContext } from './VideoCall';
 
 function Options({ children }) {
-	const [idToCall, setIdToCall] = useState('');
-
 	const { me, callAccepted, name, setName, leaveCall, callUser, callEnded } =
       useContext(SocketContext);
 
-	function getInCall() {
+	const [idToCall, setIdToCall] = useState('');
+
+	const getInCall = () => {
 		callUser(idToCall);
-	}
+	};
 
 	return (
 		<div>
@@ -18,7 +18,7 @@ function Options({ children }) {
 				<button onClick={leaveCall} type="button">Salir</button>
 			) : (
 				<button
-					onClick={getInCall()}
+					onClick={getInCall}
 					type="button"
 				>
 					Entrar a llamada

@@ -1,6 +1,8 @@
 .contAppointments {
   display: flex;
-  width: 80%;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
   height: 100%;
   margin-left: 20%;
   position: absolute;
@@ -17,21 +19,253 @@
   background-color: #f0eeee;
 }
 
+.contNextAppointments {
+  display: flex;
+  height: 95%;
+  width: 65%;
+  flex-direction: column;
+  align-items: center;
+  margin-left: -300px;
+}
+
+.gridNextAppointments {
+  display: grid;
+  grid-auto-rows: 25%;
+  overflow: auto;
+  grid-gap: 10px;
+  background-color: white;
+  padding-bottom: 5px;
+  border-radius: 5px;
+  border: 3px solid #B2B9BA;
+  height: 100%;
+  width: 100%;
+}
+
+.notAppointment {
+  display: flex;
+  max-width: 100%;
+  height: 100%;
+  background-color: white;
+  border-radius: 5px;
+  border: 3px solid #B2B9BA;
+  margin-left: 5px;
+  margin-right: 5px;
+  margin: 5px;
+  align-items: center;
+  justify-content: center;
+}
+
+.notAppointment p {
+  font-size: 180%;
+  margin-left: -30%;
+}
+
+.btnDetails {
+  color: white;
+  font-size: 20px;
+  margin: 5%;
+  text-align: center;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 5px;
+  width: 80%;
+  background: #66d086;
+  border: 0;
+  flex-direction: row;
+  margin-right: -300%;
+}
+
+.btnDetails:hover {
+  background-color: #64ba7e;
+}
+
+.btnAdd {
+  color: white;
+  font-size: 20px;
+  margin: 5%;
+  cursor: pointer;
+  padding: 3px;
+  border-radius: 5px;
+  width: 80%;
+  height: 80%;
+  background: #66d086;
+  border: 0;
+  flex-direction: row;
+  margin-right: -250%;
+}
+
+.btnAdd:hover {
+  background-color: #64ba7e;
+}
+
 @media (max-width:1200px) {
   .contAppointments {
     display: flex;
     width: 100%;
-    margin-left: 0px;
     height: 100%;
+    margin-left: 0%;
     flex-direction: column-reverse;
-    background-color: black;
     z-index: -1;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
   }
 
   .Appointments {
+    display: flex;
     position: absolute;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f0eeee;
+  }
+
+  .contNextAppointments {
+    display: flex;
+    height: 65%;
+    width: 90%;
+    align-self: flex-start;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 30px;
+  }
+
+  .gridNextAppointments {
+    display: grid;
+    height: 100%;
+    background-color: white;
+  }
+
+  .notAppointment {
+    display: flex;
+    max-width: 100%;
+    height: 100%;
+    background-color: white;
+    border-radius: 5px;
+    border: 3px solid #B2B9BA;
+    margin-left: 5px;
+    margin-right: 5px;
+    margin: 5px;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .notAppointment p {
+    font-size: 180%;
+    height: 65%;
+    width: 600%;
+    margin-left: 2%;
+  }
+
+  .btnDetails {
+    color: white;
+    font-size: 20px;
+    margin: 5%;
+    text-align: center;
+    padding: 12%;
+    border-radius: 5px;
+    width: 130%;
+    background: #66d086;
+    flex-direction: row;
+    margin-left: -50%;
+  }
+
+  .btnAdd {
+    color: white;
+    font-size: 20px;
+    margin: 6%;
+    width: 20%;
+    height: 30%;
+    background: #66d086;
+    border: 0;
+    flex-direction: row;
+    margin-right: -60%;
+  }
+}
+
+@media (max-width:600px) {
+  .contAppointments {
     display: flex;
     width: 100%;
-    height: 90%;
+    height: 100%;
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+  }
+
+  .Appointments {
+    display: flex;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f0eeee;
+  }
+
+  .contNextAppointments {
+    display: flex;
+    height: 70%;
+    width: 90%;
+    align-self: flex-start;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 5%;
+  }
+
+  .gridNextAppointments {
+    display: grid;
+    background-color: white;
+    height: 80%;
+  }
+
+  .notAppointment {
+    display: flex;
+    max-width: 100%;
+    height: 100%;
+    background-color: white;
+    border-radius: 5px;
+    border: 3px solid #B2B9BA;
+    margin: 5px;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .notAppointment p {
+    font-size: 110%;
+    margin-left: 0%;
+    height: 70%;
+    width: 70%;
+  }
+
+  .btnDetails {
+    color: white;
+    font-size: 20px;
+    margin: 5%;
+    text-align: center;
+    padding: 5px;
+    border-radius: 5px;
+    width: 40%;
+    background: #66d086;
+    flex-direction: row;
+    margin-right: 0%;
+  }
+
+  .btnAdd {
+    color: white;
+    font-size: 20px;
+    margin: 3%;
+    padding: 5px;
+    width: 30%;
+    height: 80%;
+    background: #66d086;
+    border: 0;
+    flex-direction: row;
+    margin-right: 0%;
   }
 }

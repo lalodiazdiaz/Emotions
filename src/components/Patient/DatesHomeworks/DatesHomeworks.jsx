@@ -24,7 +24,7 @@ function DatesAndHomeworks() {
 	}, [setNext]);
 
 	const updateList = async () => {
-	 await	dispatch(getappointment({ AuthStr, params }))
+		await	dispatch(getappointment({ AuthStr, params }))
 			.unwrap()
 			.then((res) => {
 				setNext(res.data);
@@ -36,7 +36,9 @@ function DatesAndHomeworks() {
 			<div className={styles.contAppointments}>
 				<div className={styles.Appointments}>
 					<h2>Proxima cita</h2>
-					<Loader />
+					<div className={styles.loaderContainer}>
+						<Loader />
+					</div>
 				</div>
 			</div>
 		);

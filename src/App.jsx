@@ -12,7 +12,9 @@ import Profile from './components/Patient/Profile/Profile';
 import DatesAndHomeworks from './components/Patient/DatesHomeworks/DatesHomeworks';
 import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute';
 import { RANGE } from './constants';
-import PsychologistScreen from './components/AdminTherapist/PsychologistScreen';
+import PsychologistScreen
+	from './components/AdminTherapist/PsychologistList/PsychologistScreen';
+import AddPsychologist from './components/AdminTherapist/AddPsychologist/AddPsychologist';
 
 function App() {
 	const userLog = JSON.parse(localStorage.getItem('user'));
@@ -98,6 +100,14 @@ function App() {
 							</ProtectedRoute>
 						)}
 						path="/dashboard/profile/"
+					/>
+					<Route
+						element={(
+							<ProtectedRoute>
+								<AddPsychologist />
+							</ProtectedRoute>
+						)}
+						path="/dashboard/addPsychologist/"
 					/>
 				</Route>
 			</Routes>

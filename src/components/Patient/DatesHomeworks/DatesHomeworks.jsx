@@ -1,10 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import ClipLoader from 'react-spinners/ClipLoader';
 import { useDispatch } from 'react-redux';
 import NextAppointment from '../../NextAppointment/NextAppointent';
 import styles from './DatesHomeworks.module.css';
-import { getNextAppointment }
-	from '../../../services/Appointments/appointmentsService';
 import Loader from '../../Loader/Loader';
 import { getappointment } from '../../../slices/Appointmrent';
 
@@ -27,7 +24,7 @@ function DatesAndHomeworks() {
 	}, [setNext]);
 
 	const updateList = async () => {
-	 await	dispatch(getappointment({ AuthStr, params }))
+		await	dispatch(getappointment({ AuthStr, params }))
 			.unwrap()
 			.then((res) => {
 				setNext(res.data);

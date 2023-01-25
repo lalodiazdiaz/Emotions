@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import PsycologistCard from '../PsychologistCard/PsycologistCard';
 import styles from './PsychologistScreen.module.css';
-import { getTherapist, deleteTherapist } from '../../../slices/psychologist';
+import { getTherapist } from '../../../slices/psychologist';
 import Loader from '../../Loader/Loader';
 
 function PsychologistScreen() {

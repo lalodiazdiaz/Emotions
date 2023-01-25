@@ -1,13 +1,44 @@
 import React, { useEffect, useState } from 'react';
-import ClipLoader from 'react-spinners/ClipLoader';
 import { useDispatch } from 'react-redux';
+import Calendar from 'react-calendar';
 import styles from './Dates.module.css';
+import 'react-calendar/dist/Calendar.css';
+import appointmentsService from '../../../services/Appointments/appointmentsService';
 import NextAppontment from '../../NextAppointment/NextAppointent';
-import { getNextAppointment } from '../../../services/Appointments/appointmentsService';
 import Loader from '../../Loader/Loader';
 import { getappointment } from '../../../slices/Appointmrent';
 
 function Dates() {
+	const [dataD, setDataD] = useState([]);
+	const [tgl, setTgl] = useState(new Date());
+
+	useEffect(() => {
+		const getAppointments = () => {
+			appointmentsService.getappointments()
+				.then((response) => {
+					const aux = response.data.data.map((x) => x.date);
+					setDataD(aux);
+				});
+		};
+		getAppointments();
+	}, []);
+
+	const tileClassName = ({ date }) => {
+		let day = date.getDate();
+		let month = date.getMonth() + 1;
+		if (date.getMonth() < 10) {
+			month = `0${month}`;
+		}
+		if (date.getDate() < 10) {
+			day = `0${day}`;
+		}
+		const realDate = `${date.getFullYear()}/${month}/${day}`;
+		if (dataD.find((val) => val === realDate)) {
+			return styles.highlight;
+		}
+		return 0;
+	};
+
 	const [next, setNext] = useState('');
 	const [loading, setloading] = useState(false);
 	const [page, setPage] = useState(1);
@@ -18,7 +49,7 @@ function Dates() {
 	const AuthStr = `Bearer ${data.token}`;
 	const params = `/appointments?page=${page}&size=10&order=date&way=1`;
 	useEffect(() => {
-		 dispatch(getappointment({ AuthStr, params }))
+		dispatch(getappointment({ AuthStr, params }))
 			.unwrap()
 			.then((res) => {
 				setNext(res.data);
@@ -47,7 +78,6 @@ function Dates() {
 			</div>
 		);
 	}
-
 	return (
 		<div className={styles.contAppointments}>
 			<div className={styles.Appointments}>
@@ -74,7 +104,27 @@ function Dates() {
 								<p>No tienes citas pendientes</p>
 							</div>
 						)}
-
+				</div>
+			</div>
+			<div className={styles.calendar}>
+				<Calendar
+					onChange={setTgl}
+					tileClassName={tileClassName}
+					value={tgl}
+				/>
+				<div className={styles.indicators}>
+					<div className={styles.ContainerBox}>
+						<div className={styles.FirstBox} />
+						<p>• Días inhábiles.</p>
+					</div>
+					<div className={styles.ContainerBox}>
+						<div className={styles.SecondBox} />
+						<p>• Días con citas registradas.</p>
+					</div>
+					<div className={styles.ContainerBox}>
+						<div className={styles.ThirdBox} />
+						<p>• Días disponibles.</p>
+					</div>
 				</div>
 			</div>
 		</div>

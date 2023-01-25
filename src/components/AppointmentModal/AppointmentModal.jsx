@@ -10,11 +10,14 @@ function AppointmentModal({ onAction, isVisible }) {
 	const [data, setData] = useState([]);
 	const [users, setUsers] = useState([]);
 	const [userSelected, setUserSelected] = useState({});
+
+	console.log(userSelected);
 	const getDataUsers = () => {
 		searchService.searchUsers()
 			.then((response) => {
 				setUsers(response.data.data);
 				setData(response.data.data);
+				console.log(response.data.data);
 			})
 			.catch((e) => {
 			});
@@ -29,7 +32,7 @@ function AppointmentModal({ onAction, isVisible }) {
 		const inputLength = inputValue.length;
 
 		const filtering = data.filter((user) => {
-			const fullText = user.name;
+			const fullText = user.fullName;
 
 			if (fullText.toLowerCase()
 				.normalize('NFD')
@@ -50,7 +53,7 @@ function AppointmentModal({ onAction, isVisible }) {
 		setUsers([]);
 	};
 
-	const getSuggestionValue = (suggestion) => `${suggestion.name}`;
+	const getSuggestionValue = (suggestion) => `${suggestion.fullName}`;
 
 	const selectUser = (user) => {
 		setUserSelected(user);
@@ -61,13 +64,13 @@ function AppointmentModal({ onAction, isVisible }) {
 			className={styles.suggestion}
 			onChange={() => selectUser(suggestion)}
 		>
-			{`${suggestion.name} ${suggestion.middleName} ${suggestion.lastName}`}
+			{`${suggestion.fullName}`}
 		</div>
 	);
 
 	const eventEnter = (e) => {
 		if (e.key === 'Enter') {
-			const userCurrent = data.filter((u) => u.name === e.target.value.trim());
+			const userCurrent = data.filter((u) => u.fullName === e.target.value.trim());
 			const user = {
 				id: userCurrent[0].id,
 			};

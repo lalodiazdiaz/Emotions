@@ -38,7 +38,9 @@ function DatesAndHomeworks() {
 			<div className={styles.contAppointments}>
 				<div className={styles.Appointments}>
 					<h2>Proxima cita</h2>
-					<Loader />
+					<div className={styles.loaderContainer}>
+						<Loader />
+					</div>
 				</div>
 			</div>
 		);

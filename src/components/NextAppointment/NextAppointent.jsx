@@ -11,11 +11,10 @@ function NextAppointment({ onAction, date, name, time, title, id }) {
 	 const dispatch = useDispatch();
 	const local = JSON.parse(localStorage.getItem('user'));
 	const { token, range } = local.data;
-	const AuthStr = `Bearer ${token}`;
 
 	const handleDeleteAppointment = async () => {
 		setIsVisible(true);
-		await dispatch(deleteAppoitnment({ AuthStr, id }))
+		await dispatch(deleteAppoitnment({ id }))
 			.then((res) => {
 				if (res.payload.isValid) {
 					Alertify.success(`<b style='color:white;'>Cita cancelada

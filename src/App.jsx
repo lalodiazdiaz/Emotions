@@ -12,7 +12,9 @@ import Profile from './components/Patient/Profile/Profile';
 import DatesAndHomeworks from './components/Patient/DatesHomeworks/DatesHomeworks';
 import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute';
 import { RANGE } from './constants';
-import PsychologistScreen from './components/AdminTherapist/PsychologistScreen';
+import PsychologistScreen
+	from './components/AdminTherapist/PsychologistList/PsychologistScreen';
+import AddPsychologist from './components/AdminTherapist/AddPsychologist/AddPsychologist';
 import DetailsPatients from './components/DetailsPatients/DetailsPatients';
 import AddPatients from './components/AddPatients/AddPatients';
 
@@ -100,6 +102,14 @@ function App() {
 							</ProtectedRoute>
 						)}
 						path="/dashboard/profile/"
+					/>
+					<Route
+						element={(
+							<ProtectedRoute>
+								<AddPsychologist />
+							</ProtectedRoute>
+						)}
+						path="/dashboard/addPsychologist/"
 					/>
 				</Route>
 				<Route

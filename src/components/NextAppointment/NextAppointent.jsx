@@ -8,7 +8,7 @@ import 'alertifyjs/build/css/alertify.css';
 
 function NextAppointment({ onAction, date, name, time, title, id }) {
 	const [isVisible, setIsVisible] = useState(false);
-	 const dispatch = useDispatch();
+	const dispatch = useDispatch();
 	const local = JSON.parse(localStorage.getItem('user'));
 	const { token, range } = local.data;
 
@@ -62,7 +62,7 @@ function NextAppointment({ onAction, date, name, time, title, id }) {
 						: styles.btnVideocalls}
 					type="button"
 				>
-					Videollamada
+					Vídeo llamada
 				</button>
 				<button
 					className={range === RANGE.patient

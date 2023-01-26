@@ -22,9 +22,9 @@ function Patients() {
 
 	if (!loading) {
 		return (
-			<div className={styles.contAppointments}>
-				<div className={styles.Appointments}>
-					<div className={styles.contNextAppointments}>
+			<div className={styles.contPatients}>
+				<div className={styles.Patients}>
+					<div className={styles.contNextPatients}>
 						<h1>Obteniendo lista de pacientes</h1>
 						<Loader />
 					</div>
@@ -34,15 +34,15 @@ function Patients() {
 	}
 
 	return (
-		<div className={styles.contAppointments}>
-			<div className={styles.Appointments}>
-				<div className={styles.contNextAppointments}>
+		<div className={styles.contPatients}>
+			<div className={styles.Patients}>
+				<div className={styles.contNextPatients}>
 					<h1>Lista de pacientes</h1>
 					{patient.length >= 1
 						? (
-							<div className={styles.gridNextAppointments}>
+							<div className={styles.gridNextPatients}>
 								{patient.map((item) => (
-									<div className={styles.notAppointment}>
+									<div className={styles.notPatients}>
 										<p>Paciente: {item.fullName}</p>
 										<Link
 											to="/dashboard/DetailsPatients/"
@@ -58,7 +58,7 @@ function Patients() {
 							</div>
 						)
 						: (
-							<div className={styles.notAppointment}>
+							<div className={styles.notPatients}>
 								<p>No tienes pacientes registrados.</p>
 							</div>
 						)}

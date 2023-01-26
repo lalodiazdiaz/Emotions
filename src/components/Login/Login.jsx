@@ -39,7 +39,7 @@ function Login(props) {
 					</b>`);
 			})
 			.catch(() => {
-				Alertify.error(`<b style='color:white;'>Email y/o password erroneos
+				Alertify.error(`<b style='color:white;'>Email y/o Password Erróneos
 					</b>`);
 				setLoading(false);
 			});
@@ -56,7 +56,7 @@ function Login(props) {
 			<div className={styles.contform}>
 				<form ref={form} className={styles.contForm} onSubmit={handleSubmit(handleLogin)}>
 					<div className={styles.campo}>
-						<h2>Log In</h2>
+						<h2>Ingresar</h2>
 						<div
 							className={`${styles.input}
 							${errors.email && styles.error}`}
@@ -88,7 +88,7 @@ function Login(props) {
 						${errors.password && styles.error}`}
 						>
 							<div className={styles.contInput}>
-								<p>Password</p>
+								<p>Contraseña</p>
 								<input
 									className={styles.btnPass}
 									name="password"
@@ -99,7 +99,7 @@ function Login(props) {
 										},
 									})}
 									onChange={onChangePassword}
-									placeholder="Password"
+									placeholder="Contraseña"
 									type="password"
 									value={password}
 								/>
@@ -110,7 +110,7 @@ function Login(props) {
 							className={styles.btnSend}
 							disabled={loading}
 							type="submit"
-							value="Iniciar sesion"
+							value="Iniciar sesión"
 						/>
 					</div>
 				</form>

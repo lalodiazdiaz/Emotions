@@ -8,12 +8,15 @@ function Modal({ isVisible, onAction, title, children }) {
 			<div className={styles.contModal}>
 				<h1>{title}</h1>
 				{children}
-				<button
-					className={styles.closeModal}
-					onClick={onAction}
-					type="button"
-				>Cerrar
-				</button>
+				<div className={styles.buttons}>
+					<button
+						className={styles.closeModal}
+						onClick={onAction}
+						type="button"
+					>
+						Cerrar
+					</button>
+				</div>
 			</div>
 		</div>
 	);

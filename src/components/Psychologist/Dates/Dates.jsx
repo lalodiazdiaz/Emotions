@@ -1,6 +1,7 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useCallback } from 'react';
 import { useDispatch } from 'react-redux';
 import Calendar from 'react-calendar';
+import AppointmentModal from '../../AppointmentModal/AppointmentModal';
 import styles from './Dates.module.css';
 import 'react-calendar/dist/Calendar.css';
 import appointmentsService from '../../../services/Appointments/appointmentsService';
@@ -9,6 +10,15 @@ import Loader from '../../Loader/Loader';
 import { getappointment } from '../../../slices/Appointmrent';
 
 function Dates() {
+	const [modal, setModal] = useState(false);
+
+	const modalOpenAction = useCallback(() => {
+		setModal(true);
+	}, []);
+
+	const modalCloseAction = useCallback(() => {
+		setModal(false);
+	}, []);
 	const [dataD, setDataD] = useState([]);
 	const [tgl, setTgl] = useState(new Date());
 
@@ -126,7 +136,15 @@ function Dates() {
 						<p>• Días disponibles.</p>
 					</div>
 				</div>
+				<button
+					className={styles.schedule}
+					onClick={modalOpenAction}
+					type="button"
+				>
+					Agregar
+				</button>
 			</div>
+			<AppointmentModal isVisible={modal} onAction={modalCloseAction} />
 		</div>
 	);
 }

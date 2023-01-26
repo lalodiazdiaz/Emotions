@@ -74,6 +74,48 @@
   background: black;
 }
 
+.schedule {
+  font-size: 20px;
+  margin: 1%;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 5px;
+  width: 180px;
+  background: #66d086;
+  border: 0;
+  color: #ffffff;
+  letter-spacing: 2px;
+  padding: 18px 30px;
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+}
+
+.schedule:hover {
+  background-color: #64ba7e;
+}
+
+.schedule {
+  font-size: 20px;
+  margin: 1%;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 5px;
+  width: 180px;
+  background: #66d086;
+  border: 0;
+  color: #ffffff;
+  letter-spacing: 2px;
+  padding: 18px 30px;
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+}
+
+.schedule:hover {
+  background-color: #64ba7e;
+}
+
 .contNextAppointments {
   display: flex;
   height: 95%;
@@ -131,15 +173,16 @@ h1 {
   justify-content: center;
 }
 
-
 @media (max-width:1300px) {
   .contAppointments {
     display: flex;
     width: 100%;
-    margin-left: 0px;
     height: 100%;
+    margin-left: 0px;
     flex-direction: column-reverse;
     z-index: -1;
+    flex-direction: column-reverse;
+    justify-content: flex-start;
   }
 
   .Appointments {
@@ -148,6 +191,10 @@ h1 {
     height: 90%;
     justify-content: flex-start;
     flex-direction: column;
+  }
+
+  .schedule {
+    position: absolute;
   }
 
   .contNextAppointments {
@@ -192,7 +239,7 @@ h1 {
     margin-left: 0px;
     height: 100%;
     flex-direction: column-reverse;
-  }
+    }
 
   .Appointments {
     display: flex;
@@ -237,5 +284,22 @@ h1 {
     display: flex;
     flex-direction: row;
     width: 100%;
+  }
+  
+  .schedule {
+    position: absolute;
+    font-size: 20px;
+    margin: 15%;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 5px;
+    width: 180px;
+    background: #66d086;
+    border: 0;
+    color: #ffffff; 
+    letter-spacing: 2px; 
+    padding: 18px 30px; 
+    bottom: 40px;
+    right: -9%;
   }
 }

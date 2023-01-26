@@ -103,6 +103,7 @@ main {
     transition: 850ms;
     align-self: flex-end;
     margin-top: 10%;
+    z-index: 1;
   }
 
   .asideMenuOpen {
@@ -110,7 +111,7 @@ main {
     display: flex;
     width: 100%;
     margin-top: 90px;
-    height: 90%;
+    height: 91%;
     background-color: #8fe0d1;
     justify-content: space-between;
     align-items: center;
@@ -118,6 +119,7 @@ main {
     align-self: flex-end;
     left: 0;
     transition: 600ms;
+    z-index: 1;
   }
 
   .resMenu {

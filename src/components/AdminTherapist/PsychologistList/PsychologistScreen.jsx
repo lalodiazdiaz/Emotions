@@ -33,7 +33,8 @@ function PsychologistScreen() {
 	const navigateScreen = () => {
 		navigate('/dashboard/addPsychologist/');
 	};
-
+	const local = JSON.parse(localStorage.getItem('user'));
+	const idTherapist = local.data.id;
 	if (!loading) {
 		return (
 			<div className={styles.mainContainer}>
@@ -58,6 +59,7 @@ function PsychologistScreen() {
 							data={data}
 							id={data.id}
 							onAction={updateList}
+							userId={idTherapist}
 						/>
 					))}
 				</div>

@@ -3,10 +3,12 @@ import { useForm } from 'react-hook-form';
 import { useDispatch } from 'react-redux';
 import Alertify from 'alertifyjs';
 import 'alertifyjs/build/css/alertify.css';
+import { useNavigate } from 'react-router-dom';
 import styles from './AddPsychologist.module.css';
 import { addTherapist } from '../../../slices/psychologist';
 
 function AddPsychologist() {
+	const navigate = useNavigate();
 	const dispatch = useDispatch();
 	const { register, handleSubmit, formState: { errors } } = useForm();
 	const [loading, setLoading] = useState(false);
@@ -49,12 +51,13 @@ function AddPsychologist() {
 			.unwrap()
 			.then((res) => {
 				window.location.reload();
-				Alertify.success(`<b style='color:white;'>Bienvenido
+				Alertify.success(`<b style='color:white;'>Usuario Registrado 
 					</b>`);
 				resetForm();
+				navigate('/dashboard/therapist/');
 			})
 			.catch(() => {
-				Alertify.error(`<b style='color:white;'>Email y/o password erroneos
+				Alertify.error(`<b style='color:white;'>Error al registrar
 					</b>`);
 				setLoading(false);
 			});

@@ -14,7 +14,7 @@ function PsycologistCard({ onAction, data, id, userId }) {
 		await dispatch(deleteTherapist({ id }))
 			.then((res) => {
 				if (res.payload.isValid) {
-					Alertify.success(`<b style='color:white;'>Cita cancelada
+					Alertify.success(`<b style='color:white;'>Usuario eliminado
 					</b>`);
 				}
 			});

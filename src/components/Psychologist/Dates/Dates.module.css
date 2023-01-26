@@ -23,7 +23,7 @@
 }
 
 .calendar {
-  margin-left: 600px;
+  margin-left: 50%;
   display: flex;
   flex-direction: column;
   height: 100%;
@@ -74,7 +74,7 @@
   background: black;
 }
 
-.schedule {
+.btnAdd {
   font-size: 20px;
   margin: 1%;
   text-align: center;
@@ -91,11 +91,11 @@
   right: 40px;
 }
 
-.schedule:hover {
+.btnAdd:hover {
   background-color: #64ba7e;
 }
 
-.schedule {
+.btnAdd {
   font-size: 20px;
   margin: 1%;
   text-align: center;
@@ -112,7 +112,7 @@
   right: 40px;
 }
 
-.schedule:hover {
+.btnAdd:hover {
   background-color: #64ba7e;
 }
 
@@ -193,7 +193,7 @@ h1 {
     flex-direction: column;
   }
 
-  .schedule {
+  .btnAdd {
     position: absolute;
   }
 
@@ -219,10 +219,10 @@ h1 {
   }
 
   .calendar {
-    height: 50%;
+    height: 60%;
     width: 100%;
     position: absolute; 
-    margin-left: 0px;
+    margin-left: 0%;
   }
   
   .indicators {
@@ -271,7 +271,6 @@ h1 {
   .calendar {
     height: 75%;
     width: 100%;
-    margin-top: 100px;
   }
   
   h1  {
@@ -283,23 +282,23 @@ h1 {
   .indicators {
     display: flex;
     flex-direction: row;
-    width: 100%;
+    width: 90%;
   }
   
-  .schedule {
+  .btnAdd {
     position: absolute;
     font-size: 20px;
-    margin: 15%;
+    margin: 10%;
     text-align: center;
     cursor: pointer;
     border-radius: 5px;
-    width: 180px;
+    width: 160px;
     background: #66d086;
     border: 0;
     color: #ffffff; 
     letter-spacing: 2px; 
     padding: 18px 30px; 
-    bottom: 40px;
-    right: -9%;
+    bottom: 10px;
+    right: -5%;
   }
 }

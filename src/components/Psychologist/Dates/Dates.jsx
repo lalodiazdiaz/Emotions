@@ -79,7 +79,7 @@ function Dates() {
 			<div className={styles.contAppointments}>
 				<div className={styles.Appointments}>
 					<div className={styles.contNextAppointments}>
-						<h1>Proximas Citas</h1>
+						<h1>Próximas Citas</h1>
 						<div className={styles.loaderContainer}>
 							<Loader />
 						</div>
@@ -92,7 +92,7 @@ function Dates() {
 		<div className={styles.contAppointments}>
 			<div className={styles.Appointments}>
 				<div className={styles.contNextAppointments}>
-					<h1>Proximas Citas</h1>
+					<h1>Próximas Citas</h1>
 					{next.length >= 1
 						? (
 							<div className={styles.gridNextAppointments}>
@@ -137,7 +137,7 @@ function Dates() {
 					</div>
 				</div>
 				<button
-					className={styles.schedule}
+					className={styles.btnAdd}
 					onClick={modalOpenAction}
 					type="button"
 				>

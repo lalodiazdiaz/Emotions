@@ -47,9 +47,11 @@ function Dashboard() {
 			.then((result) => {
 				setState(false);
 			}).catch((err) => {
+			}).finally(() => {
+				localStorage.removeItem('user');
+				navigate('/login');
+				navigate(0);
 			});
-		navigate('/login');
-		navigate(0);
 	};
 
 	return (

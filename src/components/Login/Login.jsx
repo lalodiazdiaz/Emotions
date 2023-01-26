@@ -39,7 +39,7 @@ function Login(props) {
 					</b>`);
 			})
 			.catch(() => {
-				Alertify.error(`<b style='color:white;'>Email y/o Password Erróneos
+				Alertify.error(`<b style='color:white;'>Email y/o contraseña erróneos
 					</b>`);
 				setLoading(false);
 			});

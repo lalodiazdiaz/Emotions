@@ -62,7 +62,7 @@ function NextAppointment({ onAction, date, name, time, title, id }) {
 						: styles.btnVideocalls}
 					type="button"
 				>
-					Vídeo llamada
+					Videollamada
 				</button>
 				<button
 					className={range === RANGE.patient

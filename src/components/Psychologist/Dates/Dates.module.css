@@ -3,7 +3,8 @@
   width: 80%;
   height: 100%;
   margin-left: 20%;
-  position: absolute;
+  position: absolute;  
+  background-color: #f0eeee;
 }
 
 .Appointments {
@@ -14,11 +15,108 @@
   align-items: flex-start;
   width: 100%;
   height: 100%;
-  background-color: #f0eeee;
+}
+
+.highlight {
+  font-weight: 900;
+  color: rgba(0, 156, 247, 0.886);
+}
+
+.calendar {
+  margin-left: 50%;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 50%;
+  justify-content: center;
+  align-items: center;
+  position: absolute;  
+}
+
+.indicators {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+.ContainerBox {
+  display: flex;
+  width: 33%;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.FirstBox {
+  width: 25vh;
+  max-width: 15px;
+  height: 25vh;
+  max-height: 15px;
+  position: relative;
+  background:red;
+}
+
+.SecondBox {
+  width: 25vh;
+  max-width: 15px;
+  height: 25vh;
+  max-height: 15px;
+  position: relative;
+  background:rgba(0, 156, 247, 0.886);
+}
+
+.ThirdBox {
+  width: 25vh;
+  max-width: 15px;
+  height: 25vh;
+  max-height: 15px;
+  position: relative;
+  background: black;
+}
+
+.btnAdd {
+  font-size: 20px;
+  margin: 1%;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 5px;
+  width: 180px;
+  background: #66d086;
+  border: 0;
+  color: #ffffff;
+  letter-spacing: 2px;
+  padding: 18px 30px;
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+}
+
+.btnAdd:hover {
+  background-color: #64ba7e;
+}
+
+.btnAdd {
+  font-size: 20px;
+  margin: 1%;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 5px;
+  width: 180px;
+  background: #66d086;
+  border: 0;
+  color: #ffffff;
+  letter-spacing: 2px;
+  padding: 18px 30px;
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+}
+
+.btnAdd:hover {
+  background-color: #64ba7e;
 }
 
 .contNextAppointments {
-  position: absolute;
   display: flex;
   height: 95%;
   width: 45%;
@@ -75,28 +173,31 @@ h1 {
   justify-content: center;
 }
 
-
 @media (max-width:1300px) {
   .contAppointments {
     display: flex;
     width: 100%;
-    margin-left: 0px;
     height: 100%;
+    margin-left: 0px;
     flex-direction: column-reverse;
-    background-color: black;
     z-index: -1;
+    flex-direction: column-reverse;
+    justify-content: flex-start;
   }
 
   .Appointments {
-    position: absolute;
     display: flex;
     width: 100%;
     height: 90%;
     justify-content: flex-start;
+    flex-direction: column;
+  }
+
+  .btnAdd {
+    position: absolute;
   }
 
   .contNextAppointments {
-    position: absolute;
     display: flex;
     height: 45%;
     width: 90%;
@@ -117,6 +218,18 @@ h1 {
     border: 3px solid #B2B9BA;
   }
 
+  .calendar {
+    height: 60%;
+    width: 100%;
+    position: absolute; 
+    margin-left: 0%;
+  }
+  
+  .indicators {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+  }
 }
 
 @media (max-width:600px) {
@@ -126,21 +239,16 @@ h1 {
     margin-left: 0px;
     height: 100%;
     flex-direction: column-reverse;
-    background-color: black;
-  }
+    }
 
   .Appointments {
-    position: absolute;
     display: flex;
-    width: 100%;
-    height: 90%;
     justify-content: flex-start;
   }
 
   .contNextAppointments {
-    position: absolute;
     display: flex;
-    height: 50%;
+    height: 30%;
     width: 90%;
     justify-content: flex-start;
     align-self: center;
@@ -150,21 +258,47 @@ h1 {
 
   .gridNextAppointments {
     display: grid;
-    grid-auto-rows: 50%;
+    grid-auto-rows: 70%;
     overflow: auto;
     grid-gap: 0px;
     background-color: white;
     padding-bottom: 5px;
     border-radius: 5px;
     border: 3px solid #B2B9BA;
+    height: 100%;
   }
 
+  .calendar {
+    height: 75%;
+    width: 100%;
+  }
+  
   h1  {
     margin: 0;
     margin-bottom: 10px;
     font-size: 20px;
   }
-  .gridNextAppointments {
-    height: 75%;
+
+  .indicators {
+    display: flex;
+    flex-direction: row;
+    width: 90%;
+  }
+  
+  .btnAdd {
+    position: absolute;
+    font-size: 20px;
+    margin: 10%;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 5px;
+    width: 160px;
+    background: #66d086;
+    border: 0;
+    color: #ffffff; 
+    letter-spacing: 2px; 
+    padding: 18px 30px; 
+    bottom: 10px;
+    right: -5%;
   }
 }

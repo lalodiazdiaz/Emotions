@@ -14,7 +14,6 @@ const logOutSession = async () => {
 		`${API_URL}/session/logout`,
 		{ headers: { Authorization: authStr } },
 	);
-	localStorage.removeItem('user');
 	return res.data;
 };
 

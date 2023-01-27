@@ -1,10 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import ClipLoader from 'react-spinners/ClipLoader';
 import { useDispatch } from 'react-redux';
 import NextAppointment from '../../NextAppointment/NextAppointent';
 import styles from './DatesHomeworks.module.css';
-import { getNextAppointment }
-	from '../../../services/Appointments/appointmentsService';
 import Loader from '../../Loader/Loader';
 import { getappointment } from '../../../slices/Appointmrent';
 
@@ -27,7 +24,7 @@ function DatesAndHomeworks() {
 	}, [setNext]);
 
 	const updateList = async () => {
-	 await	dispatch(getappointment({ AuthStr, params }))
+		await	dispatch(getappointment({ AuthStr, params }))
 			.unwrap()
 			.then((res) => {
 				setNext(res.data);
@@ -38,7 +35,7 @@ function DatesAndHomeworks() {
 		return (
 			<div className={styles.contAppointments}>
 				<div className={styles.Appointments}>
-					<h2>Proxima cita</h2>
+					<h2>Próxima cita</h2>
 					<div className={styles.loaderContainer}>
 						<Loader />
 					</div>
@@ -49,7 +46,7 @@ function DatesAndHomeworks() {
 	return (
 		<div className={styles.contAppointments}>
 			<div className={styles.Appointments}>
-				<h2>Proxima cita</h2>
+				<h2>Próxima cita</h2>
 				{next.length >= 1
 					? (
 						<NextAppointment
@@ -58,7 +55,7 @@ function DatesAndHomeworks() {
 							name={next[0].therapistName}
 							onAction={updateList}
 							time={next[0].hour}
-							title="Psicologo"
+							title="Psicólogo"
 						/>
 					)
 					: (

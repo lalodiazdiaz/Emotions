@@ -15,6 +15,8 @@ import { RANGE } from './constants';
 import PsychologistScreen
 	from './components/AdminTherapist/PsychologistList/PsychologistScreen';
 import AddPsychologist from './components/AdminTherapist/AddPsychologist/AddPsychologist';
+import DetailsPatients from './components/DetailsPatients/DetailsPatients';
+import AddPatients from './components/AddPatients/AddPatients';
 
 function App() {
 	const userLog = JSON.parse(localStorage.getItem('user'));
@@ -110,6 +112,22 @@ function App() {
 						path="/dashboard/addPsychologist/"
 					/>
 				</Route>
+				<Route
+					element={(
+						<ProtectedRoute>
+							<DetailsPatients />
+						</ProtectedRoute>
+					)}
+					path="/dashboard/DetailsPatients/"
+				/>
+				<Route
+					element={(
+						<ProtectedRoute>
+							<AddPatients />
+						</ProtectedRoute>
+					)}
+					path="/dashboard/AddPatients/"
+				/>
 			</Routes>
 		</BrowserRouter>
 	);

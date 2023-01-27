@@ -14,10 +14,10 @@
 
 .backModal {
   display: flex;
-  position: relative;
-  background-color: #f0eeee;
+  position: fixed;
+  background-color: #b2b9ba;
   height: 100%;
-  width: 100%;
+  width: 150%;
   opacity: .7;
 }
 
@@ -39,7 +39,11 @@
   width: 100%;
   justify-content: space-around;
   align-items: center;
+}
 
+.buttons {
+  display: flex;
+  flex-direction: row;
 }
 
 .closeModal {
@@ -53,6 +57,7 @@
   width: 130px;
   background: #fe6272;
   border: 0;
+  flex-direction: row;
 }
 
 .closeModal:hover {
@@ -65,7 +70,7 @@
 
 @media (max-width: 1100px) {
   .contModal {
-    width: 95%;
+    width: 75%;
   }
 
   .contModal h1 {
@@ -76,6 +81,11 @@
     height: max-content;
     width: 160px;
     font-size: 25px;
+  }
+
+  .backModal {
+    width: 100%;
+    height: 100%;
   }
 }
 
@@ -103,5 +113,10 @@
     height: max-content;
     width: 130px;
     font-size: 20px;
+  }
+
+  .backModal {
+    width: 100%;
+    height: 100%;
   }
 }

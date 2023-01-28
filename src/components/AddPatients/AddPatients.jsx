@@ -8,7 +8,7 @@ function AddPatients() {
 			<div className={styles.AddPatients}>
 				<div className={styles.boxAddPatients}>
 					<h1>Nuevo Paciente</h1>
-					<div>
+					<div className={styles.gridPatients}>
 						<form ref={form} className={styles.formAddPatients}>
 							<div className={styles.dataAddPatients}>
 								<p>Nombre</p>
@@ -18,10 +18,17 @@ function AddPatients() {
 								/>
 							</div>
 							<div className={styles.dataAddPatients}>
-								<p>Edad</p>
+								<p>Segundo apellido</p>
 								<input
 									className={styles.inputAddPatients}
-									name="age"
+									name="middleName"
+								/>
+							</div>
+							<div className={styles.dataAddPatients}>
+								<p>Primer apellido</p>
+								<input
+									className={styles.inputAddPatients}
+									name="lastName"
 								/>
 							</div>
 							<div className={styles.dataAddPatients}>
@@ -32,38 +39,31 @@ function AddPatients() {
 								/>
 							</div>
 							<div className={styles.dataAddPatients}>
+								<p>Teléfono</p>
+								<input
+									className={styles.inputAddPatients}
+									name="phone"
+								/>
+							</div>
+							<div className={styles.dataAddPatients}>
 								<p>Fecha de nacimiento</p>
 								<input
 									className={styles.inputAddPatients}
-									name="date"
+									name="birthdate"
 								/>
 							</div>
 							<div className={styles.dataAddPatients}>
-								<p>Dirección</p>
+								<p>Estatus civil</p>
 								<input
 									className={styles.inputAddPatients}
-									name="address"
+									name="maritalStatus"
 								/>
 							</div>
 							<div className={styles.dataAddPatients}>
-								<p>Sexo</p>
+								<p>Rango</p>
 								<input
 									className={styles.inputAddPatients}
-									name="gender"
-								/>
-							</div>
-							<div className={styles.dataAddPatients}>
-								<p>Escolaridad</p>
-								<input
-									className={styles.inputAddPatients}
-									name="schooling"
-								/>
-							</div>
-							<div className={styles.dataAddPatients}>
-								<p>Motivo de consulta</p>
-								<input
-									className={styles.inputAddPatients}
-									name="reason"
+									name="range"
 								/>
 							</div>
 						</form>

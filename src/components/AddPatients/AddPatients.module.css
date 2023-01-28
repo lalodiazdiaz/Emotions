@@ -1,8 +1,6 @@
 .contAddPatients {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
+    width: 80%;
     height: 100%;
     margin-left: 20%;
     position: absolute;
@@ -14,25 +12,9 @@
     justify-content: center;
     flex-direction: column;
     align-items: center;
-    width: 70%;
-    height: 90%;
-    background-color: #f0eeee;
-    margin-left: -20%;
-}
-
-.boxAddPatients {
-    display: flex;
-    grid-auto-rows: 25%;
-    overflow: auto;
-    grid-gap: 10px;
-    background-color: white;
-    padding-bottom: 5px;
-    border-radius: 5px;
-    border: 3px solid #B2B9BA;
+    width: 100%;
     height: 100%;
-    max-width: 100%;
-    align-items: flex-start;
-    justify-content: space-between;
+    background-color: #f0eeee;
 }
 
 @media (max-width:1200px) {
@@ -43,41 +25,12 @@
         margin-left: 0%;
         flex-direction: column-reverse;
         z-index: -1;
-        justify-content: center;
-        align-items: center;
-        position: absolute;
     }
 
     .AddPatients {
-        display: flex;
-        width: 100%;
-        height: 100%;
-        justify-content: flex-start;
-        flex-direction: column;
-        align-items: center;
-        background-color: #f0eeee;
-    }
-}
-
-@media (max-width:600px) {
-    .contAddPatients {
-        display: flex;
-        width: 100%;
-        height: 100%;
-        flex-direction: column-reverse;
-        justify-content: center;
-        align-items: center;
         position: absolute;
-    }
-
-    .AddPatients {
         display: flex;
-        position: absolute;
         width: 100%;
-        height: 100%;
-        justify-content: center;
-        flex-direction: column;
-        align-items: center;
-        background-color: #f0eeee;
+        height: 90%;
     }
 }

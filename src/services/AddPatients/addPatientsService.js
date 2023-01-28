@@ -2,7 +2,7 @@ import axios from 'axios';
 import Alertify from 'alertifyjs';
 import 'alertifyjs/build/css/alertify.css';
 
-const API_URL_AC = `${process.env.REACT_APP_API_BASE_URL}/user/register`;
+const API_URL = `${process.env.REACT_APP_API_BASE_URL}/user/register`;
 const loggedUser = window.localStorage.getItem('user');
 const userLogged = JSON.parse(loggedUser);
 let ACCESS_TOKEN = '';
@@ -16,8 +16,8 @@ const header = {
 	'Content-type': 'application/json; charset=UTF-8',
 };
 
-const postappointments = (data) => {
-	axios.post(API_URL_AC, data, {
+const postPatients = (data) => {
+	axios.post(API_URL, data, {
 		headers: header,
 	})
 		.then((response) => {
@@ -31,8 +31,8 @@ const postappointments = (data) => {
 		});
 };
 
-const appointmentsService = {
-	postappointments,
+const addPatientsService = {
+	postPatients,
 };
 
-export default appointmentsService;
+export default addPatientsService;

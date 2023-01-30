@@ -45,6 +45,7 @@ function Patients() {
 									<div className={styles.notPatients}>
 										<p>Paciente: {item.fullName}</p>
 										<Link
+											key={item.id}
 											to="/dashboard/DetailsPatients/"
 										>
 											<input

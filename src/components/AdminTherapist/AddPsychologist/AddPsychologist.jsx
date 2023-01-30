@@ -59,6 +59,7 @@ function AddPsychologist() {
 					Alertify.error(`<b style='color:white;'>Email existente
 					</b>`);
 					setLoading(false);
+					resetForm();
 				}
 			})
 			.catch(() => {

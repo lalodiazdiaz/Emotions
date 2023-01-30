@@ -49,7 +49,6 @@ function AddPsychologist() {
 		dispatch(addTherapist({ form }))
 			.unwrap()
 			.then((res) => {
-				console.log(res);
 				setLoading(true);
 				if (res.isValid === true) {
 					Alertify.success(`<b style='color:white;'>Usuario Registrado 

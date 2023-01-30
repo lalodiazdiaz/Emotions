@@ -159,7 +159,6 @@ h1 {
     margin-left: 0px;
     flex-direction: column-reverse;
     z-index: -1;
-    flex-direction: column-reverse;
     justify-content: flex-start;
   }
 

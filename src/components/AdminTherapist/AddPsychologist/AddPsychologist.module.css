@@ -5,7 +5,8 @@
   margin-left: 20%;
   position: absolute;
 }
-.inputValid{
+
+.inputValid {
   display: flex;
   flex-direction: column;
   height: 100%;
@@ -14,7 +15,7 @@
   align-items: center;
 }
 
-.inputValid strong{
+.inputValid strong {
   color: red;
   margin: 0;
 }
@@ -26,7 +27,7 @@
   height: 100%;
   background-color: #f0eeee;
   flex-direction: column;
-  align-items: center; 
+  align-items: center;
 }
 
 .newTherapist h2 {
@@ -129,7 +130,7 @@
     width: 40%;
   }
 
-  .selectOptions{
+  .selectOptions {
     width: 60%;
   }
 }
@@ -149,8 +150,7 @@
     width: 30%;
   }
 
-  .inputValid strong{
+  .inputValid strong {
     font-size: 13px;
   }
-
 }

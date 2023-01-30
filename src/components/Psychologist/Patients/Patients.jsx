@@ -26,7 +26,9 @@ function Patients() {
 				<div className={styles.Patients}>
 					<div className={styles.contNextPatients}>
 						<h1>Obteniendo lista de pacientes</h1>
-						<Loader />
+						<div className={styles.loaderContainer}>
+							<Loader />
+						</div>
 					</div>
 				</div>
 			</div>
@@ -37,7 +39,7 @@ function Patients() {
 		<div className={styles.contPatients}>
 			<div className={styles.Patients}>
 				<div className={styles.contNextPatients}>
-					<h1>Lista de pacientes</h1>
+					<h1>Pacientes</h1>
 					{patient.length >= 1
 						? (
 							<div className={styles.gridNextPatients}>
@@ -45,6 +47,7 @@ function Patients() {
 									<div className={styles.notPatients}>
 										<p>Paciente: {item.fullName}</p>
 										<Link
+											key={item.id}
 											to="/dashboard/DetailsPatients/"
 										>
 											<input

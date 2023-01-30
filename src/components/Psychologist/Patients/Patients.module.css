@@ -44,20 +44,18 @@
 .notPatients {
   display: flex;
   max-width: 100%;
-  height: 100%;
+  height: 90%;
   background-color: white;
   border-radius: 5px;
   border: 3px solid #B2B9BA;
-  margin-left: 5px;
-  margin-right: 5px;
-  margin: 5px;
+  margin: 17px;
   align-items: flex-start;
   justify-content: space-between;
 }
 
 .notPatients p {
   font-size: 180%;
-  margin-left: 5%;
+  margin-left: 2%;
 }
 
 .btnDetails {
@@ -71,7 +69,7 @@
   width: 90%;
   background: #66d086;
   border: 0;
-  margin-right: 5%;
+  margin-right: 0%;
   flex-direction: row;
   align-items: flex-end;
   justify-content: flex-end;
@@ -89,15 +87,26 @@
   padding: 3px;
   border-radius: 5px;
   width: 80%;
-  height: 80%;
+  height: 100%;
   background: #66d086;
   border: 0;
   flex-direction: row;
-  margin-right: -250%;
+  margin-right: -240%;
 }
 
 .btnAdd:hover {
   background-color: #64ba7e;
+}
+
+.loaderContainer {
+  display: flex;
+  width:100%;
+  height: 78%;
+  background-color: white;
+  border-radius: 5px;
+  border: 3px solid #B2B9BA;
+  align-items: center;
+  justify-content: center;
 }
 
 @media (max-width:1200px) {
@@ -143,19 +152,17 @@
   .notPatients {
     display: flex;
     max-width: 100%;
-    height: 100%;
+    height: 90%;
     background-color: white;
     border-radius: 5px;
     border: 3px solid #B2B9BA;
-    margin-left: 5px;
-    margin-right: 5px;
-    margin: 5px;
+    margin: 17px;
     align-items: center;
     justify-content: center;
   }
 
   .notPatients p {
-    font-size: 180%;
+    font-size: 150%;
     height: 65%;
     width: 600%;
     margin-left: 2%;
@@ -168,22 +175,22 @@
     text-align: center;
     padding: 12%;
     border-radius: 5px;
-    width: 130%;
+    width: 150%;
     background: #66d086;
     flex-direction: row;
-    margin-left: -50%;
+    margin-left: -45%;
   }
 
   .btnAdd {
     color: white;
     font-size: 20px;
-    margin: 6%;
-    width: 20%;
-    height: 30%;
+    margin: 2%;
+    width: 23%;
+    height: 100%;
     background: #66d086;
     border: 0;
     flex-direction: row;
-    margin-right: -60%;
+    margin-right: -66%;
   }
 }
 
@@ -239,10 +246,10 @@
   }
 
   .notPatients p {
-    font-size: 110%;
-    margin-left: 0%;
-    height: 10%;
-    width: 70%;
+    font-size: 118%;
+    margin-left: 10%;
+    height: 100%;
+    width: 100%;
   }
 
   .btnDetails {
@@ -250,9 +257,9 @@
     font-size: 20px;
     margin: 5%;
     text-align: center;
-    padding: 5px;
+    padding: 10px;
     border-radius: 5px;
-    width: 40%;
+    width: 45%;
     background: #66d086;
     flex-direction: row;
     margin-right: 0%;
@@ -263,7 +270,7 @@
     font-size: 20px;
     margin: 3%;
     padding: 5px;
-    width: 30%;
+    width: 40%;
     height: 80%;
     background: #66d086;
     border: 0;

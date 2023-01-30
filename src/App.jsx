@@ -111,23 +111,23 @@ function App() {
 						)}
 						path="/dashboard/addPsychologist/"
 					/>
+					<Route
+						element={(
+							<ProtectedRoute>
+								<DetailsPatients />
+							</ProtectedRoute>
+						)}
+						path="/dashboard/DetailsPatients/"
+					/>
+					<Route
+						element={(
+							<ProtectedRoute>
+								<AddPatients />
+							</ProtectedRoute>
+						)}
+						path="/dashboard/AddPatients/"
+					/>
 				</Route>
-				<Route
-					element={(
-						<ProtectedRoute>
-							<DetailsPatients />
-						</ProtectedRoute>
-					)}
-					path="/dashboard/DetailsPatients/"
-				/>
-				<Route
-					element={(
-						<ProtectedRoute>
-							<AddPatients />
-						</ProtectedRoute>
-					)}
-					path="/dashboard/AddPatients/"
-				/>
 			</Routes>
 		</BrowserRouter>
 	);

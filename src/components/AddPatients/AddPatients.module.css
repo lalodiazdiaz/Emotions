@@ -1,11 +1,12 @@
-.contAppointments {
+.contAddPatients {
     display: flex;
-    width: 100%;
+    width: 80%;
     height: 100%;
+    margin-left: 20%;
     position: absolute;
 }
 
-.Appointments {
+.AddPatients {
     display: flex;
     position: absolute;
     justify-content: center;
@@ -17,19 +18,19 @@
 }
 
 @media (max-width:1200px) {
-    .contAppointments {
+    .contAddPatients {
         display: flex;
         width: 100%;
-        margin-left: 0px;
         height: 100%;
+        margin-left: 0%;
         flex-direction: column-reverse;
         z-index: -1;
     }
 
-    .Appointments {
+    .AddPatients {
         position: absolute;
         display: flex;
         width: 100%;
-        height: 100%;
+        height: 90%;
     }
 }

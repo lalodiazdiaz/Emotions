@@ -54,12 +54,12 @@ function AddPsychologist() {
 					Alertify.success(`<b style='color:white;'>Usuario Registrado 
 					</b>`);
 					setLoading(false);
+					resetForm();
 				}
 				if (res.isValid === false && res.message === 'Email already exists') {
 					Alertify.error(`<b style='color:white;'>Email existente
 					</b>`);
 					setLoading(false);
-					resetForm();
 				}
 			})
 			.catch(() => {

@@ -22,7 +22,7 @@ export const deletePsychologist = async (id) => {
 };
 
 export const addPsychologist = async (form) => {
-	const res = await axios.post(`${API_URL}/user/register`, form, {
+	const res = await axios.post(`${API_URL}/user/registerTherapist`, form, {
 		 headers: { Authorization: authStr },
 	});
 	return res;

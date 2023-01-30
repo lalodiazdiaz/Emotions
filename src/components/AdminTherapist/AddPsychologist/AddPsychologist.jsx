@@ -46,19 +46,28 @@ function AddPsychologist() {
 	};
 
 	const handleAdd = () => {
-		setLoading(true);
 		dispatch(addTherapist({ form }))
 			.unwrap()
 			.then((res) => {
-				window.location.reload();
-				Alertify.success(`<b style='color:white;'>Usuario Registrado 
+				console.log(res);
+				setLoading(true);
+				if (res.isValid === true) {
+					Alertify.success(`<b style='color:white;'>Usuario Registrado 
 					</b>`);
-				resetForm();
-				navigate('/dashboard/therapist/');
+					setLoading(false);
+				}
+				if (res.isValid === false && res.message === 'Email already exists') {
+					Alertify.error(`<b style='color:white;'>Email existente
+					</b>`);
+					setLoading(false);
+				}
 			})
 			.catch(() => {
 				Alertify.error(`<b style='color:white;'>Error al registrar
 					</b>`);
+				setLoading(false);
+			})
+			.finally(() => {
 				setLoading(false);
 			});
 	};

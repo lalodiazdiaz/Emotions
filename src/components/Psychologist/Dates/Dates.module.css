@@ -80,36 +80,14 @@
   text-align: center;
   cursor: pointer;
   border-radius: 5px;
-  width: 180px;
+  width: 150px;
   background: #66d086;
   border: 0;
   color: #ffffff;
-  letter-spacing: 2px;
-  padding: 18px 30px;
   position: fixed;
-  bottom: 40px;
+  bottom: 10px;
   right: 40px;
-}
-
-.btnAdd:hover {
-  background-color: #64ba7e;
-}
-
-.btnAdd {
-  font-size: 20px;
-  margin: 1%;
-  text-align: center;
-  cursor: pointer;
-  border-radius: 5px;
-  width: 180px;
-  background: #66d086;
-  border: 0;
-  color: #ffffff;
-  letter-spacing: 2px;
-  padding: 18px 30px;
-  position: fixed;
-  bottom: 40px;
-  right: 40px;
+  height: 5%;
 }
 
 .btnAdd:hover {
@@ -191,10 +169,6 @@ h1 {
     height: 90%;
     justify-content: flex-start;
     flex-direction: column;
-  }
-
-  .btnAdd {
-    position: absolute;
   }
 
   .contNextAppointments {
@@ -286,19 +260,7 @@ h1 {
   }
   
   .btnAdd {
-    position: absolute;
-    font-size: 20px;
-    margin: 10%;
-    text-align: center;
-    cursor: pointer;
-    border-radius: 5px;
     width: 160px;
-    background: #66d086;
-    border: 0;
-    color: #ffffff; 
-    letter-spacing: 2px; 
-    padding: 18px 30px; 
-    bottom: 10px;
-    right: -5%;
+    right: 28%;
   }
 }

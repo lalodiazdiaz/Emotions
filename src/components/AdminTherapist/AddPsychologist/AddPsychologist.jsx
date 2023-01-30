@@ -74,7 +74,7 @@ function AddPsychologist() {
 	return (
 		<div className={styles.contNewTherapist}>
 			<div className={styles.newTherapist}>
-				<h2>Registro de psicologos</h2>
+				<h2>Registro de psicólogos</h2>
 				<form ref={forms} className={styles.contForm} onSubmit={handleSubmit(handleAdd)}>
 					<div className={styles.contInput}>
 						<p>Nombre: </p>
@@ -158,7 +158,7 @@ function AddPsychologist() {
 						</div>
 					</div>
 					<div className={styles.contInput}>
-						<p>Telefono: </p>
+						<p>Teléfono : </p>
 						<div className={styles.inputValid}>
 							<input
 								id="phone"
@@ -169,7 +169,7 @@ function AddPsychologist() {
 										value: /^[0-9]+$/i,
 									},
 									required: {
-										message: 'El telefono es un campo obligatorio',
+										message: 'El teléfono  es un campo obligatorio',
 										value: true,
 									},
 								})}
@@ -202,14 +202,14 @@ function AddPsychologist() {
 						</div>
 					</div>
 					<div className={styles.contInput}>
-						<p>Cedula: </p>
+						<p>Cédula : </p>
 						<div className={styles.inputValid}>
 							<input
 								id="license"
 								name="license"
 								{...register('license', {
 									required: {
-										message: 'La cedula profesional es un campo obligatorio',
+										message: 'La cédula  profesional es un campo obligatorio',
 										value: true,
 									},
 								})}
@@ -228,7 +228,7 @@ function AddPsychologist() {
 							onChange={handleChange}
 							value={form.range}
 						>
-							<option value="2">Psicologo</option>
+							<option value="2">Psicólogo</option>
 							<option value="3">Admin</option>
 						</select>
 					</div>

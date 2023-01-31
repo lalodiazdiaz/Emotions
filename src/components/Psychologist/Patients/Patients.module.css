@@ -2,7 +2,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100%;
+  width: 80%;
   height: 100%;
   margin-left: 20%;
   position: absolute;
@@ -28,6 +28,10 @@
   margin-left: -300px;
 }
 
+.contNextPatients h1 {
+  margin-left: 40%;
+}
+
 .gridNextPatients {
   display: grid;
   grid-auto-rows: 25%;
@@ -38,7 +42,8 @@
   border-radius: 5px;
   border: 3px solid #B2B9BA;
   height: 100%;
-  width: 100%;
+  width: 130%;
+  margin-left: 40%;
 }
 
 .notPatients {
@@ -91,7 +96,7 @@
   background: #66d086;
   border: 0;
   flex-direction: row;
-  margin-right: -240%;
+  margin-right: -400%;
 }
 
 .btnAdd:hover {

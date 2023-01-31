@@ -1,34 +1,24 @@
-import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
+import { createAsyncThunk } from '@reduxjs/toolkit';
 import addPatientsService from '../services/AddPatients/addPatientsService';
-
-const initialState = [];
+import { setMessage } from './message';
 
 export const createPatient = createAsyncThunk(
 	'patients/create',
-	async ({ name, middleName, lastName, email,
-		phone, birthdate, maritalStatus, range }) => {
-		const res = await addPatientsService.postPatients({
-			birthdate,
-			email,
-			lastName,
-			maritalStatus,
-			middleName,
-			name,
-			phone,
-			range,
-		});
-		return res;
+	async ({ form }, thunkAPI) => {
+		try {
+			const data = await addPatientsService.postPatients(form);
+			return data.data;
+		} catch (error) {
+			const message =
+				(error.response
+					&& error.response.data
+					&& error.response.data.message)
+				|| error.message
+				|| error.toString();
+			thunkAPI.dispatch(setMessage(message));
+			return thunkAPI.rejectWithValue();
+		}
 	},
 );
 
-const patientsSlice = createSlice({
-	initialState,
-	name: 'patient',
-	reducers: {
-		[createPatient.fulfilled]: (state, action) => {
-			state.push(action.payload);
-		},
-	},
-});
-
-export const patientsReducer = patientsSlice.reducer;
+export default createPatient;

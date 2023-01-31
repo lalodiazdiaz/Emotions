@@ -200,6 +200,7 @@ function AddPatients() {
 									},
 								})}
 								onChange={handleChange}
+								type="date"
 								value={form.birthdate}
 							/>
 							{errors.birthdate && <strong>{errors.birthdate.message}</strong>}

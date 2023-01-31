@@ -108,7 +108,7 @@ function AddPatients() {
 						</div>
 					</div>
 					<div className={styles.contInput}>
-						<p>Segundo nombre </p>
+						<p>Segundo nombre</p>
 						<div className={styles.inputValid}>
 							<input
 								id="middleName"

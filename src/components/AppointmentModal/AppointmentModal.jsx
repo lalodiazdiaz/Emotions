@@ -68,7 +68,7 @@ function AppointmentModal({ onAction, isVisible }) {
 	);
 
 	const eventEnter = (e) => {
-		if (e.key === 'Enter' && e.key === 'onClick') {
+		if (e.key === 'Enter') {
 			const userCurrent = data.filter((u) => u.fullName === e.target.value.trim());
 			const user = {
 				id: userCurrent[0].id,
@@ -106,6 +106,7 @@ function AppointmentModal({ onAction, isVisible }) {
 		onChange,
 		placeholder: 'Nombre del usuario',
 		value,
+		width: 1000,
 	};
 
 	const saveAppointment = () => {
@@ -129,9 +130,9 @@ function AppointmentModal({ onAction, isVisible }) {
 			title="Agendar Cita"
 		>
 			<div className={styles.data}>
-				<div className={styles.data}>
+				<div className={styles.dataAppointment}>
 					<div className={styles.form}>
-						<h2>Nombre:</h2>
+						<p>Nombre:</p>
 						<Autosuggest
 							className={styles.autocomplete}
 							getSuggestionValue={getSuggestionValue}
@@ -145,9 +146,9 @@ function AppointmentModal({ onAction, isVisible }) {
 						/>
 					</div>
 					<div className={styles.form}>
-						<h2>Fecha:</h2>
+						<p>Fecha:</p>
 						<input
-							className={styles.input}
+							className={styles.inputDate}
 							min={currentDate}
 							name="date"
 							onChange={handleInputChange}
@@ -157,9 +158,9 @@ function AppointmentModal({ onAction, isVisible }) {
 						/>
 					</div>
 					<div className={styles.form}>
-						<h2>Hora:</h2>
+						<p>Hora:</p>
 						<input
-							className={styles.input}
+							className={styles.inputHour}
 							name="hour"
 							onChange={handleInputChange}
 							required

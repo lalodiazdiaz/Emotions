@@ -17,12 +17,12 @@ function AddPatients() {
 	const [form, setForm] = useState({
 		birthdate: '',
 		email: '',
+		gender: '',
 		lastName: '',
 		maritalStatus: '',
 		middleName: '',
 		name: '',
 		phone: '',
-		range: '2',
 	});
 
 	const currentDate = new Date().toJSON().slice(0, 10);
@@ -38,12 +38,12 @@ function AddPatients() {
 		setForm({
 			birthdate: '',
 			email: '',
+			gender: '',
 			lastName: '',
 			maritalStatus: '',
 			middleName: '',
 			name: '',
 			phone: '',
-			range: '',
 		});
 	};
 
@@ -206,14 +206,14 @@ function AddPatients() {
 						</div>
 					</div>
 					<div className={styles.contInput}>
-						<p>Estatus civil</p>
+						<p>Estado civil</p>
 						<div className={styles.inputValid}>
 							<input
 								id="maritalStatus"
 								name="maritalStatus"
 								{...register('maritalStatus', {
 									required: {
-										message: 'El estatus civil es un campo obligatorio',
+										message: 'El estado civil es un campo obligatorio',
 										value: true,
 									},
 								})}
@@ -222,6 +222,25 @@ function AddPatients() {
 								value={form.maritalStatus}
 							/>
 							{errors.maritalStatus && <strong>{errors.maritalStatus.message}</strong>}
+						</div>
+					</div>
+					<div className={styles.contInput}>
+						<p>Género</p>
+						<div className={styles.inputValid}>
+							<input
+								id="gender"
+								name="gender"
+								{...register('gender', {
+									required: {
+										message: 'El género es un campo obligatorio',
+										value: true,
+									},
+								})}
+								onChange={handleChange}
+								type="text"
+								value={form.gender}
+							/>
+							{errors.gender && <strong>{errors.gender.message}</strong>}
 						</div>
 					</div>
 					<button

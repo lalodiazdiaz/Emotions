@@ -29,7 +29,7 @@
 }
 
 .contNextPatients h1 {
-  margin-left: 40%;
+  margin-left: 0%;
 }
 
 .gridNextPatients {
@@ -56,6 +56,7 @@
   margin: 17px;
   align-items: flex-start;
   justify-content: space-between;
+  margin-left: 45%;
 }
 
 .notPatients p {
@@ -239,7 +240,7 @@
 
   .notPatients {
     display: flex;
-    max-width: 100%;
+    width: 100%;
     height: 100%;
     background-color: white;
     border-radius: 5px;
@@ -251,10 +252,10 @@
   }
 
   .notPatients p {
-    font-size: 118%;
-    margin-left: 10%;
+    font-size: 107%;
+    margin-left: 2%;
     height: 100%;
-    width: 100%;
+    width: 70%;
   }
 
   .btnDetails {

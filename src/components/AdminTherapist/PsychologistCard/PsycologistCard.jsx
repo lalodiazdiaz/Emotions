@@ -5,7 +5,7 @@ import styles from './PsychologistCard.module.css';
 import 'alertifyjs/build/css/alertify.css';
 import { deleteTherapist } from '../../../slices/psychologist';
 
-function PsycologistCard({ onAction, data, id }) {
+function PsycologistCard({ onAction, data, id, userId }) {
 	const [isVisible, setIsVisible] = useState(false);
 	const dispatch = useDispatch();
 
@@ -14,13 +14,14 @@ function PsycologistCard({ onAction, data, id }) {
 		await dispatch(deleteTherapist({ id }))
 			.then((res) => {
 				if (res.payload.isValid) {
-					Alertify.success(`<b style='color:white;'>Cita cancelada
+					Alertify.success(`<b style='color:white;'>Usuario eliminado
 					</b>`);
 				}
 			});
 		onAction();
 		setIsVisible(false);
 	};
+
 	return (
 		<div className={styles.contCard}>
 			<div className={styles.contInformation}>
@@ -29,17 +30,20 @@ function PsycologistCard({ onAction, data, id }) {
 					<p>Psicologo: {data.fullName}</p>
 				</div>
 			</div>
-
 			<div className={styles.contButtons}>
+				{id !== userId
+					?			(
+						<button
+							className={styles.btnDelete}
+							disabled={isVisible}
+							onClick={handleDeleteAppointment}
+							type="button"
+						>
+							Eliminar
+						</button>
+					)
+					: null}
 
-				<button
-					className={styles.btnDelete}
-					disabled={isVisible}
-					onClick={handleDeleteAppointment}
-					type="button"
-				>
-					Eliminar
-				</button>
 			</div>
 		</div>
 	);

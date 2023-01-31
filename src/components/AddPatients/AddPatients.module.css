@@ -1,4 +1,4 @@
-.contAddPatients {
+.contNewTherapist {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -6,43 +6,45 @@
     height: 100%;
     margin-left: 20%;
     position: absolute;
-}
-
-.AddPatients {
+  }
+  
+  .inputValid {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 80%;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .inputValid strong {
+    color: red;
+    margin: 0;
+  }
+  
+  .newTherapist {
     display: flex;
     position: absolute;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
     width: 100%;
     height: 100%;
     background-color: #f0eeee;
-}
-
-.boxAddPatients {
-    display: flex;
-    height: 95%;
-    width: 65%;
     flex-direction: column;
     align-items: center;
-    margin-left: -300px;
-}
-
-.gridAddPatients {
-    display: grid;
-    grid-auto-rows: 20%;
-    overflow: auto;
-    grid-gap: 10px;
+  }
+  
+  .newTherapist h2 {
+    margin: 0;
+    margin-bottom: 10px;
+  }
+  
+  .contForm {
     background-color: white;
-    padding-bottom: 5px;
+    height: 90%;
+    width: 95%;
     border-radius: 5px;
     border: 3px solid #B2B9BA;
-    height: 100%;
-    width: 100%;
-}
-
-.dataAddPatients {
     display: flex;
+<<<<<<< HEAD
     max-width: 100%;
     height: 58%;
     background-color: white;
@@ -75,12 +77,59 @@
     height: 100%;
     background: #66d086;
     border: 0;
+=======
+    flex-direction: column;
+    justify-content: space-evenly;
+  }
+  
+  .contInput {
+    align-self: center;
+    width: 95%;
+    display: flex;
+>>>>>>> 5254f0811ee63b8e9b76e6d35898369e19478477
     flex-direction: row;
-    margin-right: -30%;
-}
-
-.btnAdd:hover {
+  }
+  
+  .contInput p {
+    width: 20%;
+    font-size: 23px;
+    margin: 0;
+    font-weight: bold;
+  }
+  
+  .inputValid input {
+    width: 98%;
+    border-radius: 5px;
+    border: 3px solid #B2B9BA;
+    padding-left: 13px;
+    font-size: 20px;
+    align-self: flex-start;
+  }
+  
+  .selectOptions {
+    width: 80%;
+    border-radius: 5px;
+    border: 3px solid #B2B9BA;
+    padding-left: 13px;
+    font-size: 20px;
+  }
+  
+  .btnAdd {
+    width: 10%;
+    height: 5%;
+    font-size: 20px;
+    background-color: #66d086;
+    border: 0;
+    border-radius: 5px;
+    color: white;
+    margin-top: 2%;
+    align-self: flex-end;
+    margin-right: 2%;
+  }
+  
+  .btnAdd:hover {
     background-color: #64ba7e;
+<<<<<<< HEAD
 }
 
 @media (max-width:1200px) {
@@ -105,64 +154,38 @@
         flex-direction: column;
         align-items: center;
         background-color: #f0eeee;
+=======
+  }
+  
+  @media (max-width:1200px) {
+    .contNewTherapist {
+      display: flex;
+      width: 100%;
+      margin-left: 0px;
+      height: 100%;
+      flex-direction: column-reverse;
+      z-index: -1;
     }
-
-    .boxAddPatients {
-        display: flex;
-        height: 65%;
-        width: 90%;
-        align-self: flex-start;
-        flex-direction: column;
-        align-items: center;
-        margin-left: 30px;
+  
+    .newTherapist {
+      position: absolute;
+      display: flex;
+      width: 100%;
+      height: 90%;
+>>>>>>> 5254f0811ee63b8e9b76e6d35898369e19478477
     }
-
-    .gridAddPatients {
-        display: grid;
-        height: 100%;
-        width: 100%;
-        background-color: white;
+  
+    .newTherapist h2 {
+      margin: 0;
+      margin-bottom: 10px;
+      font-size: 30px;
     }
-
-    .dataAddPatients {
-        display: flex;
-        max-width: 100%;
-        height: 57%;
-        background-color: white;
-        border-radius: 5px;
-        margin-left: 5px;
-        margin-right: 5px;
-        margin: 5px;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .dataAddPatients p {
-        font-size: 130%;
-        height: 25%;
-        width: 30%;
-        margin-left: 2%;
-    }
-
-    .inputAddPatients {
-        border-radius: 5px;
-        color: #393939;
-        padding: 10px;
-        width: 65%;
-        height: 30%;
-    }
-
+  
     .btnAdd {
-        color: white;
-        font-size: 20px;
-        margin: 6%;
-        width: 20%;
-        height: 5%;
-        background: #66d086;
-        border: 0;
-        flex-direction: row;
-        margin-right: -65%;
+      width: 20%;
+      margin-right: 3%;
     }
+<<<<<<< HEAD
 }
 
 @media (max-width:600px) {
@@ -185,42 +208,38 @@
         flex-direction: column;
         align-items: center;
         background-color: #f0eeee;
+=======
+  
+    .inputValid {
+      width: 60%;
+>>>>>>> 5254f0811ee63b8e9b76e6d35898369e19478477
     }
-
-    .boxAddPatients {
-        display: flex;
-        height: 70%;
-        width: 90%;
-        align-self: flex-start;
-        flex-direction: column;
-        align-items: center;
-        margin-left: 5%;
+  
+    .contInput p {
+      width: 40%;
     }
-
-    .gridAddPatients {
-        display: grid;
-        background-color: white;
-        height: 90%;
-        width: 95%;
-        left: 50%;
+  
+    .selectOptions {
+      width: 60%;
     }
-
-    .gridAddPatients p {
-        font-size: 110%;
-        margin-left: 0%;
-        height: 55%;
-        width: 30%;
+  }
+  
+  @media (max-width:600px) {
+  
+    .contInput p {
+      width: 40%;
+      font-size: 20px;
     }
-
+  
+    .inputValid {
+      width: 55%;
+    }
+  
     .btnAdd {
-        color: white;
-        font-size: 20px;
-        margin: 6%;
-        width: 35%;
-        height: 5%;
-        background: #66d086;
-        border: 0;
-        flex-direction: row;
-        margin-right: 10%;
+      width: 30%;
     }
-}
+  
+    .inputValid strong {
+      font-size: 13px;
+    }
+  }

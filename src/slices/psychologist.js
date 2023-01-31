@@ -1,5 +1,5 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
-import { deletePsychologist,
+import { addPsychologist, deletePsychologist,
 	getAllPsychologist } from '../services/Psychologist/psychologistService';
 import { setMessage } from './message';
 
@@ -27,6 +27,25 @@ export const deleteTherapist = createAsyncThunk(
 	async ({ id }, thunkAPI) => {
 		try {
 			const data = await deletePsychologist(id);
+			return data.data;
+		} catch (error) {
+			const message =
+				(error.response
+					&& error.response.data
+					&& error.response.data.message)
+				|| error.message
+				|| error.toString();
+			thunkAPI.dispatch(setMessage(message));
+			return thunkAPI.rejectWithValue();
+		}
+	},
+);
+
+export const addTherapist = createAsyncThunk(
+	'auth/addPsychologist',
+	async ({ form }, thunkAPI) => {
+		try {
+			const data = await addPsychologist(form);
 			return data.data;
 		} catch (error) {
 			const message =

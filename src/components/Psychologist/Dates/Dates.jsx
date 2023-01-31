@@ -136,14 +136,14 @@ function Dates() {
 						<p>• Días disponibles.</p>
 					</div>
 				</div>
-				<button
-					className={styles.btnAdd}
-					onClick={modalOpenAction}
-					type="button"
-				>
-					Agregar
-				</button>
 			</div>
+			<button
+				className={styles.btnAdd}
+				onClick={modalOpenAction}
+				type="button"
+			>
+				Agregar
+			</button>
 			<AppointmentModal isVisible={modal} onAction={modalCloseAction} />
 		</div>
 	);

@@ -12,14 +12,37 @@
     width: 70%;
 }
 
-.input {
+.btnAutocomplete {
+    margin-left: -38%;
+    width: 123%;
+    border-radius: 5px;
+    padding: 10px;
+    margin-top: 20px;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.inputDate {
     font-size: 20px;
     margin: 5%;
     text-align: center;
     cursor: pointer;
-    padding: 10px;
+    padding: 3%;
     border-radius: 5px;
-    width: 130%;
+    width: 91%;
+    height: 100%;
+    text-decoration: none;
+}
+
+.inputHour {
+    font-size: 20px;
+    margin: 5%;
+    text-align: center;
+    cursor: pointer;
+    padding: 3%;
+    border-radius: 5px;
+    width: 91%;
+    height: 100%;
     text-decoration: none;
 }
 
@@ -27,6 +50,14 @@
     display: flex;
     flex-direction: row;
     width: 100%;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-left: 20%;
+}
+
+.form p {
+    font-size: 150%;
+    margin-left: -35%;
 }
 
 .btnAdd {
@@ -41,22 +72,11 @@
     background: #66d086;
     border: 0;
     flex-direction: row;
+    margin-left: 34%;
 }
 
 .btnAdd:hover {
     background-color: #64ba7e;
-}
-
-.btnAutocomplete {
-    font-size: 20px;
-    text-align: center;
-    cursor: pointer;
-    padding: 10px;
-    border-radius: 5px;
-    text-decoration: none;
-    margin-top: 20px;
-    width: 242px;
-    margin-right: 18px;
 }
 
 .suggestion {
@@ -85,16 +105,32 @@
         text-align: center;
     }
 
-    .input {
+    .btnAutocomplete {
+        margin-left: -42%;
+        width: 127%;
+    }
+
+    .inputDate {
         font-size: 20px;
         margin: 5%;
         text-align: center;
         cursor: pointer;
         padding: 10px;
         border-radius: 5px;
-        width: 100%;
+        width: 95%;
         text-decoration: none;
-        }
+    }
+
+    .inputHour {
+        font-size: 20px;
+        margin: 5%;
+        text-align: center;
+        cursor: pointer;
+        padding: 10px;
+        border-radius: 5px;
+        width: 95%;
+        text-decoration: none;
+    }
 
     .form {
         display: flex;
@@ -102,21 +138,16 @@
         width: 100%;
     }
 
+    .form p {
+        font-size: 150%;
+        margin-left: -35%;
+    }
+
     .btnAdd {
         height: max-content;
         width: 142px;
         font-size: 25px;
-    }
-
-    .btnAutocomplete {
-        font-size: 20px;
-        text-align: center;
-        cursor: pointer;
-        padding: 10px;
-        border-radius: 5px;
-        width: 180px;
-        text-decoration: none;
-        margin-left: 20px;
+        margin-left: 32%;
     }
 }
 
@@ -136,15 +167,35 @@
         margin: 0;
     }
 
-    .input {
+    .btnAutocomplete {
+        padding: 10px;
+        border-radius: 5px;
+        margin-left: -32%;
+        width: 115%;
+    }
+
+    .inputDate {
         font-size: 20px;
         margin: 5%;
         text-align: center;
         cursor: pointer;
         padding: 10px;
         border-radius: 5px;
-        width: 240px;
+        width: 115%;
         text-decoration: none;
+        margin-left: -34%;
+    }
+
+    .inputHour {
+        font-size: 20px;
+        margin: 5%;
+        text-align: center;
+        cursor: pointer;
+        padding: 10px;
+        border-radius: 5px;
+        width: 115%;
+        text-decoration: none;
+        margin-left: -34%;
     }
 
     .form {
@@ -155,21 +206,15 @@
         align-items: center;
     }
 
+    .form p {
+        font-size: 150%;
+        margin-left: -35%;
+    }
+
     .btnAdd {
         height: max-content;
         width: 115px;
         font-size: 20px;
-    }
-
-    .btnAutocomplete {
-        font-size: 20px;
-        margin: 5%;
-        text-align: center;
-        cursor: pointer;
-        padding: 10px;
-        border-radius: 5px;
-        width: 240px;
-        text-decoration: none;
-        margin-right: 30px;
+        margin-left: 30%;
     }
 }

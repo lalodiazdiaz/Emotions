@@ -61,7 +61,7 @@ function AddPatients() {
 								/>
 							</div>
 							<div className={styles.dataAddPatients}>
-								<p>Segundo apellido</p>
+								<p>Segundo nombre</p>
 								<input
 									className={styles.inputAddPatients}
 									name="middleName"

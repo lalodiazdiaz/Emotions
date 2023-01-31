@@ -11,7 +11,7 @@ function AppointmentModal({ onAction, isVisible }) {
 	const [data, setData] = useState([]);
 	const [users, setUsers] = useState([]);
 	const [userSelected, setUserSelected] = useState({});
-
+	console.log(userSelected);
 	const getDataUsers = () => {
 		searchService.searchUsers()
 			.then((response) => {
@@ -68,7 +68,7 @@ function AppointmentModal({ onAction, isVisible }) {
 	);
 
 	const eventEnter = (e) => {
-		if (e.key === 'Enter') {
+		if (e.key === 'Enter' && e.key === 'onClick') {
 			const userCurrent = data.filter((u) => u.fullName === e.target.value.trim());
 			const user = {
 				id: userCurrent[0].id,

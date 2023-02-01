@@ -6,3 +6,6 @@ export const RANGE = {
 	patient: 1,
 	psychologist: 2,
 };
+export const ERROR = {
+	unauthorized: 401,
+};

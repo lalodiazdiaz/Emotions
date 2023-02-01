@@ -1,4 +1,5 @@
 import axios from 'axios';
+import errorsApi from '../../apiError';
 
 const API_URL = `${process.env.REACT_APP_API_BASE_URL}`;
 
@@ -10,7 +11,10 @@ if (local) {
 }
 
 export const getAllPsychologist = async (params) => {
-	const res = await axios.get(API_URL + params, { headers: { Authorization: authStr } });
+	const res = await axios.get(API_URL + params, { headers: { Authorization: authStr } })
+		.catch((error) => {
+			errorsApi(error);
+		});
 	return res;
 };
 

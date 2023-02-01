@@ -73,7 +73,7 @@ const appointmentsService = {
 export const getNextAppointment = async (params) => {
 	const res = await axios.get(API_URL + params, { headers: { Authorization: authStr } })
 		.catch((error) => {
-			errorsApi(error);
+		  errorsApi(error);
 		});
 	return res;
 };

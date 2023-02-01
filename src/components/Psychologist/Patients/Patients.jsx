@@ -22,11 +22,13 @@ function Patients() {
 
 	if (!loading) {
 		return (
-			<div className={styles.contAppointments}>
-				<div className={styles.Appointments}>
-					<div className={styles.contNextAppointments}>
+			<div className={styles.contPatients}>
+				<div className={styles.Patients}>
+					<div className={styles.contNextPatients}>
 						<h1>Obteniendo lista de pacientes</h1>
-						<Loader />
+						<div className={styles.loaderContainer}>
+							<Loader />
+						</div>
 					</div>
 				</div>
 			</div>
@@ -34,17 +36,18 @@ function Patients() {
 	}
 
 	return (
-		<div className={styles.contAppointments}>
-			<div className={styles.Appointments}>
-				<div className={styles.contNextAppointments}>
-					<h1>Lista de pacientes</h1>
+		<div className={styles.contPatients}>
+			<div className={styles.Patients}>
+				<div className={styles.contNextPatients}>
+					<h1>Pacientes</h1>
 					{patient.length >= 1
 						? (
-							<div className={styles.gridNextAppointments}>
+							<div className={styles.gridNextPatients}>
 								{patient.map((item) => (
-									<div className={styles.notAppointment}>
+									<div className={styles.notPatients}>
 										<p>Paciente: {item.fullName}</p>
 										<Link
+											key={item.id}
 											to="/dashboard/DetailsPatients/"
 										>
 											<input
@@ -58,7 +61,7 @@ function Patients() {
 							</div>
 						)
 						: (
-							<div className={styles.notAppointment}>
+							<div className={styles.notPatients}>
 								<p>No tienes pacientes registrados.</p>
 							</div>
 						)}

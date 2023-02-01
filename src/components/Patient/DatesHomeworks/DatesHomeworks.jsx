@@ -35,7 +35,7 @@ function DatesAndHomeworks() {
 		return (
 			<div className={styles.contAppointments}>
 				<div className={styles.Appointments}>
-					<h2>Proxima cita</h2>
+					<h2>Próxima cita</h2>
 					<div className={styles.loaderContainer}>
 						<Loader />
 					</div>
@@ -46,7 +46,7 @@ function DatesAndHomeworks() {
 	return (
 		<div className={styles.contAppointments}>
 			<div className={styles.Appointments}>
-				<h2>Proxima cita</h2>
+				<h2>Próxima cita</h2>
 				{next.length >= 1
 					? (
 						<NextAppointment
@@ -55,7 +55,7 @@ function DatesAndHomeworks() {
 							name={next[0].therapistName}
 							onAction={updateList}
 							time={next[0].hour}
-							title="Psicologo"
+							title="Psicólogo"
 						/>
 					)
 					: (

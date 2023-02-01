@@ -1,7 +1,6 @@
 import React, { useCallback, useState } from 'react';
-import { NavLink, Outlet, useNavigate } from 'react-router-dom';
+import { Outlet, useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import Alertify from 'alertifyjs';
 import styles from './Dashboard.module.css';
 import logo from '../../assets/logo1.png';
 import btnMenu from '../../assets/menuIcon.png';
@@ -72,7 +71,7 @@ function Dashboard() {
 						)}
 				</div>
 				<button className={styles.btnLogout} onClick={logoutSession} type="button">
-					Cerrar sesion
+					Cerrar sesión
 				</button>
 			</div>
 			<div className={styles.resMenu}>

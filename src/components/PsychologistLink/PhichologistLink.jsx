@@ -27,7 +27,7 @@ function PhichologistLink({ onClick, Range }) {
 							})}
 							to="/dashboard/therapist/"
 						>
-							Psicologos
+							Psicólogos
 						</NavLink>
 					)
 					:					null}
@@ -49,7 +49,7 @@ function PhichologistLink({ onClick, Range }) {
 					})}
 					to="/dashboard/analysis/"
 				>
-					Analisis de video
+					Análisis de video
 				</NavLink>
 			</div>
 		</div>

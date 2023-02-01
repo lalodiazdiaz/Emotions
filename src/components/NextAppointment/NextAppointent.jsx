@@ -8,7 +8,7 @@ import 'alertifyjs/build/css/alertify.css';
 
 function NextAppointment({ onAction, date, name, time, title, id }) {
 	const [isVisible, setIsVisible] = useState(false);
-	 const dispatch = useDispatch();
+	const dispatch = useDispatch();
 	const local = JSON.parse(localStorage.getItem('user'));
 	const { token, range } = local.data;
 

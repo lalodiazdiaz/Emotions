@@ -7,7 +7,6 @@ import Loader from '../../Loader/Loader';
 function Patients() {
 	const [patient, setPatient] = useState('');
 	const [loading, setloading] = useState(false);
-
 	const getDataPatients = () => {
 		patientsService.getpatients()
 			.then((response) => {
@@ -15,17 +14,15 @@ function Patients() {
 			})
 			.finally(() => setloading(true));
 	};
-
 	useEffect(() => {
 		getDataPatients();
 	}, []);
-
 	if (!loading) {
 		return (
 			<div className={styles.contPatients}>
 				<div className={styles.Patients}>
 					<div className={styles.contNextPatients}>
-						<h1>Obteniendo lista de pacientes</h1>
+						<h1>Pacientes</h1>
 						<div className={styles.loaderContainer}>
 							<Loader />
 						</div>
@@ -34,7 +31,6 @@ function Patients() {
 			</div>
 		);
 	}
-
 	return (
 		<div className={styles.contPatients}>
 			<div className={styles.Patients}>
@@ -65,19 +61,18 @@ function Patients() {
 								<p>No tienes pacientes registrados.</p>
 							</div>
 						)}
+					<Link
+						to="/dashboard/AddPatients/"
+					>
+						<input
+							className={styles.btnAdd}
+							type="submit"
+							value="Agregar"
+						/>
+					</Link>
 				</div>
-				<Link
-					to="/dashboard/AddPatients/"
-				>
-					<input
-						className={styles.btnAdd}
-						type="submit"
-						value="Agregar"
-					/>
-				</Link>
 			</div>
 		</div>
 	);
 }
-
 export default Patients;

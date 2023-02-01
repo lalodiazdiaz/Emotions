@@ -16,20 +16,15 @@
   align-items: center;
   width: 100%;
   height: 100%;
-  background-color: #f0eeee;
+  background-color: #F0EEEE;
 }
 
 .contNextPatients {
   display: flex;
   height: 95%;
-  width: 65%;
+  width: 90%;
   flex-direction: column;
   align-items: center;
-  margin-left: -300px;
-}
-
-.contNextPatients h1 {
-  margin-left: 0%;
 }
 
 .gridNextPatients {
@@ -42,8 +37,7 @@
   border-radius: 5px;
   border: 3px solid #B2B9BA;
   height: 100%;
-  width: 130%;
-  margin-left: 40%;
+  width: 100%;
 }
 
 .notPatients {
@@ -56,7 +50,6 @@
   margin: 17px;
   align-items: flex-start;
   justify-content: space-between;
-  margin-left: 45%;
 }
 
 .notPatients p {
@@ -73,7 +66,7 @@
   padding: 10px;
   border-radius: 5px;
   width: 90%;
-  background: #66d086;
+  background: #66D086;
   border: 0;
   margin-right: 0%;
   flex-direction: row;
@@ -82,7 +75,7 @@
 }
 
 .btnDetails:hover {
-  background-color: #64ba7e;
+  background-color: #64BA7E;
 }
 
 .btnAdd {
@@ -94,25 +87,26 @@
   border-radius: 5px;
   width: 80%;
   height: 100%;
-  background: #66d086;
+  background: #66D086;
   border: 0;
   flex-direction: row;
-  margin-right: -400%;
+  margin-right: -390%;
 }
 
 .btnAdd:hover {
-  background-color: #64ba7e;
+  background-color: #64BA7E;
 }
 
 .loaderContainer {
   display: flex;
-  width:100%;
-  height: 78%;
+  width: 100%;
+  height: 73%;
   background-color: white;
   border-radius: 5px;
   border: 3px solid #B2B9BA;
   align-items: center;
   justify-content: center;
+  margin-top: 0px;
 }
 
 @media (max-width:1200px) {
@@ -136,7 +130,7 @@
     justify-content: center;
     flex-direction: column;
     align-items: center;
-    background-color: #f0eeee;
+    background-color: #F0EEEE;
   }
 
   .contNextPatients {
@@ -182,7 +176,7 @@
     padding: 12%;
     border-radius: 5px;
     width: 150%;
-    background: #66d086;
+    background: #66D086;
     flex-direction: row;
     margin-left: -45%;
   }
@@ -193,10 +187,10 @@
     margin: 2%;
     width: 23%;
     height: 100%;
-    background: #66d086;
+    background: #66D086;
     border: 0;
     flex-direction: row;
-    margin-right: -66%;
+    margin-right: -80%;
   }
 }
 
@@ -219,7 +213,7 @@
     justify-content: center;
     flex-direction: column;
     align-items: center;
-    background-color: #f0eeee;
+    background-color: #F0EEEE;
   }
 
   .contNextPatients {
@@ -240,7 +234,7 @@
 
   .notPatients {
     display: flex;
-    width: 100%;
+    max-width: 100%;
     height: 100%;
     background-color: white;
     border-radius: 5px;
@@ -252,10 +246,10 @@
   }
 
   .notPatients p {
-    font-size: 107%;
-    margin-left: 2%;
+    font-size: 118%;
+    margin-left: 10%;
     height: 100%;
-    width: 70%;
+    width: 100%;
   }
 
   .btnDetails {
@@ -266,11 +260,11 @@
     padding: 10px;
     border-radius: 5px;
     width: 45%;
-    background: #66d086;
+    background: #66D086;
     flex-direction: row;
     margin-right: 0%;
   }
-
+  
   .btnAdd {
     color: white;
     font-size: 20px;
@@ -278,7 +272,7 @@
     padding: 5px;
     width: 40%;
     height: 80%;
-    background: #66d086;
+    background: #66D086;
     border: 0;
     flex-direction: row;
     margin-right: 0%;

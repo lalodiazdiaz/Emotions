@@ -50,7 +50,7 @@ function Patients() {
 								<div className={styles.contCard}>
 									<div className={styles.contInformation}>
 										<div className={styles.dataCard}>
-											<p>Psicologo: {item.fullName}</p>
+											<p>Paciente: {item.fullName}</p>
 										</div>
 									</div>
 									<div className={styles.contButtons}>

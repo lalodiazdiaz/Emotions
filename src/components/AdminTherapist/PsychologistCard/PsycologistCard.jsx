@@ -27,7 +27,7 @@ function PsycologistCard({ onAction, data, id, userId }) {
 			<div className={styles.contInformation}>
 
 				<div className={styles.dataCard}>
-					<p>Psicologo: {data.fullName}</p>
+					<p>Psicólogo: {data.fullName}</p>
 				</div>
 			</div>
 			<div className={styles.contButtons}>

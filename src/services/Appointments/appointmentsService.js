@@ -1,6 +1,7 @@
 import axios from 'axios';
 import Alertify from 'alertifyjs';
 import 'alertifyjs/build/css/alertify.css';
+import errorsApi from '../../apiError';
 
 const API_URL = `${process.env.REACT_APP_API_BASE_URL}`;
 const local = JSON.parse(localStorage.getItem('user'));
@@ -61,6 +62,7 @@ const postappointments = (data) => {
 			return response.data;
 		})
 		.catch((error) => {
+			errorsApi(error);
 		});
 };
 
@@ -70,13 +72,18 @@ const appointmentsService = {
 };
 
 export const getNextAppointment = async (params) => {
-	const res = await axios.get(API_URL + params, { headers: { Authorization: authStr } });
+	const res = await axios.get(API_URL + params, { headers: { Authorization: authStr } })
+		.catch((error) => {
+		  errorsApi(error);
+		});
 	return res;
 };
 
 export const deleteAppointment = async (id) => {
 	const res = await axios.delete(`${API_URL}/appointments?_id=${id}`, {
 		headers: { Authorization: authStr },
+	}).catch((error) => {
+		errorsApi(error);
 	});
 	return res;
 };

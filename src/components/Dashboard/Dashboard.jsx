@@ -1,5 +1,5 @@
 import React, { useCallback, useState } from 'react';
-import { Outlet, useNavigate } from 'react-router-dom';
+import { Outlet } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import styles from './Dashboard.module.css';
 import logo from '../../assets/logo1.png';
@@ -17,8 +17,6 @@ function Dashboard() {
 	const [state, setState] = useState(false);
 	const NAME = userLogged.data.fullName;
 	const dispatch = useDispatch();
-
-	const navigate = useNavigate();
 
 	const asideOpenAction = () => {
 		if (!state) {
@@ -48,8 +46,7 @@ function Dashboard() {
 			}).catch((err) => {
 			}).finally(() => {
 				localStorage.removeItem('user');
-				navigate('/login');
-				navigate(0);
+				window.location.replace('/login');
 			});
 	};
 

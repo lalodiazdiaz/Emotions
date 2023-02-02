@@ -1,4 +1,5 @@
 import axios from 'axios';
+import errorsApi from '../../apiError';
 
 const API_URL = `${process.env.REACT_APP_API_BASE_URL}/user/register`;
 const loggedUser = window.localStorage.getItem('user');
@@ -17,7 +18,10 @@ const header = {
 const postPatients = async (form) => {
 	const res = await axios.post(`${API_URL}`, form, {
 		headers: header,
-	});
+	})
+		.catch((error) => {
+			errorsApi(error);
+		});
 	return res;
 };
 

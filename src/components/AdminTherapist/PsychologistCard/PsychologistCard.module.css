@@ -71,11 +71,6 @@
     height: 30%;
   }
 
-  .btnDelete {
-    width: 90%;
-    height: 30%;
-  }
-
 }
 
 @media (max-width:600px) {
@@ -106,5 +101,4 @@
     font-size: 20px;
     margin-bottom: 10px;
   }
-
 }

@@ -80,7 +80,7 @@
   }
 
   .gridPsychologist {
-    height: 83%;
+    grid-auto-rows: 18%;
   }
 
   .btnAdd {
@@ -108,10 +108,12 @@
 
   .btnAdd {
     width: 40%;
+    margin-top: 10%;
+    align-self: center;
+    margin-right: 0;
   }
 
   .gridPsychologist {
     grid-auto-rows: 22%;
-
   }
 }

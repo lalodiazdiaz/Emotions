@@ -7,10 +7,10 @@ import { createAppointment } from '../../slices/appointments';
 import searchService from '../../services/Users/usersServices';
 
 function AppointmentModal({ onAction, isVisible }) {
+	const currentDate = new Date().toJSON().slice(0, 10);
 	const [data, setData] = useState([]);
 	const [users, setUsers] = useState([]);
 	const [userSelected, setUserSelected] = useState({});
-
 	const getDataUsers = () => {
 		searchService.searchUsers()
 			.then((response) => {
@@ -148,6 +148,7 @@ function AppointmentModal({ onAction, isVisible }) {
 						<p>Fecha:</p>
 						<input
 							className={styles.inputDate}
+							min={currentDate}
 							name="date"
 							onChange={handleInputChange}
 							required

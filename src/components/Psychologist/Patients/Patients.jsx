@@ -44,10 +44,9 @@ function Patients() {
 						? (
 							<div className={styles.gridNextPatients}>
 								{patient.map((item) => (
-									<div className={styles.notPatients}>
+									<div key={item.id} className={styles.notPatients}>
 										<p>Paciente: {item.fullName}</p>
 										<Link
-											key={item.id}
 											to="/dashboard/DetailsPatients/"
 										>
 											<input

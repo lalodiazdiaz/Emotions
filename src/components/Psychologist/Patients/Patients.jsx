@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import styles from './Patients.module.css';
 import patientsService from '../../../services/Patients/patientsService';
 import Loader from '../../Loader/Loader';
 
 function Patients() {
+	const navigate = useNavigate();
 	const [patient, setPatient] = useState('');
 	const [loading, setloading] = useState(false);
-
 	const getDataPatients = () => {
 		patientsService.getpatients()
 			.then((response) => {
@@ -15,17 +15,24 @@ function Patients() {
 			})
 			.finally(() => setloading(true));
 	};
-
 	useEffect(() => {
 		getDataPatients();
 	}, []);
+
+	const navigatePatients = () => {
+		navigate('/dashboard/DetailsPatients/');
+	};
+
+	const navigateScreen = () => {
+		navigate('/dashboard/AddPatients/');
+	};
 
 	if (!loading) {
 		return (
 			<div className={styles.contPatients}>
 				<div className={styles.Patients}>
 					<div className={styles.contNextPatients}>
-						<h1>Obteniendo lista de pacientes</h1>
+						<h1>Pacientes</h1>
 						<div className={styles.loaderContainer}>
 							<Loader />
 						</div>
@@ -34,7 +41,6 @@ function Patients() {
 			</div>
 		);
 	}
-
 	return (
 		<div className={styles.contPatients}>
 			<div className={styles.Patients}>
@@ -46,15 +52,13 @@ function Patients() {
 								{patient.map((item) => (
 									<div key={item.id} className={styles.notPatients}>
 										<p>Paciente: {item.fullName}</p>
-										<Link
-											to="/dashboard/DetailsPatients/"
+										<button
+											className={styles.btnDetails}
+											onClick={navigatePatients}
+											type="button"
 										>
-											<input
-												className={styles.btnDetails}
-												type="submit"
-												value="Detalles"
-											/>
-										</Link>
+											Detalles
+										</button>
 									</div>
 								))}
 							</div>
@@ -64,19 +68,16 @@ function Patients() {
 								<p>No tienes pacientes registrados.</p>
 							</div>
 						)}
-				</div>
-				<Link
-					to="/dashboard/AddPatients/"
-				>
-					<input
+					<button
 						className={styles.btnAdd}
-						type="submit"
-						value="Agregar"
-					/>
-				</Link>
+						onClick={navigateScreen}
+						type="button"
+					>
+						Agregar
+					</button>
+				</div>
 			</div>
 		</div>
 	);
 }
-
 export default Patients;

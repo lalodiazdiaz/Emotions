@@ -11,7 +11,6 @@ function AppointmentModal({ onAction, isVisible }) {
 	const [data, setData] = useState([]);
 	const [users, setUsers] = useState([]);
 	const [userSelected, setUserSelected] = useState({});
-	console.log(userSelected);
 	const getDataUsers = () => {
 		searchService.searchUsers()
 			.then((response) => {

@@ -1,4 +1,5 @@
 import axios from 'axios';
+import errorsApi from '../../apiError';
 
 // const API_URL = `${process.env.REACT_APP_API_BASE_URL}/patients`;
 const API_URL = 'http://localhost:5000/api/user/patients';
@@ -21,6 +22,8 @@ const getpatients = () => axios.get(API_URL, {
 		Authorization: `token ${ACCESS_TOKEN}`,
 	},
 	params: param,
+}).catch((error) => {
+	errorsApi(error);
 });
 
 const patientsService = {

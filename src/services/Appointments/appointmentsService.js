@@ -62,6 +62,7 @@ const postappointments = (data) => {
 			return response.data;
 		})
 		.catch((error) => {
+			errorsApi(error);
 		});
 };
 
@@ -81,6 +82,8 @@ export const getNextAppointment = async (params) => {
 export const deleteAppointment = async (id) => {
 	const res = await axios.delete(`${API_URL}/appointments?_id=${id}`, {
 		headers: { Authorization: authStr },
+	}).catch((error) => {
+		errorsApi(error);
 	});
 	return res;
 };

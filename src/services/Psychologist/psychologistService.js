@@ -21,13 +21,19 @@ export const getAllPsychologist = async (params) => {
 export const deletePsychologist = async (id) => {
 	const res = await axios.delete(`${API_URL}/user/deleteTherapist?_id=${id}`, {
 		headers: { Authorization: authStr },
-	});
+	})
+		.catch((error) => {
+			errorsApi(error);
+		});
 	return res;
 };
 
 export const addPsychologist = async (form) => {
 	const res = await axios.post(`${API_URL}/user/registerTherapist`, form, {
-		 headers: { Authorization: authStr },
-	});
+		headers: { Authorization: authStr },
+	})
+		.catch((error) => {
+			errorsApi(error);
+		});
 	return res;
 };

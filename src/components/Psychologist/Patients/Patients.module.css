@@ -58,17 +58,17 @@
 }
 
 .btnDetails {
+  width: 20%;
   color: white;
-  font-size: 20px;
-  margin: 5%;
-  text-align: center;
-  cursor: pointer;
-  padding: 10px;
-  border-radius: 5px;
-  width: 90%;
   background: #66D086;
+  padding: 10px;
+  margin: 3%;
+  margin-right: 2%;
   border: 0;
-  margin-right: 0%;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 20px;
+  text-align: center;
   flex-direction: row;
   align-items: flex-end;
   justify-content: flex-end;
@@ -79,18 +79,16 @@
 }
 
 .btnAdd {
-  color: white;
+  width: 13%;
+  height: 8%;
   font-size: 20px;
-  margin: 5%;
-  cursor: pointer;
-  padding: 3px;
-  border-radius: 5px;
-  width: 80%;
-  height: 100%;
-  background: #66D086;
+  background-color: #66d086;
   border: 0;
-  flex-direction: row;
-  margin-right: -390%;
+  border-radius: 5px;
+  color: white;
+  margin-top: 2%;
+  align-self: flex-end;
+  margin-right: 3%;
 }
 
 .btnAdd:hover {
@@ -100,7 +98,7 @@
 .loaderContainer {
   display: flex;
   width: 100%;
-  height: 76%;
+  height: 77%;
   background-color: white;
   border-radius: 5px;
   border: 3px solid #B2B9BA;
@@ -126,7 +124,7 @@
     display: flex;
     position: absolute;
     width: 100%;
-    height: 100%;
+    height: 125%;
     justify-content: center;
     flex-direction: column;
     align-items: center;
@@ -140,7 +138,7 @@
     align-self: flex-start;
     flex-direction: column;
     align-items: center;
-    margin-left: 30px;
+    margin-left: 5%;
   }
 
   .gridNextPatients {
@@ -152,11 +150,11 @@
   .notPatients {
     display: flex;
     max-width: 100%;
-    height: 90%;
+    height: 93%;
     background-color: white;
     border-radius: 5px;
     border: 3px solid #B2B9BA;
-    margin: 17px;
+    margin: 2%;
     align-items: center;
     justify-content: center;
   }
@@ -169,34 +167,39 @@
   }
 
   .btnDetails {
+    width: 200%;
     color: white;
-    font-size: 20px;
-    margin: 5%;
-    text-align: center;
-    padding: 12%;
-    border-radius: 5px;
-    width: 150%;
     background: #66D086;
+    padding: 10px;
+    margin: 3%;
+    margin-right: 2%;
+    border: 0;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 20px;
+    text-align: center;
     flex-direction: row;
-    margin-left: -45%;
+    align-items: flex-end;
+    justify-content: flex-end;
   }
 
   .btnAdd {
-    color: white;
-    font-size: 20px;
-    margin: 2%;
     width: 23%;
-    height: 100%;
-    background: #66D086;
+    height: 8%;
+    font-size: 20px;
+    background-color: #66d086;
     border: 0;
-    flex-direction: row;
-    margin-right: -80%;
+    border-radius: 5px;
+    color: white;
+    margin-top: 2%;
+    align-self: flex-end;
+    margin-right: 3%;
   }
 
   .loaderContainer {
     display: flex;
     width: 100%;
-    height: 75%;
+    height: 81%;
     background-color: white;
     border-radius: 5px;
     border: 3px solid #B2B9BA;
@@ -221,7 +224,7 @@
     display: flex;
     position: absolute;
     width: 100%;
-    height: 100%;
+    height: 108%;
     justify-content: center;
     flex-direction: column;
     align-items: center;
@@ -236,6 +239,10 @@
     flex-direction: column;
     align-items: center;
     margin-left: 5%;
+  }
+
+  .contNextPatients h1 {
+    font-size: 160%;
   }
 
   .gridNextPatients {
@@ -265,35 +272,39 @@
   }
 
   .btnDetails {
-    color: white;
-    font-size: 20px;
-    margin: 5%;
-    text-align: center;
-    padding: 10px;
-    border-radius: 5px;
     width: 45%;
+    color: white;
     background: #66D086;
+    padding: 10px;
+    margin: 3%;
+    margin-right: 2%;
+    border: 0;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 20px;
+    text-align: center;
     flex-direction: row;
-    margin-right: 0%;
+    align-items: flex-end;
+    justify-content: flex-end;
   }
 
   .btnAdd {
-    color: white;
-    font-size: 20px;
-    margin: 3%;
-    padding: 5px;
     width: 40%;
-    height: 80%;
-    background: #66D086;
+    height: 8%;
+    font-size: 20px;
+    background-color: #66d086;
     border: 0;
-    flex-direction: row;
-    margin-right: 0%;
+    border-radius: 5px;
+    color: white;
+    margin-top: 2%;
+    align-self: flex-end;
+    margin-right: 30%;
   }
 
   .loaderContainer {
     display: flex;
     width: 100%;
-    height: 81%;
+    height: 84%;
     background-color: white;
     border-radius: 5px;
     border: 3px solid #B2B9BA;

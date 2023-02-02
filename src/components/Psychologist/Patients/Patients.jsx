@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import styles from './Patients.module.css';
 import patientsService from '../../../services/Patients/patientsService';
 import Loader from '../../Loader/Loader';
 
 function Patients() {
+	const navigate = useNavigate();
 	const [patient, setPatient] = useState('');
 	const [loading, setloading] = useState(false);
 	const getDataPatients = () => {
@@ -17,6 +18,15 @@ function Patients() {
 	useEffect(() => {
 		getDataPatients();
 	}, []);
+
+	const navigatePatients = () => {
+		navigate('/dashboard/DetailsPatients/');
+	};
+
+	const navigateScreen = () => {
+		navigate('/dashboard/AddPatients/');
+	};
+
 	if (!loading) {
 		return (
 			<div className={styles.contPatients}>
@@ -42,16 +52,13 @@ function Patients() {
 								{patient.map((item) => (
 									<div className={styles.notPatients}>
 										<p>Paciente: {item.fullName}</p>
-										<Link
-											key={item.id}
-											to="/dashboard/DetailsPatients/"
+										<button
+											className={styles.btnDetails}
+											onClick={navigatePatients}
+											type="button"
 										>
-											<input
-												className={styles.btnDetails}
-												type="submit"
-												value="Detalles"
-											/>
-										</Link>
+											Detalles
+										</button>
 									</div>
 								))}
 							</div>
@@ -61,15 +68,13 @@ function Patients() {
 								<p>No tienes pacientes registrados.</p>
 							</div>
 						)}
-					<Link
-						to="/dashboard/AddPatients/"
+					<button
+						className={styles.btnAdd}
+						onClick={navigateScreen}
+						type="button"
 					>
-						<input
-							className={styles.btnAdd}
-							type="submit"
-							value="Agregar"
-						/>
-					</Link>
+						Agregar
+					</button>
 				</div>
 			</div>
 		</div>

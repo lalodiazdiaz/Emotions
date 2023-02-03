@@ -56,7 +56,7 @@ function Patients() {
 									<div className={styles.contButtons}>
 										<button
 											className={styles.btnDetails}
-											onClick={navigateScreen}
+											onClick={navigatePatients}
 											type="button"
 										>
 											Detalles

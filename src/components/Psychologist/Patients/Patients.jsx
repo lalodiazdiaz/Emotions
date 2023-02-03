@@ -31,11 +31,9 @@ function Patients() {
 		return (
 			<div className={styles.contPatients}>
 				<div className={styles.Patients}>
-					<div className={styles.contNextPatients}>
-						<h1>Pacientes</h1>
-						<div className={styles.loaderContainer}>
-							<Loader />
-						</div>
+					<h1>Pacientes</h1>
+					<div className={styles.loaderContainer}>
+						<Loader />
 					</div>
 				</div>
 			</div>
@@ -44,14 +42,18 @@ function Patients() {
 	return (
 		<div className={styles.contPatients}>
 			<div className={styles.Patients}>
-				<div className={styles.contNextPatients}>
-					<h1>Pacientes</h1>
-					{patient.length >= 1
-						? (
-							<div className={styles.gridNextPatients}>
-								{patient.map((item) => (
-									<div key={item.id} className={styles.notPatients}>
-										<p>Paciente: {item.fullName}</p>
+				<h1>Pacientes</h1>
+				{patient.length >= 1
+					? (
+						<div className={styles.gridNextPatients}>
+							{patient.map((item) => (
+								<div className={styles.contCard}>
+									<div className={styles.contInformation}>
+										<div className={styles.dataCard}>
+											<p>Paciente: {item.fullName}</p>
+										</div>
+									</div>
+									<div className={styles.contButtons}>
 										<button
 											className={styles.btnDetails}
 											onClick={navigatePatients}
@@ -60,22 +62,22 @@ function Patients() {
 											Detalles
 										</button>
 									</div>
-								))}
-							</div>
-						)
-						: (
-							<div className={styles.notPatients}>
-								<p>No tienes pacientes registrados.</p>
-							</div>
-						)}
-					<button
-						className={styles.btnAdd}
-						onClick={navigateScreen}
-						type="button"
-					>
-						Agregar
-					</button>
-				</div>
+								</div>
+							))}
+						</div>
+					)
+					: (
+						<div className={styles.notPatients}>
+							<p>No tienes pacientes registrados.</p>
+						</div>
+					)}
+				<button
+					className={styles.btnAdd}
+					onClick={navigateScreen}
+					type="button"
+				>
+					Agregar
+				</button>
 			</div>
 		</div>
 	);

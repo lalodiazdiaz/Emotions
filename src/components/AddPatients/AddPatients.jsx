@@ -77,14 +77,14 @@ function AddPatients() {
 	return (
 		<div className={styles.contNewTherapist}>
 			<div className={styles.newTherapist}>
-				<h2>Nuevo Paciente</h2>
+				<h1>Nuevo Paciente</h1>
 				<form
 					ref={forms}
 					className={styles.contForm}
 					onSubmit={handleSubmit(handleAdd)}
 				>
 					<div className={styles.contInput}>
-						<p>Nombre</p>
+						<p>Nombre:</p>
 						<div className={styles.inputValid}>
 							<input
 								id="name"
@@ -108,7 +108,7 @@ function AddPatients() {
 						</div>
 					</div>
 					<div className={styles.contInput}>
-						<p>Segundo nombre </p>
+						<p>Segundo nombre: </p>
 						<div className={styles.inputValid}>
 							<input
 								id="middleName"
@@ -119,7 +119,7 @@ function AddPatients() {
 						</div>
 					</div>
 					<div className={styles.contInput}>
-						<p>Apellido</p>
+						<p>Apellido:</p>
 						<div className={styles.inputValid}>
 							<input
 								id="lastName"
@@ -141,7 +141,7 @@ function AddPatients() {
 						</div>
 					</div>
 					<div className={styles.contInput}>
-						<p>Email</p>
+						<p>Email:</p>
 						<div className={styles.inputValid}>
 							<input
 								id="email"
@@ -164,7 +164,7 @@ function AddPatients() {
 						</div>
 					</div>
 					<div className={styles.contInput}>
-						<p>Teléfono</p>
+						<p>Teléfono:</p>
 						<div className={styles.inputValid}>
 							<input
 								id="phone"
@@ -187,7 +187,7 @@ function AddPatients() {
 						</div>
 					</div>
 					<div className={styles.contInput}>
-						<p>Fecha de nacimiento</p>
+						<p>Fecha de nacimiento:</p>
 						<div className={styles.inputValid}>
 							<input
 								id="birthdate"
@@ -207,7 +207,7 @@ function AddPatients() {
 						</div>
 					</div>
 					<div className={styles.contInput}>
-						<p>Estado civil</p>
+						<p>Estado civil:</p>
 						<div className={styles.inputValid}>
 							<input
 								id="maritalStatus"
@@ -226,7 +226,7 @@ function AddPatients() {
 						</div>
 					</div>
 					<div className={styles.contInput}>
-						<p>Género</p>
+						<p>Género:</p>
 						<div className={styles.inputValid}>
 							<input
 								id="gender"

@@ -1,8 +1,7 @@
 import axios from 'axios';
 import errorsApi from '../../apiError';
 
-// const API_URL = `${process.env.REACT_APP_API_BASE_URL}/patients`;
-const API_URL = 'http://localhost:5000/api/user/patients';
+const API_URL = `${process.env.REACT_APP_API_BASE_URL}/user/patients`;
 const loggedUser = window.localStorage.getItem('user');
 const userLogged = JSON.parse(loggedUser);
 let ACCESS_TOKEN = '';

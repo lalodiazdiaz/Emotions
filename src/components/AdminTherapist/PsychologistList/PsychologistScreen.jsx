@@ -39,7 +39,7 @@ function PsychologistScreen() {
 		return (
 			<div className={styles.mainContainer}>
 				<div className={styles.Psychologist}>
-					<h1>Psicologos</h1>
+					<h1>Psicólogos</h1>
 					<div className={styles.loaderContainer}>
 						<Loader />
 					</div>

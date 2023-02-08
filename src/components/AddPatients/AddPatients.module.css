@@ -30,7 +30,7 @@
   align-items: center;
 }
 
-.newTherapist h2 {
+.newTherapist h1 {
   margin: 0;
   margin-bottom: 10px;
 }
@@ -75,28 +75,6 @@
   border: 3px solid #B2B9BA;
   padding-left: 13px;
   font-size: 20px;
-}
-
-.btnAdd {
-  width: 10%;
-  height: 5%;
-  font-size: 20px;
-  background-color: #66d086;
-  border: 0;
-  border-radius: 5px;
-  color: white;
-  margin-top: 2%;
-  align-self: flex-end;
-  margin-right: 2%;
-}
-
-.btnAdd:hover {
-  background-color: #64ba7e;
-  display: flex;
-  width: 80%;
-  height: 100%;
-  margin-left: 20%;
-  position: absolute;
 }
 
 .inputValid {

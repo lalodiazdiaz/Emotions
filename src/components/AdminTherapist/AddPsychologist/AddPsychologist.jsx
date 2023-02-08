@@ -74,7 +74,7 @@ function AddPsychologist() {
 	return (
 		<div className={styles.contNewTherapist}>
 			<div className={styles.newTherapist}>
-				<h2>Registro de psicólogos</h2>
+				<h1>Registro de psicólogos</h1>
 				<form ref={forms} className={styles.contForm} onSubmit={handleSubmit(handleAdd)}>
 					<div className={styles.contInput}>
 						<p>Nombre: </p>

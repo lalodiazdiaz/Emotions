@@ -47,7 +47,7 @@ function Patients() {
 					? (
 						<div className={styles.gridNextPatients}>
 							{patient.map((item) => (
-								<div className={styles.contCard}>
+								<div key={item.id} className={styles.contCard}>
 									<div className={styles.contInformation}>
 										<div className={styles.dataCard}>
 											<p>Paciente: {item.fullName}</p>

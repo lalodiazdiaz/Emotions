@@ -33,8 +33,7 @@ function Login(props) {
 		dispatch(login({ email, password }))
 			.unwrap()
 			.then(() => {
-				navigate('/dashboard/');
-				window.location.reload();
+				window.location.replace('/dashboard/');
 				Alertify.success(`<b style='color:white;'>Bienvenido
 					</b>`);
 			})

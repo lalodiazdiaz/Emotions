@@ -17,7 +17,7 @@
   position: fixed;
   background-color: #b2b9ba;
   height: 100%;
-  width: 150%;
+  width: 100%;
   opacity: .7;
 }
 
@@ -32,7 +32,6 @@
   width: 45%;
   border: 3px #b2b9ba solid;
   border-radius: 5px;
-  margin-left: -20%;
 }
 
 .contact {

@@ -38,7 +38,7 @@ function DetailsPatients() {
 					<NavLink
 						className={({ isActive }) => (isActive ? styles.tabActive
 							: styles.tabOption)}
-						to="/dashboard/DetailsPatients/Trasncription"
+						to="/dashboard/DetailsPatients/Transcription"
 					>
 						Transcripciones
 					</NavLink>

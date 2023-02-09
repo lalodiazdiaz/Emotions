@@ -162,7 +162,7 @@ function App() {
 									<Transcriptions />
 								</ProtectedRoute>
 							)}
-							path="/dashboard/DetailsPatients/Trasncription"
+							path="/dashboard/DetailsPatients/Transcription"
 						/>
 					</Route>
 					<Route

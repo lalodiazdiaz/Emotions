@@ -9,6 +9,7 @@ function ScheduleModal({ onAction, isVisible }) {
 			isVisible={isVisible}
 			onAction={onAction}
 			title="Consulta a tu psicologo"
+			typeModal="normal"
 		>
 			<div className={styles.contact}>
 				<h2>Lic. Claudia Patricia Gonzalez Moreno </h2>

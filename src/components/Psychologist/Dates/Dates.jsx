@@ -147,7 +147,7 @@ function Dates() {
 			<AppointmentModal
 				isVisible={modal}
 				onAction={modalCloseAction}
-				reload={updateList}
+				typeModal="appointment"
 			/>
 		</div>
 	);

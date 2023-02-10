@@ -81,6 +81,19 @@
     background-color: #64ba7e;
 }
 
+.suggestion {
+    list-style-type: none;
+    list-style: none;
+    background: #cac7c7;
+    padding: 5px;
+    width: 150px;
+    margin-right: auto;
+    margin-bottom: 5px;
+    margin-left: auto;
+    border-radius: 10px;
+    font-size: 18px;
+}
+
 @media (max-width: 1100px) {
     .data {
         justify-content: space-around;
@@ -141,9 +154,11 @@
 
     .btnAdd {
         height: max-content;
-        width: 142px;
+        width: 40%;
         font-size: 25px;
-        margin-left: 24%;
+        margin: 0;
+        margin-left: 30%;
+        margin-bottom: 10px;
     }
 }
 
@@ -153,48 +168,14 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
-    }
-
-    .form p {
-        font-size: 20px;
-        justify-content: center;
-        text-align: center;
         width: 100%;
-        margin: 0;
     }
 
-    .inputName {
-        font-size: 20px;
-        margin: 5%;
-        text-align: center;
-        padding: 10px;
-        border-radius: 5px;
-        width: 135%;
-        height: 100%;
-        text-decoration: none;
-        margin-left: -34%;
-    }
-
-    .inputDate {
-        font-size: 20px;
-        margin: 5%;
-        text-align: center;
-        padding: 10px;
-        border-radius: 5px;
-        width: 115%;
-        text-decoration: none;
-        margin-left: -34%;
-    }
-
-    .inputHour {
-        font-size: 20px;
-        margin: 5%;
-        text-align: center;
-        padding: 10px;
-        border-radius: 5px;
-        width: 115%;
-        text-decoration: none;
-        margin-left: -34%;
+    .dataAppointment {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 100%;
     }
 
     .form {
@@ -203,17 +184,53 @@
         width: 100%;
         justify-content: center;
         align-items: center;
+        margin-left: 0;
     }
 
     .form p {
-        font-size: 150%;
-        margin-left: -35%;
+        font-size: 20px;
+        justify-content: center;
+        text-align: center;
+        width: 100%;
+    }
+
+    .btnAutocomplete {
+        border-radius: 5px;
+        width: 160%;
+        margin-left: -70px;
+        margin-top: 10px;
+    }
+
+    .inputDate {
+        font-size: 20px;
+        text-align: center;
+        cursor: pointer;
+        border-radius: 5px;
+        width: 90%;
+        margin: 0;
+        margin-top: 5px;
+    }
+
+    .inputHour {
+        font-size: 20px;
+        text-align: center;
+        border-radius: 5px;
+        width: 90%;
+        margin: 0;
+        margin-top: 5px;
+
+    }
+
+    .form p {
+        font-size: 23px;
+        margin: 0;
+        margin-top: 10px;
     }
 
     .btnAdd {
-        height: max-content;
-        width: 115px;
+        width: 32%;
         font-size: 20px;
-        margin-left: 23%;
+        margin-left: 13px;
+        align-self: center;
     }
 }

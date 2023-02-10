@@ -39,6 +39,7 @@ const getappointments = () => axios.get(API_URL_AC, {
 });
 
 const postappointments = (data) => {
+	console.log(data);
 	axios.post(API_URL_AC, data, {
 		headers: header,
 	})

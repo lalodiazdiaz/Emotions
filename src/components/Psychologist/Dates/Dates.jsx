@@ -144,7 +144,11 @@ function Dates() {
 			>
 				Agregar
 			</button>
-			<AppointmentModal isVisible={modal} onAction={modalCloseAction} />
+			<AppointmentModal
+				isVisible={modal}
+				onAction={modalCloseAction}
+				reload={updateList}
+			/>
 		</div>
 	);
 }

@@ -59,7 +59,6 @@
     width: 80%;
     height: 40px;
     align-self: center;
-
 }
 
 .btnAdd {
@@ -92,58 +91,70 @@
         text-align: center;
     }
 
-    .inputName {
-        font-size: 20px;
-        margin: 5%;
-        text-align: center;
-        cursor: pointer;
-        padding: 10px;
-        border-radius: 5px;
-        min-width: 110%;
-        text-decoration: none;
-        margin-left: 5%;
-    }
-
-    .inputDate {
-        font-size: 20px;
-        margin: 5%;
-        text-align: center;
-        cursor: pointer;
-        padding: 10px;
-        border-radius: 5px;
-        width: 95%;
-        text-decoration: none;
-    }
-
-    .inputHour {
-        font-size: 20px;
-        margin: 5%;
-        text-align: center;
-        cursor: pointer;
-        padding: 10px;
-        border-radius: 5px;
-        width: 95%;
-        text-decoration: none;
+    .dataAppointment {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 100%;
     }
 
     .form {
         display: flex;
         flex-direction: row;
         width: 100%;
+        height: 20%;
+        justify-content: space-around;
     }
 
     .form p {
-        font-size: 150%;
-        margin-left: -50%;
+        font-size: 20px;
+        width: 15%;
+        text-align: justify;
+        font-weight: bold;
     }
 
+    .inputName {
+        font-size: 20px;
+        cursor: pointer;
+        border-radius: 5px;
+        width: 80%;
+        text-decoration: none;
+        border: black 2px solid;
+        align-self: center;
+        text-align: center;
+    }
+    
+    .inputDate {
+        font-size: 20px;
+        text-align: center;
+        cursor: pointer;
+        border-radius: 5px;
+        width: 80%;
+        height: 40px;
+        align-self: center;
+    }
+    
+    .inputHour {
+        font-size: 20px;
+        text-align: center;
+        cursor: pointer;
+        border-radius: 5px;
+        width: 80%;
+        height: 40px;
+        align-self: center;
+    }
+    
     .btnAdd {
-        height: max-content;
-        width: 52%;
+        color: white;
         font-size: 25px;
-        margin: 0;
-        margin-left: 24%;
-        margin-bottom: 10px;
+        text-align: center;
+        cursor: pointer;
+        border-radius: 5px;
+        background: #66d086;
+        border: 0;
+        width: 28%;
+        align-self: center;
+        height: 48px;
     }
 }
 
@@ -156,70 +167,74 @@
         width: 100%;
     }
 
+    .data h2 {
+        font-size: 30px;
+        text-align: center;
+    }
+
     .dataAppointment {
         display: flex;
         flex-direction: column;
-        justify-content: center;
         width: 100%;
+        height: 100%;
     }
 
     .form {
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
         width: 100%;
-        justify-content: center;
-        align-items: center;
-        margin-left: 0;
+        height: 20%;
+        justify-content: space-around;
     }
 
     .form p {
         font-size: 20px;
-        justify-content: center;
-        text-align: center;
-        width: 100%;
+        width: 15%;
+        text-align: justify;
+        font-weight: bold;
     }
 
     .inputName {
         font-size: 20px;
-        text-align: center;
         cursor: pointer;
         border-radius: 5px;
-        min-width: 103%;
-        margin: 0;
-        margin-top: 5px;
+        width: 60%;
+        text-decoration: none;
+        border: black 2px solid;
+        align-self: center;
+        text-align: center;
     }
-
+    
     .inputDate {
         font-size: 20px;
         text-align: center;
         cursor: pointer;
         border-radius: 5px;
-        width: 90%;
-        margin: 0;
-        margin-top: 5px;
+        width: 60%;
+        height: 40px;
+        align-self: center;
     }
-
+    
     .inputHour {
         font-size: 20px;
         text-align: center;
+        cursor: pointer;
         border-radius: 5px;
-        width: 90%;
-        margin: 0;
-        margin-top: 5px;
-
-    }
-
-    .form p {
-        font-size: 23px;
-        margin: 0;
-        margin-top: 10px;
-    }
-
-    .btnAdd {
-        width: 37%;
-        font-size: 20px;
-        margin-left: 13px;
+        width: 60%;
+        height: 40px;
         align-self: center;
-        margin-left: 0%;
+    }
+    
+    .btnAdd {
+        color: white;
+        font-size: 20px;
+        text-align: center;
+        cursor: pointer;
+        border-radius: 5px;
+        background: #66d086;
+        border: 0;
+        width: 35%;
+        align-self: center;
+        height: 45px;
     }
 }

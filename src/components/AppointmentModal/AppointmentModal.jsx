@@ -6,7 +6,7 @@ import styles from './AppointmentModal.module.css';
 import { createAppointment } from '../../slices/appointments';
 import searchService from '../../services/Users/usersServices';
 
-function AppointmentModal({ onAction, isVisible, onUpdate }) {
+function AppointmentModal({ onAction, isVisible }) {
 	const currentDate = new Date().toJSON().slice(0, 10);
 	const [data, setData] = useState([]);
 	const [users, setUsers] = useState([]);
@@ -53,11 +53,10 @@ function AppointmentModal({ onAction, isVisible, onUpdate }) {
 			hour,
 			idPacient: userSelected,
 			idUser: userLogged.data.id,
-		}))
-			.then((res) => {
-				console.log(res);
-				onUpdate();
-		 });
+		}));
+		setTimeout(() => {
+			window.location.replace('/dashboard/');
+		}, 2000);
 	};
 	return (
 		<Modal

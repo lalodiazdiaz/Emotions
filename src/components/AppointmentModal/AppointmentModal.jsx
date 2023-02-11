@@ -10,7 +10,7 @@ function AppointmentModal({ onAction, isVisible }) {
 	const currentDate = new Date().toJSON().slice(0, 10);
 	const [data, setData] = useState([]);
 	const [users, setUsers] = useState([]);
-	const [userSelected, setUserSelected] = useState({});
+	const [userSelected, setUserSelected] = useState('');
 	const loggedUser = window.localStorage.getItem('user');
 	const userLogged = JSON.parse(loggedUser);
 	const dispatch = useDispatch();
@@ -39,8 +39,6 @@ function AppointmentModal({ onAction, isVisible }) {
 	const [appointment, setAppointment] = useState({
 		date: '',
 		hour: '',
-		idPacient: userSelected.id,
-		idUser: userLogged.data.id,
 	});
 
 	const handleInputChange = (event) => {
@@ -49,17 +47,16 @@ function AppointmentModal({ onAction, isVisible }) {
 	};
 
 	const saveAppointment = () => {
-		const { date, hour, idUser } = appointment;
-		dispatch(createAppointment(appointment))
-			.unwrap()
-			.then(() => {
-				setAppointment({
-					date,
-					hour,
-					idPacient: userSelected.id,
-					idUser,
-				});
-			});
+		const { date, hour } = appointment;
+		dispatch(createAppointment({
+			date,
+			hour,
+			idPacient: userSelected,
+			idUser: userLogged.data.id,
+		}));
+		setTimeout(() => {
+			window.location.reload();
+		}, 2000);
 	};
 	return (
 		<Modal
@@ -70,7 +67,7 @@ function AppointmentModal({ onAction, isVisible }) {
 			<div className={styles.data}>
 				<div className={styles.dataAppointment}>
 					<div className={styles.form}>
-						<p className={styles.name}>Nombre:</p>
+						<p>Nombre:</p>
 						<Select
 							className={styles.inputName}
 							name="idPacient"

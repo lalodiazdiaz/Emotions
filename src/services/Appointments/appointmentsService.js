@@ -39,7 +39,6 @@ const getappointments = () => axios.get(API_URL_AC, {
 });
 
 const postappointments = (data) => {
-	console.log(data);
 	axios.post(API_URL_AC, data, {
 		headers: header,
 	})
@@ -52,13 +51,6 @@ const postappointments = (data) => {
 				=== 'The therapist does not have available this day and time') {
 				Alertify.error(`<b style='color:white;'>La fecha y hora ya están registradas.
 				</b>`);
-			}
-			if (response.data.message
-				=== 'idPacient length must be at least 24 characters long') {
-				Alertify.warning(
-					`<b style='color:dark;'>¿Usted está de acuerdo con los datos ingresados?
-				</b>`,
-				);
 			}
 			return response.data;
 		})

@@ -23,19 +23,21 @@
 
 .form p {
     font-size: 150%;
-    margin-left: -45%;
+    margin-left: -75%;
 }
 
 .inputName {
     font-size: 20px;
+    position: static;
+    display: block;
     margin: 5%;
     text-align: center;
     cursor: pointer;
     padding: 3%;
     border-radius: 5px;
-    min-width: 104%;
+    min-width: 140%;
     text-decoration: none;
-    margin-left: 3%;
+    margin-left: 6%;
 }
 
 .inputDate {
@@ -45,9 +47,10 @@
     cursor: pointer;
     padding: 3%;
     border-radius: 5px;
-    width: 91%;
+    min-width: 165%;
     height: 100%;
     text-decoration: none;
+    margin-left: 20%;
 }
 
 .inputHour {
@@ -57,9 +60,10 @@
     cursor: pointer;
     padding: 3%;
     border-radius: 5px;
-    width: 91%;
+    min-width: 165%;
     height: 100%;
     text-decoration: none;
+    margin-left: 23%;
 }
 
 .btnAdd {
@@ -116,7 +120,7 @@
         border-radius: 5px;
         min-width: 110%;
         text-decoration: none;
-        margin-left: 4.5%;
+        margin-left: 5%;
     }
 
     .inputDate {
@@ -154,10 +158,10 @@
 
     .btnAdd {
         height: max-content;
-        width: 40%;
+        width: 52%;
         font-size: 25px;
         margin: 0;
-        margin-left: 30%;
+        margin-left: 24%;
         margin-bottom: 10px;
     }
 }
@@ -194,11 +198,14 @@
         width: 100%;
     }
 
-    .btnAutocomplete {
+    .inputName {
+        font-size: 20px;
+        text-align: center;
+        cursor: pointer;
         border-radius: 5px;
-        width: 160%;
-        margin-left: -70px;
-        margin-top: 10px;
+        min-width: 103%;
+        margin: 0;
+        margin-top: 5px;
     }
 
     .inputDate {
@@ -228,9 +235,10 @@
     }
 
     .btnAdd {
-        width: 32%;
+        width: 37%;
         font-size: 20px;
         margin-left: 13px;
         align-self: center;
+        margin-left: 0%;
     }
 }

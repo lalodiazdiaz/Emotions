@@ -1,101 +1,82 @@
 .data {
     display: flex;
-    width: 90%;
+    width: 95%;
     flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
+}
+
+.dataAppointment {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
 }
 
 .data h2 {
     font-size: 30px;
-    left: 100%;
-    width: 70%;
 }
 
 .form {
     display: flex;
-    flex-direction: flex;
+    flex-direction: row;
     width: 100%;
-    align-items: flex-start;
-    justify-content: space-between;
-    margin-left: 20%;
+    height: 20%;
+    justify-content: space-around;
 }
 
 .form p {
-    font-size: 150%;
-    margin-left: -75%;
+    font-size: 20px;
+    width: 15%;
+    text-align: justify;
+    font-weight: bold;
 }
 
 .inputName {
     font-size: 20px;
-    position: static;
-    display: block;
-    margin: 5%;
-    text-align: center;
     cursor: pointer;
-    padding: 3%;
     border-radius: 5px;
-    min-width: 140%;
+    width: 80%;
     text-decoration: none;
-    margin-left: 6%;
+    border: black 2px solid;
+    align-self: center;
+    text-align: center;
 }
 
 .inputDate {
     font-size: 20px;
-    margin: 5%;
     text-align: center;
     cursor: pointer;
-    padding: 3%;
     border-radius: 5px;
-    min-width: 165%;
-    height: 100%;
-    text-decoration: none;
-    margin-left: 20%;
+    width: 80%;
+    height: 40px;
+    align-self: center;
 }
 
 .inputHour {
     font-size: 20px;
-    margin: 5%;
     text-align: center;
     cursor: pointer;
-    padding: 3%;
     border-radius: 5px;
-    min-width: 165%;
-    height: 100%;
-    text-decoration: none;
-    margin-left: 23%;
+    width: 80%;
+    height: 40px;
+    align-self: center;
+
 }
 
 .btnAdd {
     color: white;
     font-size: 20px;
-    margin: 5%;
     text-align: center;
     cursor: pointer;
-    padding: 10px;
     border-radius: 5px;
-    width: 120px;
     background: #66d086;
     border: 0;
-    flex-direction: row;
-    margin-left: 27%;
+    width: 20%;
+    align-self: center;
+    height: 45px;
 }
 
 .btnAdd:hover {
     background-color: #64ba7e;
-}
-
-.suggestion {
-    list-style-type: none;
-    list-style: none;
-    background: #cac7c7;
-    padding: 5px;
-    width: 150px;
-    margin-right: auto;
-    margin-bottom: 5px;
-    margin-left: auto;
-    border-radius: 10px;
-    font-size: 18px;
 }
 
 @media (max-width: 1100px) {

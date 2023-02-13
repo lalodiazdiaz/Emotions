@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-import Autosuggest from 'react-autosuggest';
+import Select from 'react-select';
 import Modal from '../Modal/Modal';
 import styles from './AppointmentModal.module.css';
 import { createAppointment } from '../../slices/appointments';
@@ -10,7 +10,11 @@ function AppointmentModal({ onAction, isVisible }) {
 	const currentDate = new Date().toJSON().slice(0, 10);
 	const [data, setData] = useState([]);
 	const [users, setUsers] = useState([]);
-	const [userSelected, setUserSelected] = useState({});
+	const [userSelected, setUserSelected] = useState('');
+	const loggedUser = window.localStorage.getItem('user');
+	const userLogged = JSON.parse(loggedUser);
+	const dispatch = useDispatch();
+
 	const getDataUsers = () => {
 		searchService.searchUsers()
 			.then((response) => {
@@ -25,102 +29,34 @@ function AppointmentModal({ onAction, isVisible }) {
 		getDataUsers();
 	}, []);
 
-	const filteringUsers = (value) => {
-		const inputValue = value.trim().toLowerCase();
-		const inputLength = inputValue.length;
+	const options = users.map((element) => ({ label: `${element.fullName}`,
+		value: `${element.id}` }));
 
-		const filtering = data.filter((user) => {
-			const fullText = user.fullName;
-
-			if (fullText.toLowerCase()
-				.normalize('NFD')
-				.replace(/[\u0300-\u036f]/g, '')
-				.includes(inputValue)) {
-				return user;
-			}
-			return 0;
-		});
-		return inputLength <= 2 ? [] : filtering;
+	const handleSelectChange = ({ value }) => {
+		setUserSelected(value);
 	};
 
-	const onSuggestionsFetchRequested = ({ value }) => {
-		setUsers(filteringUsers(value));
-	};
-
-	const onSuggestionsClearRequested = () => {
-		setUsers([]);
-	};
-
-	const getSuggestionValue = (suggestion) => `${suggestion.fullName}`;
-
-	const selectUser = (user) => {
-		setUserSelected(user);
-	};
-
-	const renderSuggestion = (suggestion) => (
-		<div
-			className={styles.suggestion}
-			onChange={() => selectUser(suggestion)}
-		>
-			{`${suggestion.fullName}`}
-		</div>
-	);
-
-	const eventEnter = (e) => {
-		if (e.key === 'Enter') {
-			const userCurrent = data.filter((u) => u.fullName === e.target.value.trim());
-			const user = {
-				id: userCurrent[0].id,
-			};
-			selectUser(user);
-		}
-	};
-
-	const loggedUser = window.localStorage.getItem('user');
-	const userLogged = JSON.parse(loggedUser);
-	const dispatch = useDispatch();
-
-	const initialAppointmentState = {
+	const [appointment, setAppointment] = useState({
 		date: '',
 		hour: '',
-		idPacient: userSelected.id,
-		idUser: userLogged.data.id,
-	};
-
-	const [appointment, setAppointment] = useState(initialAppointmentState);
+	});
 
 	const handleInputChange = (event) => {
 		const { name, value } = event.target;
 		setAppointment({ ...appointment, [name]: value });
 	};
 
-	const [value, setValue] = useState('');
-
-	const onChange = (e, { newValue }) => {
-		setValue(newValue);
-	};
-
-	const inputProps = {
-		className: styles.btnAutocomplete,
-		onChange,
-		placeholder: 'Nombre del usuario',
-		value,
-		width: 1000,
-	};
-
 	const saveAppointment = () => {
-		const { date, hour, idPacient, idUser } = appointment;
-
-		dispatch(createAppointment(appointment))
-			.unwrap()
-			.then(() => {
-				setAppointment({
-					date,
-					hour,
-					idPacient: userSelected.id,
-					idUser,
-				});
-			});
+		const { date, hour } = appointment;
+		dispatch(createAppointment({
+			date,
+			hour,
+			idPacient: userSelected,
+			idUser: userLogged.data.id,
+		}));
+		setTimeout(() => {
+			window.location.replace('/dashboard/');
+		}, 2000);
 	};
 	return (
 		<Modal
@@ -132,16 +68,12 @@ function AppointmentModal({ onAction, isVisible }) {
 				<div className={styles.dataAppointment}>
 					<div className={styles.form}>
 						<p>Nombre:</p>
-						<Autosuggest
-							className={styles.autocomplete}
-							getSuggestionValue={getSuggestionValue}
-							inputProps={inputProps}
-							onChange={handleInputChange}
-							onSuggestionsClearRequested={onSuggestionsClearRequested}
-							onSuggestionSelected={eventEnter}
-							onSuggestionsFetchRequested={onSuggestionsFetchRequested}
-							renderSuggestion={renderSuggestion}
-							suggestions={users}
+						<Select
+							className={styles.inputName}
+							name="idPacient"
+							onChange={handleSelectChange}
+							options={options}
+							type="submit"
 						/>
 					</div>
 					<div className={styles.form}>

@@ -17,6 +17,11 @@ import PsychologistScreen
 import AddPsychologist from './components/AdminTherapist/AddPsychologist/AddPsychologist';
 import DetailsPatients from './components/DetailsPatients/DetailsPatients';
 import AddPatients from './components/AddPatients/AddPatients';
+import Records from './components/Tabs/Records/Records';
+import Notes from './components/Tabs/Notes/Notes';
+import Task from './components/Tabs/Task/Task';
+import Evidences from './components/Tabs/Evidence/Evidence';
+import Transcriptions from './components/Tabs/Transcriptions/Transcriptions';
 
 function App() {
 	const userLog = JSON.parse(localStorage.getItem('user'));
@@ -118,7 +123,48 @@ function App() {
 							</ProtectedRoute>
 						)}
 						path="/dashboard/DetailsPatients/"
-					/>
+					>
+						<Route
+							element={(
+								<ProtectedRoute>
+									<Records />
+								</ProtectedRoute>
+							)}
+							path="/dashboard/DetailsPatients/"
+						/>
+						<Route
+							element={(
+								<ProtectedRoute>
+									<Notes />
+								</ProtectedRoute>
+							)}
+							path="/dashboard/DetailsPatients/Notes"
+						/>
+						<Route
+							element={(
+								<ProtectedRoute>
+									<Evidences />
+								</ProtectedRoute>
+							)}
+							path="/dashboard/DetailsPatients/Evidences"
+						/>
+						<Route
+							element={(
+								<ProtectedRoute>
+									<Task />
+								</ProtectedRoute>
+							)}
+							path="/dashboard/DetailsPatients/Task"
+						/>
+						<Route
+							element={(
+								<ProtectedRoute>
+									<Transcriptions />
+								</ProtectedRoute>
+							)}
+							path="/dashboard/DetailsPatients/Transcription"
+						/>
+					</Route>
 					<Route
 						element={(
 							<ProtectedRoute>

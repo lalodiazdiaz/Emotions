@@ -1,54 +1,135 @@
-.contAppointments {
-    display: flex;
-    width: 80%;
-    height: 100%;
-    margin-left: 20%;
-    position: absolute;
+.contMain {
+  display: flex;
+  width: 80%;
+  height: 100%;
+  margin-left: 20%;
+  position: absolute;
+  background-color: #f0eeee;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
-.Appointments {
-    display: flex;
-    position: absolute;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    height: 100%;
-    background-color: #f0eeee;
+.tabsScreen {
+  display: flex;
+  width: 95%;
+  height: 95%;
+  background-color: #f0eeee;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.options {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 6%;
+  z-index: 1;
+}
+
+.tabOption {
+  display: flex;
+  height: 100%;
+  width: 25%;
+  background-color: white;
+  justify-content: center;
+  align-items: center;
+  border: 3px solid #B2B9BA;
+  text-decoration: none;
+  color: black;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  font-size: 18px;
+  margin: 0;
+}
+
+.tabActive {
+  display: flex;
+  height: 100%;
+  width: 25%;
+  background-color: white;
+  justify-content: center;
+  align-items: center;
+  border: 3px solid #B2B9BA;
+  color: black;
+  border-bottom: none;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  font-size: 20px;
+  margin: 0;
+  text-decoration: none;
+}
+
+.contScreens {
+  display: flex;
+  flex-direction: column;
+  width: 99.7%;
+  height: 94%;
+  background-color: white;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border-bottom: 3px solid #B2B9BA;
+  border-left: 3px solid #B2B9BA;
+  border-right: 3px solid #B2B9BA;
 }
 
 @media (max-width:1200px) {
-    .contAppointments {
-        display: flex;
-        width: 100%;
-        margin-left: 0px;
-        height: 100%;
-        flex-direction: column-reverse;
-        z-index: -1;
-    }
+  .contMain {
+    display: flex;
+    width: 100%;
+    margin-left: 0px;
+    height: 100%;
+    flex-direction: column-reverse;
+    z-index: -1;
 
-    .Appointments {
-        position: absolute;
-        display: flex;
-        width: 100%;
-        height: 100%;
-    }
+  }
+
+  .tabsScreen {
+    position: absolute;
+    display: flex;
+    width: 95%;
+    height: 85%;
+    margin-top: 12%;
+  }
+
+  .tabOption {
+    font-size: 15px;
+  }
+
+  .tabActive {
+    font-size: 18px;
+  }
 }
 
 @media (max-width:600px) {
-    .contAppointments {
-        display: flex;
-        width: 100%;
-        margin-left: 0px;
-        height: 100%;
-        flex-direction: column-reverse;
-        z-index: -1;
-    }
+  .contMain {
+    display: flex;
+    width: 100%;
+    margin-left: 0px;
+    height: 100%;
+    flex-direction: column-reverse;
+    z-index: -1;
 
-    .Appointments {
-        position: absolute;
-        display: flex;
-        width: 100%;
-        height: 100%;
-    }
+  }
+
+  .tabsScreen {
+    position: absolute;
+    display: flex;
+    width: 95%;
+    height: 85%;
+    margin-top: 15%;
+  }
+
+  .tabOption {
+    font-size: 10px;
+  }
+
+  .tabActive {
+    font-size: 12px;
+  }
+
+  .contScreens {
+    width: 98.5%;
+  }
 }
